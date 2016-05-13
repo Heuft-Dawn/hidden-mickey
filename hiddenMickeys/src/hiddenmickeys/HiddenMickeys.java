@@ -11,6 +11,9 @@ package hiddenmickeys;
  */
 
 import byui.cit260.hiddenMickeys.model.Player;
+import byui.cit260.hiddenMickeys.model.Character;
+import byui.cit260.hiddenMickeys.model.Backpack;
+import byui.cit260.hiddenMickeys.model.Map;
 
 public class HiddenMickeys {
 
@@ -26,6 +29,34 @@ public class HiddenMickeys {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        
+        Character characterOne = new Character();
+        characterOne.setName("Cindi");
+        characterOne.setHeight(65);
+        characterOne.setAge(21);
+        characterOne.setGender("F");
+        
+        String characterInfo = characterOne.toString();
+        System.out.println(characterInfo);
+        
+        
+        Backpack playerBackpack = new Backpack();
+        playerBackpack.setEmergencyWaterUsed(0);
+        playerBackpack.setEmergencySnackUsed(0);
+        playerBackpack.setNumberFastPasses(3);
+        playerBackpack.setMoneyBalance(50);
+        
+        String backpackInfo = playerBackpack.toString();
+        System.out.println(backpackInfo);
+        
+        
+        Map playerMap = new Map();
+        playerMap.setRowCount(1);
+        playerMap.setColumnCount(1);
+        
+        String mapInfo = playerMap.toString();
+        System.out.println(mapInfo);
     }
     
 }
