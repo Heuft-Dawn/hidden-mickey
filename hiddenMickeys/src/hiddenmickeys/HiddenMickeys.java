@@ -16,6 +16,7 @@ import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Map;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.FastPassStation;
+import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Shop;
 
 public class HiddenMickeys {
@@ -87,6 +88,18 @@ public class HiddenMickeys {
         
         String shopInfo = shop1.toString();
         System.out.println(shopInfo);
+        
+        Location playerLocation = new Location ();
+        
+        playerLocation.setName("Thunder Mountain");
+        playerLocation.setRow(2);
+        playerLocation.setColumn(4);
+        playerLocation.setLand("Adventure Land");
+        playerLocation.setReturnAllowed(true);
+        playerLocation.setVisited(false);
+        
+        String locationInfo = playerLocation.toString();
+        System.out.println(locationInfo);
     }
     
 }
