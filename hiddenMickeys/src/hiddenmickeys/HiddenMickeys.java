@@ -16,7 +16,10 @@ import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Map;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.FastPassStation;
+import byui.cit260.hiddenMickeys.model.Kiosk;
 import byui.cit260.hiddenMickeys.model.Location;
+import byui.cit260.hiddenMickeys.model.Ride;
+import byui.cit260.hiddenMickeys.model.Scene;
 import byui.cit260.hiddenMickeys.model.Shop;
 
 public class HiddenMickeys {
@@ -100,6 +103,31 @@ public class HiddenMickeys {
         
         String locationInfo = playerLocation.toString();
         System.out.println(locationInfo);
+        
+        Ride ride1 = new Ride ();
+        ride1.setWaitTime(100);
+        ride1.setDescription("Space Mountain");
+        ride1.setEnergyUsed(30);
+        ride1.setFastPassEligible(true);
+        ride1.setMickeyAvailable(true);
+        
+        String rideInfo = ride1.toString();
+        System.out.println(rideInfo);
+        
+        Kiosk kiosk1 = new Kiosk ();
+        kiosk1.setCost(2);
+        kiosk1.setEnergyBoostIncrease(50);
+        kiosk1.setFoodItem("popcorn");
+        
+        String kioskInfo = kiosk1.toString();
+        System.out.println(kiosk1);
+        
+        Scene scene1 = new Scene ();
+        scene1.setDescription("Main Street");
+        scene1.setMickeyLocation("Fantasy Land");
+        
+        String sceneInfo = scene1.toString();
+        System.out.println(scene1);
     }
     
 }
