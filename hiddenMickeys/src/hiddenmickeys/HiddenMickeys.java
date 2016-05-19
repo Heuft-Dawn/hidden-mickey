@@ -42,8 +42,8 @@ public class HiddenMickeys {
         
         
         Backpack playerBackpack = new Backpack();
-        playerBackpack.setEmergencyWaterUsed(0);
-        playerBackpack.setEmergencySnackUsed(0);
+        playerBackpack.setEmergencyWaterUsed(false);
+        playerBackpack.setEmergencySnackUsed(false);
         playerBackpack.setNumberFastPasses(3);
         playerBackpack.setMoneyBalance(50);
         

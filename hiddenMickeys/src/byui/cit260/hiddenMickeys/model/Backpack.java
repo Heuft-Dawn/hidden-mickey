@@ -7,34 +7,35 @@ package byui.cit260.hiddenMickeys.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 /**
  *
  * @author Hannah Mars
  */
 public class Backpack implements Serializable{
     //class instance variables
-    private double emergencyWaterUsed;
-    private double emergencySnackUsed;
+    private boolean emergencyWaterUsed;
+    private boolean emergencySnackUsed;
     private int numberFastPasses;
     private double moneyBalance;
 
     public Backpack() {
     }
 
-    public double getEmergencyWaterUsed() {
+    
+    
+    public boolean isEmergencyWaterUsed() {
         return emergencyWaterUsed;
     }
 
-    public void setEmergencyWaterUsed(double emergencyWaterUsed) {
+    public void setEmergencyWaterUsed(boolean emergencyWaterUsed) {
         this.emergencyWaterUsed = emergencyWaterUsed;
     }
 
-    public double getEmergencySnackUsed() {
+    public boolean isEmergencySnackUsed() {
         return emergencySnackUsed;
     }
 
-    public void setEmergencySnackUsed(double emergencySnackUsed) {
+    public void setEmergencySnackUsed(boolean emergencySnackUsed) {
         this.emergencySnackUsed = emergencySnackUsed;
     }
 
@@ -57,10 +58,10 @@ public class Backpack implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + (int) (Double.doubleToLongBits(this.emergencyWaterUsed) ^ (Double.doubleToLongBits(this.emergencyWaterUsed) >>> 32));
-        hash = 79 * hash + (int) (Double.doubleToLongBits(this.emergencySnackUsed) ^ (Double.doubleToLongBits(this.emergencySnackUsed) >>> 32));
-        hash = 79 * hash + this.numberFastPasses;
-        hash = 79 * hash + (int) (Double.doubleToLongBits(this.moneyBalance) ^ (Double.doubleToLongBits(this.moneyBalance) >>> 32));
+        hash = 29 * hash + (this.emergencyWaterUsed ? 1 : 0);
+        hash = 29 * hash + (this.emergencySnackUsed ? 1 : 0);
+        hash = 29 * hash + this.numberFastPasses;
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.moneyBalance) ^ (Double.doubleToLongBits(this.moneyBalance) >>> 32));
         return hash;
     }
 
@@ -76,10 +77,10 @@ public class Backpack implements Serializable{
             return false;
         }
         final Backpack other = (Backpack) obj;
-        if (Double.doubleToLongBits(this.emergencyWaterUsed) != Double.doubleToLongBits(other.emergencyWaterUsed)) {
+        if (this.emergencyWaterUsed != other.emergencyWaterUsed) {
             return false;
         }
-        if (Double.doubleToLongBits(this.emergencySnackUsed) != Double.doubleToLongBits(other.emergencySnackUsed)) {
+        if (this.emergencySnackUsed != other.emergencySnackUsed) {
             return false;
         }
         if (this.numberFastPasses != other.numberFastPasses) {
@@ -95,6 +96,6 @@ public class Backpack implements Serializable{
     public String toString() {
         return "Backpack{" + "emergencyWaterUsed=" + emergencyWaterUsed + ", emergencySnackUsed=" + emergencySnackUsed + ", numberFastPasses=" + numberFastPasses + ", moneyBalance=" + moneyBalance + '}';
     }
-    
+            
     
 }
