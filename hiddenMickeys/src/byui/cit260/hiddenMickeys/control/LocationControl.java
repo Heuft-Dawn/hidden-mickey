@@ -11,6 +11,12 @@ Author: Susan Allen
 public class LocationControl {
     
    public int calcFastPassTime(int time) {
+    /**
+     * This function calculates fast pass time by dividing the 
+     * current wait time in half and rounding it down to a 
+     * 5 minute interval
+     */   
+       
 	//check for negatives
        if (time < 0) {
             return -1;
@@ -24,11 +30,16 @@ public class LocationControl {
             return 999;
             }
 	
+        //calculate what half the time would be
         double halfTime = (double)time /2;
+        
+        //round the halfTime value 
         int roundHalfTime = (int)Math.round(halfTime);
-        System.out.println(halfTime);
-        System.out.println(roundHalfTime);
+
+        //find how many minutes the value is above the 5 minute time interval below it   
         int adjustment = roundHalfTime % 5;
+        
+        //adjust the rounded half time down to the 5 minute interval
         int fastPassTime = roundHalfTime - adjustment; 
 
         return fastPassTime;	
