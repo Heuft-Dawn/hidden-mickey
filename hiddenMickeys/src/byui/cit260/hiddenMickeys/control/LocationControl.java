@@ -45,4 +45,25 @@ public class LocationControl {
         return fastPassTime;	
         }
  
+   
+   // author - Dawn Heuft
+   
+   public int calcEnergyUsed (int timeUsed, int curEnergy) {
+       if (timeUsed < 5 || timeUsed > 120) { // check range
+          return -1;
+       }
+      if (curEnergy < 1 || curEnergy > 300) { // check range
+          return -2;
+      }
+      int energyUsed = timeUsed/5;
+      int level = curEnergy - energyUsed;
+      curEnergy = level;
+      
+      if (curEnergy < 10){ //check energy level
+          System.out.println ("Caution energy level is below 10, replenish soon");
+          return energyUsed;
+      }    
+      return energyUsed;
+      }
+       
 }
