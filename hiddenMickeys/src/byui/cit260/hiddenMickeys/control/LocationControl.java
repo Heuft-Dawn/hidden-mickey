@@ -61,7 +61,7 @@ public class LocationControl {
       
       if (curEnergy < 10){ //check energy level
           System.out.println ("Caution energy level is below 10, replenish soon");
-          return energyUsed;
+          return energyUsed; 
       }    
       return energyUsed;
       }
