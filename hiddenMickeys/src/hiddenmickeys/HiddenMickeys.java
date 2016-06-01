@@ -23,12 +23,20 @@ import byui.cit260.hiddenMickeys.model.Ride;
 import byui.cit260.hiddenMickeys.model.Scene;
 import byui.cit260.hiddenMickeys.model.Shop;
 
+import byui.cit260.hiddenMickeys.view.StartProgramView;
+
 public class HiddenMickeys {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //create the start program view and display the start program view
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+        
+        
+        
         Player playerOne = new Player();
         
         playerOne.setPlayerName("Amy");
