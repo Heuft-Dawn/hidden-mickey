@@ -5,6 +5,10 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.GameControl;
+import byui.cit260.hiddenMickeys.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author Hannah Mars
@@ -52,15 +56,15 @@ public class StartProgramView {
     //display the start program view
     public void displayStartProgramView() {
         
-        boolean done = false;
+        boolean done = false; //set flag to not done
         do {
             //prompt for and get player's name
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q"))
+            String playerName = this.getPlayerName();
+            if (playerName.toUpperCase().equals("Q"))
                 return; //exit the game
             
             //do the requested action and display the next view
-            done = this.doAction(playersName);
+            done = this.doAction(playerName);
             
         } while (!done);
         
@@ -82,14 +86,46 @@ public class StartProgramView {
         //Determine and display the next view
     }
 
-    private String getPlayersName() {
-       System.out.println("\n*** getPlayersName() function was called ***");
-       return "Dawn";
+    private String getPlayerName() {
+        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
+        String value = ""; //value to be returned
+        boolean valid = false; //initialize to not valid
+        
+        while (!valid) { //loop while an invalid value is entered
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); //get next line typed on keyboard
+            value = value.trim(); //trim off leading and trailing blanks
+            
+            if (value.length() < 1) { //value is blank
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+            break; //end the loop
+        }
+        return value; //return the value entered
+    }
+    
+     private boolean doAction(String playerName) {
+        if (playerName.length() < 2) {
+            System.out.println("\nInvalid player's name: "
+            + "The name must be greater than one character in length.");
+            return false;
+        }
+        
+        //call createPlayer() control function
+        Player player = GameControl.createPlayer(playerName);
+        
+        if (player == null) { //if unsuccessful
+            System.out.println("\nError creating the player");
+            return false;
+        }
+        this.displayNextView(player);
+        return true;
     }
 
-    private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() function was called ***");
-        return true;
+    private void displayNextView(Player player) {
+        System.out.println("\n*** displayNextView() function called ***");
     }
             
             

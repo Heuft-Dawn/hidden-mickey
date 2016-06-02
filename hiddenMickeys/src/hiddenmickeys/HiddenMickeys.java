@@ -26,7 +26,13 @@ import byui.cit260.hiddenMickeys.model.Shop;
 import byui.cit260.hiddenMickeys.view.StartProgramView;
 
 public class HiddenMickeys {
+    
+    private static Game currentGame = null;
+    private static Player player = null;
 
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -137,6 +143,23 @@ public class HiddenMickeys {
         
         String sceneInfo = scene1.toString();
         System.out.println(scene1);
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        HiddenMickeys.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+    
+
+    public static void setPlayer(Player player) {
+        HiddenMickeys.player = player;
     }
     
 }
