@@ -125,7 +125,21 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-        System.out.println("\n*** displayNextView() function called ***");
+        System.out.println("\n================================"
+                          +"\nWelcome to the game, " + player.getPlayerName() +"!"
+                          +"\nEnjoy the hunt!"
+                          +"\n================================");
+        
+        
+        
+        
+        //create MainMenuView object
+        
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        //display the Main Menu View
+        
+        mainMenuView.displayMainMenuView();
     }
             
             

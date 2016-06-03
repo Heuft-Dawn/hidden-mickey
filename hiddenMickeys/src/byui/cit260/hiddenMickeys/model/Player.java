@@ -84,10 +84,8 @@ public class Player implements Serializable{
         return "Player{" + "playerName=" + playerName + ", bestTime=" + bestTime + ", dateLastPlayed=" + dateLastPlayed + '}';
     }
 
-    public void setName(String playerName) {
-       
-    }
-    
+ 
+  
     
     
 }

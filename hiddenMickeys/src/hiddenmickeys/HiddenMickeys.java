@@ -43,7 +43,7 @@ public class HiddenMickeys {
         
         
         
-        Player playerOne = new Player();
+      /*  Player playerOne = new Player();
         
         playerOne.setPlayerName("Amy");
         playerOne.setBestTime(150);
@@ -143,7 +143,9 @@ public class HiddenMickeys {
         
         String sceneInfo = scene1.toString();
         System.out.println(scene1);
-    }
+*/    
+}
+
 
     public static Game getCurrentGame() {
         return currentGame;

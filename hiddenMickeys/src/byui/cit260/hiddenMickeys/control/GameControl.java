@@ -19,10 +19,14 @@ public class GameControl {
             return null;
         }
         Player player = new Player();
-        player.setName(playerName);
+        player.setPlayerName(playerName);
         
         HiddenMickeys.setPlayer(player); //save the player
         return player;
+    }
+
+    public static void createNewGame(Player player) {
+        System.out.println("\n***New game created");
     }
     
 }
