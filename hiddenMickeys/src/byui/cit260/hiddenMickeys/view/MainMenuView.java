@@ -19,7 +19,7 @@ public class MainMenuView {
     
 public MainMenuView() {
     this.promptMessage = "\nPlease enter your choice: ";
-    this.displayMenu();
+    //this.displayMenu();
 }
 
 public void displayMainMenuView() { //display the start program view
@@ -42,7 +42,7 @@ public void displayMainMenuView() { //display the start program view
         Scanner keyboard = new Scanner(System.in); //get in file for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
-        //displayMenu();
+        displayMenu();
         while (!valid) { //loop while an invalid value is entered
             
             System.out.println("\n" + this.promptMessage);
@@ -65,15 +65,18 @@ public void displayMainMenuView() { //display the start program view
         switch (choice) {
             case "N": //create and start a new game
                 this.startNewGame();
+                this.quitTheOption();
                 break;
             case "G": //get and start an existing game
                 this.startExistingGame();
+                this.quitTheOption();
                 break;   
             case "H": //display help menu
                 this.displayHelpMenu();
                 break;
             case "S": //save current game
                 this.saveGame();
+                this.quitTheOption();
                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
@@ -117,6 +120,38 @@ public void displayMainMenuView() { //display the start program view
         +"\nS - Save Game"
         +"\nQ - Quit"
         +"\n---------------------------------------------------");
+    }
+    
+    private void quitTheOption(){
+        String quit; //Variable used to return to the help menu
+        do {
+                    quit = this.promptForQuit();
+                    if (quit.toUpperCase().equals("Q")) { //user wants to quit
+                    this.displayMenu(); 
+                    
+                    return; //exit the screen & return
+                    }
+            } while (!quit.equals("Q"));
+    }
+    
+     private String promptForQuit() {
+        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
+        String value = ""; //value to be returned
+        boolean valid = false; //initialize to not valid
+        
+        while (!valid) { //loop while an invalid value is entered
+            System.out.println("\nEnter Q to Return:");
+            
+            value = keyboard.nextLine(); //get next line typed on keyboard
+            value = value.trim(); //trim off leading and trailing blanks
+            
+            if (value.length() < 1) { //value is blank
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+            break; //end the loop
+        }
+        return value; //return the value entered
     }
 }
     

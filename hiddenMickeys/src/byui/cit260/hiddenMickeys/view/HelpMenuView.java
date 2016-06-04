@@ -89,7 +89,7 @@ public void displayHelpMenu() {
     }
 
     private void displayGameGoal() {
-    String quit; //Variable used to return to the help menu
+    
         System.out.println("\n"
             +"\n   The objective of the game is to find 10 Hidden Mickeys.  You must do this before "
             +"\nyou run out of time and energy."
@@ -111,16 +111,12 @@ public void displayHelpMenu() {
             +"\npark. You may recharge the energy by eating a snack at a snack location, by resting, "
             +"\nor by using emergency food contained in your backpack.  "
             +"\n  ");
-            do {
-                    quit = this.getQuit();
-                    if (quit.toUpperCase().equals("Q")) { //user wants to quit
-                    this.displayMenu(); 
-                    
-                    return; //exit the screen & return
-                    }
-            } while (!quit.equals("Q"));
+            
+        this.quitTheOption();
             
     }
+    
+   
 
     private void displayHowMove() {
     String quit; //Variable used to return to the help menu
@@ -131,14 +127,7 @@ public void displayHelpMenu() {
         +"\nyou decide to move, you will confirm that you would like to move.  Your map position"
         +"\nwill then change to the location that you entered."
         +"\n");
-        do {
-                    quit = this.getQuit();
-                    if (quit.toUpperCase().equals("Q")) { //user wants to quit
-                    this.displayMenu(); 
-                    
-                    return; //exit the screen & return
-                    }
-            } while (!quit.equals("Q"));
+        this.quitTheOption();
     }
 
     private void displayHowCheckEnergy() {
@@ -148,14 +137,7 @@ public void displayHelpMenu() {
         +"\n"
         + "\n  Your current energy level will be displayed."
         +"\n");
-         do {
-                    quit = this.getQuit();
-                    if (quit.toUpperCase().equals("Q")) { //user wants to quit
-                    this.displayMenu(); 
-                    
-                    return; //exit the screen & return
-                    }
-            } while (!quit.equals("Q"));
+         this.quitTheOption();
     }
 
     private void displayHowCheckTime() {
@@ -165,14 +147,7 @@ public void displayHelpMenu() {
         +"\n"
         +"\nYour Total Time Spent and Total Time Remaining will be displayed."
         +"\n");
-         do {
-                    quit = this.getQuit();
-                    if (quit.toUpperCase().equals("Q")) { //user wants to quit
-                    this.displayMenu(); 
-                    
-                    return; //exit the screen & return
-                    }
-            } while (!quit.equals("Q"));
+        this.quitTheOption();
     }
 
     private void displayHowRechargeEnergy() {
@@ -188,14 +163,7 @@ public void displayHelpMenu() {
         +"\n3)- Enter an 'R' from the Game Menu and take the option to rest for 15 minutes. This " 
         +"\nwill recharge your energy by 20."
 	+"\n    ");
-         do {
-                    quit = this.getQuit();
-                    if (quit.toUpperCase().equals("Q")) { //user wants to quit
-                    this.displayMenu(); 
-                    
-                    return; //exit the screen & return
-                    }
-            } while (!quit.equals("Q"));
+        this.quitTheOption();
     }
 
     private void displayHowSearch() {
@@ -211,8 +179,13 @@ public void displayHelpMenu() {
         +"\n   A helpful strategy would be to find nouns within the description and use those"
         +"\nas guesses."
 	+"\n    ");
-         do {
-                    quit = this.getQuit();
+        this.quitTheOption();
+    }
+
+    private void quitTheOption(){
+        String quit; //Variable used to return to the help menu
+        do {
+                    quit = this.promptForQuit();
                     if (quit.toUpperCase().equals("Q")) { //user wants to quit
                     this.displayMenu(); 
                     
@@ -220,8 +193,9 @@ public void displayHelpMenu() {
                     }
             } while (!quit.equals("Q"));
     }
-
-private String getQuit() {
+     
+    
+    private String promptForQuit() {
         Scanner keyboard = new Scanner(System.in); //get in file for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
@@ -241,7 +215,10 @@ private String getQuit() {
         return value; //return the value entered
     }
 
-    private void displayMenu() {
+   
+
+     
+      private void displayMenu() {
        System.out.println("\n"
         + "\n---------------------------------------------------"
         +"\n|  Help Menu                                      |"
@@ -255,6 +232,4 @@ private String getQuit() {
         +"\nQ - Return to previous screen"
         +"\n---------------------------------------------------" );
     }
-
-    
 }
