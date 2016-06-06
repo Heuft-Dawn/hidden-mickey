@@ -88,6 +88,8 @@ public GameMenuView(){
             case "H": //save current game
                 this.displayHelpMenu();
                 break;
+            case "Q":
+                break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
                 break;
