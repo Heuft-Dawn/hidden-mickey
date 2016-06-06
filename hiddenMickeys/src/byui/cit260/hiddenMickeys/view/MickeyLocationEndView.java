@@ -11,21 +11,19 @@ import java.util.Scanner;
  *
  * @author Administrator
  */
-public class ExploreRideLocationView {
-   private String promptMessage;  
- 
-    
-    
-    public ExploreRideLocationView(){
-    this.promptMessage = "\nThe current Ride wait time is _____.  What would you like to do?";
+public class MickeyLocationEndView {
+   private String promptMessage; 
+    //Constructor function
+    public MickeyLocationEndView(){//constructor Function
+    this.promptMessage = "\nWould you like to search for a Mickey (Y) or exit (N)?";
 }
 
-    public void displayExploreRideLocationView() {
+    public void displayMickeyLocationEndView() {
         boolean done = false; //set flag to not done
     
         do { //prompt for and get selected menu option
             displayMenu();
-            String gameMenuOption = this.getGameMenuOption();
+            String gameMenuOption = this.getEndLocationMenuOption();
             if (gameMenuOption.toUpperCase().equals("Q"))  //user wants to quit
                 return; //exit the game
 
@@ -35,7 +33,7 @@ public class ExploreRideLocationView {
         } while(!done);
     }
 
-     private String getGameMenuOption() {
+     private String getEndLocationMenuOption() {
         Scanner keyboard = new Scanner(System.in); //get in file for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
@@ -59,65 +57,32 @@ public class ExploreRideLocationView {
         choice = choice.toUpperCase();
         System.out.println("The choice you entered is " + choice);
         switch (choice) {
-            case "P": //Use FastPass
-                this.useFastPass();
-                this.quitTheOption();
+            case "Y": //Use FastPass
+                this.displayMickeySearch();
                 break;
-            case "Y": //Continue and explore
-                this.exploreRide();
-                this.quitTheOption();
-                break;   
             case "N": //go back to menu
-                break;
-            case "Q": //go back to menu
                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
                 break;
-        }
+                        }
         return false;
     }
-
-   private void displayMenu(){
+    
+    
+     private void displayMenu(){
          System.out.println("\n"
             +"\n------------------------------"
-            +"\nRide Menu"
+            +"\nRide Exit Menu"
             +"\n------------------------------"
-            +"\nP - Use Fast Pass"
-            +"\nY - Continue "
-            +"\nN - Return to Map View"
+            +"\nS - Search for Mickey Head"
+            +"\nQ - Exit Ride/ Stop Exploring"
             +"\n------------------------------");
+    
      }
-   
-private void quitTheOption() {
-         //change the prompt message temporarily
-                this.promptMessage = "Enter Q to Return";
-                String option = this.getGameMenuOption();
-                //reset the prompt message
-                this.promptMessage = "\nPlease enter your choice: ";
-                //it doesn't matter what the user enters-- go back to the help menu
-                this.doAction(option);
-    }
 
-    private void useFastPass() {
-        System.out.println("\n***useFastPass()function called***");
-    }
-
-    private void exploreRide() {
-        this.updateTime();
-        this.getRideDescription();
-        
-        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
-        locationEndMenu.displayMickeyLocationEndView();
-                
- 
-    }
-
-    private void getRideDescription() {
-       System.out.println("\n***getRideDescription()function called***");
-    }
-
-    private void updateTime() {
-       System.out.println("\n***updateTime()function called***");
+    private void displayMickeySearch() {
+        MickeySearchMenuView  mickeySearchMenu = new MickeySearchMenuView();
+        mickeySearchMenu.displayMickeySearchMenuView();
     }
 }

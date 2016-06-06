@@ -103,6 +103,8 @@ public GameMenuView(){
 
     private void exploreLocation() {
         System.out.println("\n***exploreLocation()function called***");
+        ExploreRideLocationView exploreRideView = new ExploreRideLocationView();
+        exploreRideView.displayExploreRideLocationView();
     }
 
     private void viewBackpack() {
