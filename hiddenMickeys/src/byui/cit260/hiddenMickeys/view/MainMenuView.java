@@ -92,7 +92,7 @@ public void displayMainMenuView() { //display the start program view
         GameControl.createNewGame(HiddenMickeys.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.displayGameMenuView();
     }
 
     private void startExistingGame() {
