@@ -27,7 +27,7 @@ public void displayMainMenuView() { //display the start program view
     boolean done = false; //set flag to not done
     
     do { //prompt for and get selected menu option
-        
+        displayMenu();
         String menuOption = this.getMenuOption();
         if (menuOption.toUpperCase().equals("Q"))  //user wants to quit
             return; //exit the game
@@ -42,7 +42,7 @@ public void displayMainMenuView() { //display the start program view
         Scanner keyboard = new Scanner(System.in); //get in file for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
-        displayMenu();
+        
         while (!valid) { //loop while an invalid value is entered
             
             System.out.println("\n" + this.promptMessage);
@@ -78,6 +78,8 @@ public void displayMainMenuView() { //display the start program view
                 this.saveGame();
                 this.quitTheOption();
                 break;
+            case "Q":
+                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
                 break;
@@ -123,35 +125,15 @@ public void displayMainMenuView() { //display the start program view
     }
     
     private void quitTheOption(){
-        String quit; //Variable used to return to the help menu
-        do {
-                    quit = this.promptForQuit();
-                    if (quit.toUpperCase().equals("Q")) { //user wants to quit
-                    this.displayMenu(); 
-                    
-                    return; //exit the screen & return
-                    }
-            } while (!quit.equals("Q"));
+       //change the prompt message temporarily
+                this.promptMessage = "Enter Q to Return";
+                String option = this.getMenuOption();
+                //reset the prompt message
+                this.promptMessage = "\nPlease enter your choice: ";
+                //it doesn't matter what the user enters-- go back to the help menu
+                this.doAction(option);
     }
     
-     private String promptForQuit() {
-        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is entered
-            System.out.println("\nEnter Q to Return:");
-            
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
+    
 }
     
