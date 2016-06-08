@@ -57,18 +57,15 @@ public class MickeySearchMenuView {
 
     private boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        System.out.println("The choice you entered is " + choice);
-        switch (choice) {
-            case "V": //Use FastPass
-                this.useFastPass();
+        //System.out.println("The choice you entered is " + choice);
+        if (choice.equals("V")) {
+                this.displayRideDescription();
                 this.quitTheOption();
-                break;
-            case "Q": //go back to menu
-                break;
-            default:
+        }else if (choice.equals("Q")) {
+                return false;
+        }else {
                 this.searchDescription(choice);
-                this.quitTheOption();
-                break;
+                
         }
         return false;
     }
@@ -87,21 +84,22 @@ public class MickeySearchMenuView {
      }
 
     private void searchDescription(String choice) {
-        System.out.println("\n***searchDescription()function called***");
+        System.out.println("\n***searchDescription()function called on " + choice + "***");
+        System.out.println("\nSorry, no Mickey found there.");
     }
 
     private void quitTheOption() {
         //change the prompt message temporarily
-                this.promptMessage = "Enter Q to Return";
+                this.promptMessage = "Try again, or enter Q to quit:";
                 String option = this.getGameMenuOption();
                 //reset the prompt message
-                this.promptMessage = "\nPlease enter your choice: ";
+                this.promptMessage = "\nEnter your choice: ";
                 //it doesn't matter what the user enters-- go back to the help menu
                 this.doAction(option);
     }
 
-    private void useFastPass() {
-        System.out.println("\n***useFastPass()function called***");
+   private void displayRideDescription() {
+        System.out.println("Here is the description of the ride...");
     }
      
     

@@ -57,15 +57,13 @@ public class ExploreRideLocationView {
 
     private boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        System.out.println("The choice you entered is " + choice);
+        // remove quitTheOption function if the coding for the next menu is complete
         switch (choice) {
             case "P": //Use FastPass
                 this.useFastPass();
-                this.quitTheOption();
                 break;
             case "Y": //Continue and explore
                 this.exploreRide();
-                this.quitTheOption();
                 break;   
             case "N": //go back to menu
                 break;
@@ -85,7 +83,7 @@ public class ExploreRideLocationView {
             +"\n------------------------------"
             +"\nP - Use Fast Pass"
             +"\nY - Continue "
-            +"\nN - Return to Map View"
+            +"\nQ - Return to Map View"
             +"\n------------------------------");
      }
    
@@ -101,6 +99,11 @@ private void quitTheOption() {
 
     private void useFastPass() {
         System.out.println("\n***useFastPass()function called***");
+        //print a description of the ride
+        this.getRideDescription();
+        //Go to the end of ride menu that allows Mickey Searching
+        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
+        locationEndMenu.displayMickeyLocationEndView();
     }
 
     private void exploreRide() {

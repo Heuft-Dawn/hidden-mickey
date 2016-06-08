@@ -63,7 +63,6 @@ public GameMenuView(){
                 break;
             case "E": //explore/enter current location
                 this.exploreLocation();
-                this.quitTheOption();
                 break;   
             case "B": //view Backpack
                 this.viewBackpack();

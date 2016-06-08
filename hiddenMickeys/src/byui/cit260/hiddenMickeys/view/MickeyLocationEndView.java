@@ -15,7 +15,7 @@ public class MickeyLocationEndView {
    private String promptMessage; 
     //Constructor function
     public MickeyLocationEndView(){//constructor Function
-    this.promptMessage = "\nWould you like to search for a Mickey (Y) or exit (N)?";
+    this.promptMessage = "\nEnter your choice";
 }
 
     public void displayMickeyLocationEndView() {
@@ -57,10 +57,10 @@ public class MickeyLocationEndView {
         choice = choice.toUpperCase();
         System.out.println("The choice you entered is " + choice);
         switch (choice) {
-            case "Y": //Use FastPass
+            case "S": //Search for Mickey
                 this.displayMickeySearch();
                 break;
-            case "N": //go back to menu
+            case "Q": //go back to menu
                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
