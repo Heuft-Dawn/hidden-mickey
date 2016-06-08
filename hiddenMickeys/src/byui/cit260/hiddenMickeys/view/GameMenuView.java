@@ -112,6 +112,8 @@ public GameMenuView(){
                 break;
             case "S":
                 //open menu for a shop location
+                ExploreShopLocationView exploreShopView = new ExploreShopLocationView();
+                exploreShopView.displayExploreShopLocationView();
                 break;
             case "F":
                 //open menu for a food location
@@ -126,7 +128,7 @@ public GameMenuView(){
     private String getLocationType() {
        //we can use this function for testing  R=Ride, S=Shop, F=Food
        //when testing your code, change the return value to your menu type 
-       return "R";
+       return "S";
     }
         
     private void viewBackpack() {
