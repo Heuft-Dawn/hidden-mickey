@@ -65,7 +65,6 @@ public void displayMainMenuView() { //display the start program view
         switch (choice) {
             case "N": //create and start a new game
                 this.startNewGame();
-                this.quitTheOption();
                 break;
             case "G": //get and start an existing game
                 this.startExistingGame();

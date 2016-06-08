@@ -83,7 +83,7 @@ public class ExploreRideLocationView {
             +"\n------------------------------"
             +"\nP - Use Fast Pass"
             +"\nY - Continue "
-            +"\nQ - Return to Map View"
+            +"\nQ - Return to Game Menu"
             +"\n------------------------------");
      }
    
@@ -98,7 +98,7 @@ private void quitTheOption() {
     }
 
     private void useFastPass() {
-        System.out.println("\n***useFastPass()function called***");
+        System.out.println("\nYou used a Fast Pass.\n");
         //print a description of the ride
         this.getRideDescription();
         //Go to the end of ride menu that allows Mickey Searching
@@ -107,9 +107,11 @@ private void quitTheOption() {
     }
 
     private void exploreRide() {
+        //this will update the player's amount of time spent
         this.updateTime();
+        //this will display a description for the user - telling them what they experienced during the ride
         this.getRideDescription();
-        
+        //This calls a menu that gives the player a chance to search for Mickeys or exit.
         MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
         locationEndMenu.displayMickeyLocationEndView();
                 
@@ -117,7 +119,8 @@ private void quitTheOption() {
     }
 
     private void getRideDescription() {
-       System.out.println("\n***getRideDescription()function called***");
+       System.out.println("Here is a description of the ride you just went on.  You saw"
+                    +"\nTHIS and THIS and THIS and it was a blast.");
     }
 
     private void updateTime() {

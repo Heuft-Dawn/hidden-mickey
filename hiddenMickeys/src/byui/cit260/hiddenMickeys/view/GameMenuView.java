@@ -66,7 +66,6 @@ public GameMenuView(){
                 break;   
             case "B": //view Backpack
                 this.viewBackpack();
-                this.quitTheOption();
                 break;
             case "T": //view time spent/remaining
                 this.viewTime();
@@ -101,11 +100,35 @@ public GameMenuView(){
     }
 
     private void exploreLocation() {
-        System.out.println("\n***exploreLocation()function called***");
-        ExploreRideLocationView exploreRideView = new ExploreRideLocationView();
-        exploreRideView.displayExploreRideLocationView();
-    }
+     String locationType;   
+        //get the type of location that the user is currently on
+        locationType = this.getLocationType();
+        //R=Ride, S=Shop, F=Food
+        switch (locationType) {
+            case "R":
+                //open the menu for a ride location 
+                ExploreRideLocationView exploreRideView = new ExploreRideLocationView();
+                exploreRideView.displayExploreRideLocationView();
+                break;
+            case "S":
+                //open menu for a shop location
+                break;
+            case "F":
+                //open menu for a food location
+                break;
+            default:
+                System.out.println("Invalid Location Type");
+                break;
+         }
 
+    }
+    
+    private String getLocationType() {
+       //we can use this function for testing  R=Ride, S=Shop, F=Food
+       //when testing your code, change the return value to your menu type 
+       return "R";
+    }
+        
     private void viewBackpack() {
         System.out.println("\n***viewBackpack()function called***");
     }
@@ -127,7 +150,7 @@ public GameMenuView(){
     }
 
     private void displayHelpMenu() {
-         HelpMenuView helpMenu = new HelpMenuView();
+        HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenu();
     }
 
@@ -157,4 +180,6 @@ public GameMenuView(){
             +"\nQ - Quit"
             +"\n---------------------------------------------------");
      }
+
+
 }
