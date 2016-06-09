@@ -25,7 +25,7 @@ public class ExploreRideLocationView {
     
         do { //prompt for and get selected menu option
             displayMenu();
-            String gameMenuOption = this.getGameMenuOption();
+            String gameMenuOption = this.getExploreRideLocationOption();
             if (gameMenuOption.toUpperCase().equals("Q"))  //user wants to quit
                 return; //exit the game
 
@@ -35,7 +35,7 @@ public class ExploreRideLocationView {
         } while(!done);
     }
 
-     private String getGameMenuOption() {
+     private String getExploreRideLocationOption() {
         Scanner keyboard = new Scanner(System.in); //get in file for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
@@ -90,7 +90,7 @@ public class ExploreRideLocationView {
 private void quitTheOption() {
          //change the prompt message temporarily
                 this.promptMessage = "Enter Q to Return";
-                String option = this.getGameMenuOption();
+                String option = this.getExploreRideLocationOption();
                 //reset the prompt message
                 this.promptMessage = "\nPlease enter your choice: ";
                 //it doesn't matter what the user enters-- go back to the help menu

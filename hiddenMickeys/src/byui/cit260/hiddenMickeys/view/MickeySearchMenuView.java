@@ -25,7 +25,7 @@ public class MickeySearchMenuView {
     
         do { //prompt for and get selected menu option
             displayMenu();
-            String gameMenuOption = this.getGameMenuOption();
+            String gameMenuOption = this.getMickeySearchMenuOption();
             if (gameMenuOption.toUpperCase().equals("Q"))  //user wants to quit
                 return; //exit the game
 
@@ -35,7 +35,7 @@ public class MickeySearchMenuView {
         } while(!done);
     }
 
-     private String getGameMenuOption() {
+     private String getMickeySearchMenuOption() {
         Scanner keyboard = new Scanner(System.in); //get in file for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
@@ -59,7 +59,9 @@ public class MickeySearchMenuView {
         choice = choice.toUpperCase();
         //System.out.println("The choice you entered is " + choice);
         if (choice.equals("V")) {
+                //show the description for the ride
                 this.displayRideDescription();
+                //have the user enter q to continue with the search menu
                 this.quitTheOption();
         }else if (choice.equals("Q")) {
                 return false;
@@ -91,10 +93,11 @@ public class MickeySearchMenuView {
     private void quitTheOption() {
         //change the prompt message temporarily
                 this.promptMessage = "Try again, or enter Q to quit:";
-                String option = this.getGameMenuOption();
+                //get the user input
+                String option = this.getMickeySearchMenuOption();
                 //reset the prompt message
                 this.promptMessage = "\nEnter your choice: ";
-                //it doesn't matter what the user enters-- go back to the help menu
+                //do action for a "q"
                 this.doAction(option);
     }
 
