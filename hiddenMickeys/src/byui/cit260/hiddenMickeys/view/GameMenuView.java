@@ -132,7 +132,8 @@ public GameMenuView(){
     }
         
     private void viewBackpack() {
-        System.out.println("\n***viewBackpack()function called***");
+       BackpackView backpack = new BackpackView();
+       backpack.displayBackpackView();
     }
 
     private void viewTime() {
@@ -182,6 +183,8 @@ public GameMenuView(){
             +"\nQ - Quit"
             +"\n---------------------------------------------------");
      }
-
-
 }
+
+   
+
+        
