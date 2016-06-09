@@ -132,8 +132,9 @@ public GameMenuView(){
     }
         
     private void viewBackpack() {
-       BackpackView backpack = new BackpackView();
-       backpack.displayBackpackView();
+     //  BackpackView backpack = new BackpackView();
+     //  backpack.displayBackpackView();
+     System.out.println("\n***viewBackpack()function called***");
     }
 
     private void viewTime() {
