@@ -4,23 +4,26 @@
  * and open the template in the editor.
  */
 package byui.cit260.hiddenMickeys.view;
+
 import java.util.Scanner;
 
 /**
  *
  * @author Dawn
  */
-public class BackpackView {
-   private String promptMessage;
-   
-   public BackpackView() {
-       this.promptMessage = "\nYou have several items in your backpack,"
-               + "which one would you like to check?";
-    }
-   public void displayBackpackViewMenu() {
-      boolean done = false; //set flag to not done
+public class ExploreFoodLocationView {
+   private String promptMessage;  
     
-     do { //prompt for and get selected menu option
+    
+    public ExploreFoodLocationView(){
+    this.promptMessage = "\nThis location sells popcorn, "
+      + "what would you like to do?";
+}
+
+    public void displayExploreFoodLocationView() {
+        boolean done = false; //set flag to not done
+    
+        do { //prompt for and get selected menu option
             displayMenu();
             String gameMenuOption = this.getGameMenuOption();
             if (gameMenuOption.toUpperCase().equals("Q"))  //user wants to quit
@@ -30,8 +33,9 @@ public class BackpackView {
             done = this.doAction(gameMenuOption);
 
         } while(!done);
-   }
-   private String getGameMenuOption() {
+    }
+
+     private String getGameMenuOption() {
         Scanner keyboard = new Scanner(System.in); //get in file for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
@@ -49,22 +53,20 @@ public class BackpackView {
             break; //end the loop
         }
         return value; //return the value entered
-   }
+    }
 
-   private boolean doAction(String choice) {
+    private boolean doAction(String choice) {
         choice = choice.toUpperCase();
         // remove quitTheOption function if the coding for the next menu is complete
         switch (choice) {
-            case "P": //View Fast Passes
-                this.viewFastPass();
+            case "B": //Buy food
+                this.buyFood();
                 break;
-            case "M": //Check Money balance
-                this.viewMoneyBalance();
+            case "Y": //Continue and explore
+                this.exploreFood();
                 break;   
-            case "W": //Use emergency water
+            case "N": //go back to menu
                 break;
-            case "S": //Use emergency snack
-                break;    
             case "Q": //go back to menu
                 break;
             default:
@@ -73,24 +75,19 @@ public class BackpackView {
         }
         return false;
     }
-   
-    private void displayMenu(){
+
+   private void displayMenu(){
          System.out.println("\n"
-            +"\n----------------------------------------------"
-            +"\nView Backpack Menu"
-            +"\n----------------------------------------------"
-            +"\nP - Check number of fast passes"
-            +"\nM - Check Money Balance "
-            +"\nQ - Use Emergency Water"
-            +"\nQ - Use Emergency Snack"
-            +"\n----------------------------------------------");
+            +"\n------------------------------"
+            +"\nFood Menu"
+            +"\n------------------------------"
+            +"\nB - Buy Food"
+            +"\nY - Continue "
+            +"\nQ - Return to Game Menu"
+            +"\n------------------------------");
      }
-
-    private void viewFastPass() {
-         System.out.println("\n***viewFastPasses()function called***");
-    }
-
-    private void quitTheOption() {
+   
+private void quitTheOption() {
          //change the prompt message temporarily
                 this.promptMessage = "Enter Q to Return";
                 String option = this.getGameMenuOption();
@@ -100,24 +97,27 @@ public class BackpackView {
                 this.doAction(option);
     }
 
-    private void viewMoneyBalance() {
-         System.out.println("You have ______ money in your backpack");
+    private void exploreFood() {
+        //this will display a description for the user - telling them what they experienced during the ride
+        this.getFoodDescription();
+        //This calls a menu that gives the player a chance to search for Mickeys or exit.
+        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
+        locationEndMenu.displayMickeyLocationEndView();
+                
+ 
     }
 
-    private void useEmergencyWater() {
-        System.out.println("\n Whew, you are feeling refreshed after drinking"
-                + "your emergency water.");
+    private void getFoodDescription() {
+       System.out.println("This kiosk sells popcorn in souvenir containers."
+                +"\nYou purchased a Star Wars souvenir container and ate"
+                + "\nseveral handfuls of popcorn.  It was delicious.");
     }
 
-    private void useEmergencySnack() {
-        System.out.println("\nYummy, You have eaten your emergency snack and "
-                + "it was delicious.");
+    private void updateEnergy() {
+       System.out.println("\n***updateEnergy()function called***");
     }
-    
-    private String getbackpackMenuOption() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    private void buyFood() {
+        System.out.println("\n***buyFood()function called***");
     }
 }
-
-
-
