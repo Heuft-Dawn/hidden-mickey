@@ -17,7 +17,7 @@ public class BackpackView {
        this.promptMessage = "\nYou have several items in your backpack,"
                + "which one would you like to check?";
     }
-   public void displayBackpackViewMenu() {
+   public void displayBackpackView() {
       boolean done = false; //set flag to not done
     
      do { //prompt for and get selected menu option
@@ -81,8 +81,9 @@ public class BackpackView {
             +"\n----------------------------------------------"
             +"\nP - Check number of fast passes"
             +"\nM - Check Money Balance "
-            +"\nQ - Use Emergency Water"
-            +"\nQ - Use Emergency Snack"
+            +"\nW - Use Emergency Water"
+            +"\nS - Use Emergency Snack"
+            +"\nq - Return to menu"   
             +"\n----------------------------------------------");
      }
 

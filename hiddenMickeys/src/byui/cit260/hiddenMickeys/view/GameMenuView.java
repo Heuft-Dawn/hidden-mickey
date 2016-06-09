@@ -117,6 +117,8 @@ public GameMenuView(){
                 break;
             case "F":
                 //open menu for a food location
+                ExploreFoodLocationView exploreFoodView = new ExploreFoodLocationView();
+                exploreFoodView.displayExploreFoodLocationView();
                 break;
             default:
                 System.out.println("Invalid Location Type");
@@ -132,9 +134,9 @@ public GameMenuView(){
     }
         
     private void viewBackpack() {
-     //  BackpackView backpack = new BackpackView();
-     //  backpack.displayBackpackView();
-     System.out.println("\n***viewBackpack()function called***");
+       BackpackView backpack = new BackpackView();
+       backpack.displayBackpackView();
+        System.out.println("\n***viewBackpack()function called***");
     }
 
     private void viewTime() {
@@ -184,6 +186,8 @@ public GameMenuView(){
             +"\nQ - Quit"
             +"\n---------------------------------------------------");
      }
+
+    
 }
 
    
