@@ -15,7 +15,7 @@ public class BackpackView {
    
    public BackpackView() {
        this.promptMessage = "\nYou have several items in your backpack,"
-               + "which one would you like to check?";
+               + " which one would you like to check?";
     }
    public void displayBackpackView() {
       boolean done = false; //set flag to not done
@@ -62,8 +62,10 @@ public class BackpackView {
                 this.viewMoneyBalance();
                 break;   
             case "W": //Use emergency water
+                this.useEmergencyWater();
                 break;
             case "S": //Use emergency snack
+                this.useEmergencyWater();
                 break;    
             case "Q": //go back to menu
                 break;
@@ -107,12 +109,12 @@ public class BackpackView {
 
     private void useEmergencyWater() {
         System.out.println("\n Whew, you are feeling refreshed after drinking"
-                + "your emergency water.");
+                + " your emergency water.");
     }
 
     private void useEmergencySnack() {
         System.out.println("\nYummy, You have eaten your emergency snack and "
-                + "it was delicious.");
+                + " it was delicious.");
     }
     
 }
