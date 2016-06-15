@@ -13,53 +13,29 @@ import java.util.Scanner;
  *
  * @author Hannah Mars
  */
-public class MainMenuView {
-    private String menu;
-    private String promptMessage;
+public class MainMenuView extends View {
+
+    
     
 public MainMenuView() {
-    this.promptMessage = "\nPlease enter your choice: ";
-    //this.displayMenu();
+    super("\n"
+        +"\n---------------------------------------------------"
+        +"\n|  Main Menu                                      |"
+        +"\n---------------------------------------------------"
+        +"\nN - Start new game                                 "
+        +"\nG - Get and start saved game"
+        +"\nH - Get help on how to play the game"
+        +"\nS - Save Game"
+        +"\nQ - Quit"
+        +"\n---------------------------------------------------"
+        +"\n"
+        +"\n"
+        +"\nPlease enter your choice: ");
+    
 }
 
-public void displayMainMenuView() { //display the start program view
-    
-    boolean done = false; //set flag to not done
-    
-    do { //prompt for and get selected menu option
-        displayMenu();
-        String menuOption = this.getMenuOption();
-        if (menuOption.toUpperCase().equals("Q"))  //user wants to quit
-            return; //exit the game
-        
-        //this will do the requested action and display the next view
-        done = this.doAction(menuOption);
-            
-        } while(!done);
-    }        
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is entered
-            
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {
@@ -71,7 +47,7 @@ public void displayMainMenuView() { //display the start program view
                 this.quitTheOption();
                 break;   
             case "H": //display help menu
-                this.displayHelpMenu();
+                this.showHelpMenu();
                 break;
             case "S": //save current game
                 this.saveGame();
@@ -91,47 +67,28 @@ public void displayMainMenuView() { //display the start program view
         GameControl.createNewGame(HiddenMickeys.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
        System.out.println("\n***startExistingGame()function called***");
     }
 
-    private void displayHelpMenu() {
+    private void showHelpMenu() {
        //display help menu
        // GameControl.createNewGame(HiddenMickeys.getPlayer());
         
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
     }
 
     private void saveGame() {
        System.out.println("\n***saveGame()function called***");
     }
 
-    private void displayMenu() {
-       System.out.println("\n"
-        +"\n---------------------------------------------------"
-        +"\n|  Main Menu                                      |"
-        +"\n---------------------------------------------------"
-        +"\nN - Start new game                                 "
-        +"\nG - Get and start saved game"
-        +"\nH - Get help on how to play the game"
-        +"\nS - Save Game"
-        +"\nQ - Quit"
-        +"\n---------------------------------------------------");
-    }
+   
     
-    private void quitTheOption(){
-       //change the prompt message temporarily
-                this.promptMessage = "Enter Q to Return";
-                String option = this.getMenuOption();
-                //reset the prompt message
-                this.promptMessage = "\nPlease enter your choice: ";
-                //it doesn't matter what the user enters-- go back to the help menu
-                this.doAction(option);
-    }
+    
     
     
 }

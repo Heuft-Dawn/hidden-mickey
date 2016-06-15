@@ -11,51 +11,25 @@ import java.util.Scanner;
  *
  * @author Administrator
  */
-public class ExploreRideLocationView {
+public class ExploreRideLocationView extends View {
    private String promptMessage;  
  
     
     
     public ExploreRideLocationView(){
-    this.promptMessage = "\nThe current Ride wait time is _____.  What would you like to do?";
+        super("\n"
+            +"\n------------------------------"
+            +"\nRide Menu"
+            +"\n------------------------------"
+            +"\nP - Use Fast Pass"
+            +"\nY - Continue "
+            +"\nQ - Return to Game Menu"
+            +"\n------------------------------");
+    //this.promptMessage = "\nThe current Ride wait time is _____.  What would you like to do?";
 }
 
-    public void displayExploreRideLocationView() {
-        boolean done = false; //set flag to not done
-    
-        do { //prompt for and get selected menu option
-            displayMenu();
-            String gameMenuOption = this.getExploreRideLocationOption();
-            if (gameMenuOption.toUpperCase().equals("Q"))  //user wants to quit
-                return; //exit the game
-
-            //this will do the requested action and display the next view
-            done = this.doAction(gameMenuOption);
-
-        } while(!done);
-    }
-
-     private String getExploreRideLocationOption() {
-        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
-        while (!valid) { //loop while an invalid value is entered
-            
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         // remove quitTheOption function if the coding for the next menu is complete
         switch (choice) {
@@ -76,26 +50,7 @@ public class ExploreRideLocationView {
         return false;
     }
 
-   private void displayMenu(){
-         System.out.println("\n"
-            +"\n------------------------------"
-            +"\nRide Menu"
-            +"\n------------------------------"
-            +"\nP - Use Fast Pass"
-            +"\nY - Continue "
-            +"\nQ - Return to Game Menu"
-            +"\n------------------------------");
-     }
-   
-private void quitTheOption() {
-         //change the prompt message temporarily
-                this.promptMessage = "Enter Q to Return";
-                String option = this.getExploreRideLocationOption();
-                //reset the prompt message
-                this.promptMessage = "\nPlease enter your choice: ";
-                //it doesn't matter what the user enters-- go back to the help menu
-                this.doAction(option);
-    }
+  
 
     private void useFastPass() {
         System.out.println("\nYou used a Fast Pass.\n");
@@ -103,7 +58,7 @@ private void quitTheOption() {
         this.getRideDescription();
         //Go to the end of ride menu that allows Mickey Searching
         MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
-        locationEndMenu.displayMickeyLocationEndView();
+        locationEndMenu.display();
     }
 
     private void exploreRide() {
@@ -113,7 +68,7 @@ private void quitTheOption() {
         this.getRideDescription();
         //This calls a menu that gives the player a chance to search for Mickeys or exit.
         MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
-        locationEndMenu.displayMickeyLocationEndView();
+        locationEndMenu.display();
                 
  
     }

@@ -11,49 +11,31 @@ import java.util.Scanner;
  *
  * @author Hannah Mars
  */
-public class GameMenuView {
-    private String promptMessage;
+public class GameMenuView extends View {
+
+//    private String promptMessage;
     
 public GameMenuView(){
-    this.promptMessage = "\nWhat would you like to do?";
+    super("\n"
+            +"\n---------------------------------------------------"
+            +"\n|  Game Menu                                      |"
+            +"\n---------------------------------------------------"
+            +"\nM - View Map or Move  (to move to new location)"
+            +"\nE - Explore/enter the current location"
+            +"\nB-  View backpack"
+            +"\nT - View Time spent/Time remaining"
+            +"\nL - View Energy Level"
+            +"\nR - Rest for 15 minutes (charges Energy level +20%)"
+            +"\nS - Save game"
+            +"\nH - Help"
+            +"\nQ - Quit"
+            +"\n---------------------------------------------------");
+    
+   // this.promptMessage = "\nWhat would you like to do?";
 }
 
-    public void displayGameMenuView() {
-         boolean done = false; //set flag to not done
-    
-    do { //prompt for and get selected menu option
-        displayMenu();
-        String gameMenuOption = this.getGameMenuOption();
-        if (gameMenuOption.toUpperCase().equals("Q"))  //user wants to quit
-            return; //exit the game
-        
-        //this will do the requested action and display the next view
-        done = this.doAction(gameMenuOption);
-            
-        } while(!done);
-    }
-    
-     private String getGameMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
-        while (!valid) { //loop while an invalid value is entered
-            
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         System.out.println("The choice you entered is " + choice);
         switch (choice) {
@@ -84,7 +66,7 @@ public GameMenuView(){
                 this.quitTheOption();
                 break;
             case "H": //save current game
-                this.displayHelpMenu();
+                this.showHelpMenu();
                 break;
             case "Q":
                 break;
@@ -108,17 +90,17 @@ public GameMenuView(){
             case "R":
                 //open the menu for a ride location 
                 ExploreRideLocationView exploreRideView = new ExploreRideLocationView();
-                exploreRideView.displayExploreRideLocationView();
+                exploreRideView.display();
                 break;
             case "S":
                 //open menu for a shop location
                 ExploreShopLocationView exploreShopView = new ExploreShopLocationView();
-                exploreShopView.displayExploreShopLocationView();
+                exploreShopView.display();
                 break;
             case "F":
                 //open menu for a food location
                 ExploreFoodLocationView exploreFoodView = new ExploreFoodLocationView();
-                exploreFoodView.displayExploreFoodLocationView();
+                exploreFoodView.display();
                 break;
             default:
                 System.out.println("Invalid Location Type");
@@ -135,7 +117,7 @@ public GameMenuView(){
         
     private void viewBackpack() {
        BackpackView backpack = new BackpackView();
-       backpack.displayBackpackView();
+       backpack.display();
         System.out.println("\n***viewBackpack()function called***");
     }
 
@@ -155,37 +137,13 @@ public GameMenuView(){
         System.out.println("\n***saveGame()function called***");
     }
 
-    private void displayHelpMenu() {
+    private void showHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
     }
 
-    private void quitTheOption() {
-         //change the prompt message temporarily
-                this.promptMessage = "Enter Q to Return";
-                String option = this.getGameMenuOption();
-                //reset the prompt message
-                this.promptMessage = "\nPlease enter your choice: ";
-                //it doesn't matter what the user enters-- go back to the help menu
-                this.doAction(option);
-    }
+   
 
-     private void displayMenu(){
-         System.out.println("\n"
-            +"\n---------------------------------------------------"
-            +"\n|  Game Menu                                      |"
-            +"\n---------------------------------------------------"
-            +"\nM - View Map or Move  (to move to new location)"
-            +"\nE - Explore/enter the current location"
-            +"\nB-  View backpack"
-            +"\nT - View Time spent/Time remaining"
-            +"\nL - View Energy Level"
-            +"\nR - Rest for 15 minutes (charges Energy level +20%)"
-            +"\nS - Save game"
-            +"\nH - Help"
-            +"\nQ - Quit"
-            +"\n---------------------------------------------------");
-     }
 
     
 }

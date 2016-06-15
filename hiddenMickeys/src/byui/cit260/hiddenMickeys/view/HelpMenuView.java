@@ -11,55 +11,29 @@ import java.util.Scanner;
  *
  * @author Hannah Mars
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
 private String promptMessage;
     
 public HelpMenuView() {//Constructor Function
-    this.promptMessage = "\nWhat would you like help with? ";
+   super("\n"
+        + "\n---------------------------------------------------"
+        +"\n|  Help Menu                                      |"
+        +"\n---------------------------------------------------"
+        +"\nG - What is the goal/objective of the game?"
+        +"\nM - How to move"
+        +"\nE - How to check energy levels"
+        +"\nT - How to check time remaining"
+        +"\nR - How to re-charge energy"
+        +"\nS - How to search for Mickey Heads"
+        +"\nQ - Return to previous screen"
+        +"\n---------------------------------------------------");
+    
+   // this.promptMessage = "\nWhat would you like help with? ";
     
 }
     
-
-public void displayHelpMenu() {
-    
-    boolean done = false; //set flag to not done
-    
-    do { //prompt for and get selected menu option
-        this.displayMenu();
-        String helpMenuOption = this.getHelpMenuOption();
-        if (helpMenuOption.toUpperCase().equals("Q")) { //user wants to quit
-            System.out.println("\n------------------------"
-                               +"\nExiting Help Menu"
-                               +"\n------------------------");
-            return; //exit the game
-        }
-        //this will do the requested action and display the next view
-        done = this.doAction(helpMenuOption);
-            
-        } while(!done);
-    }       
-
-    private String getHelpMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {
@@ -184,28 +158,6 @@ public void displayHelpMenu() {
         this.quitTheOption();
     }
 
-    private void quitTheOption(){
-        //change the prompt message temporarily
-                this.promptMessage = "Enter Q to Return";
-                String option = this.getHelpMenuOption();
-                //reset the prompt message
-                this.promptMessage = "\nWhat would you like help with? ";
-                //it doesn't matter what the user enters-- go back to the help menu
-                this.doAction(option);
-    }
   
-      private void displayMenu() {
-       System.out.println("\n"
-        + "\n---------------------------------------------------"
-        +"\n|  Help Menu                                      |"
-        +"\n---------------------------------------------------"
-        +"\nG - What is the goal/objective of the game?"
-        +"\nM - How to move"
-        +"\nE - How to check energy levels"
-        +"\nT - How to check time remaining"
-        +"\nR - How to re-charge energy"
-        +"\nS - How to search for Mickey Heads"
-        +"\nQ - Return to previous screen"
-        +"\n---------------------------------------------------" );
-    }
+     
 }
