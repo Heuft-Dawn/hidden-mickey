@@ -25,9 +25,9 @@ public abstract class View implements ViewInterface {
     @Override
     public void display(){
         boolean done = false; //set flag to not done
-        System.out.println("\n" + this.displayMessage);
+        
         do { //prompt for and get selected menu option
-            
+            System.out.println("\n" + this.displayMessage);
             String value = this.getInput();
             if (value.toUpperCase().equals("Q"))  //user wants to quit
               return; //exit the game
