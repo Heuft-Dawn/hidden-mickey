@@ -21,8 +21,9 @@ public class MickeyLocationEndView extends View{
             +"\n------------------------------"
             +"\nS - Search for Mickey Head"
             +"\nQ - Exit Ride/ Stop Exploring"
-            +"\n------------------------------");
-    //this.promptMessage = "\nEnter your choice";
+            +"\n------------------------------"
+            +"\n \n"
+            +"\n Enter your choice");
 }
 
    @Override

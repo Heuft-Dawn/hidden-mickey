@@ -26,10 +26,10 @@ public HelpMenuView() {//Constructor Function
         +"\nR - How to re-charge energy"
         +"\nS - How to search for Mickey Heads"
         +"\nQ - Return to previous screen"
-        +"\n---------------------------------------------------");
-    
-   // this.promptMessage = "\nWhat would you like help with? ";
-    
+        +"\n---------------------------------------------------"
+        + "\n \n"
+        + "\n What would you like help with?" );
+  
 }
     
     @Override
