@@ -5,16 +5,12 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
-import java.util.Scanner;
 
 /**
  *
  * @author Administrator
  */
 public class ExploreRideLocationView extends View {
-   private String promptMessage;  
- 
-    
     
     public ExploreRideLocationView(){
         super("\n"
@@ -24,14 +20,13 @@ public class ExploreRideLocationView extends View {
             +"\nP - Use Fast Pass"
             +"\nY - Continue "
             +"\nQ - Return to Game Menu"
-            +"\n------------------------------");
-    //this.promptMessage = "\nThe current Ride wait time is _____.  What would you like to do?";
+            +"\n------------------------------"
+            +"\n\n\nThe current Ride wait time is _____.  What would you like to do?");
 }
 
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        // remove quitTheOption function if the coding for the next menu is complete
         switch (choice) {
             case "P": //Use FastPass
                 this.useFastPass();

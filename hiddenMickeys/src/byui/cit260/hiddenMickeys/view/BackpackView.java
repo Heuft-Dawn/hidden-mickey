@@ -4,14 +4,12 @@
  * and open the template in the editor.
  */
 package byui.cit260.hiddenMickeys.view;
-import java.util.Scanner;
 
 /**
  *
  * @author Dawn
  */
 public class BackpackView extends View{
-   private String promptMessage;
    
    public BackpackView() {
        super("\n"
@@ -23,15 +21,14 @@ public class BackpackView extends View{
             +"\nW - Use Emergency Water"
             +"\nS - Use Emergency Snack"
             +"\nq - Return to menu"   
-            +"\n----------------------------------------------");
-      // this.promptMessage = "\nYou have several items in your backpack,"
-      //         + " which one would you like to check?";
+            +"\n----------------------------------------------"
+            +"\n\n\nYou have several items in your backpack,"
+            + " which one would you like to check?");
     }
    
    @Override
    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        // remove quitTheOption function if the coding for the next menu is complete
         switch (choice) {
             case "P": //View Fast Passes
                 this.viewFastPass();

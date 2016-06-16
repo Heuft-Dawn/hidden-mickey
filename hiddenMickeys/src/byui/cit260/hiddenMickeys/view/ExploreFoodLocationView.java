@@ -5,15 +5,12 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
-import java.util.Scanner;
 
 /**
  *
  * @author Dawn
  */
-public class ExploreFoodLocationView extends View {
-   private String promptMessage;  
-    
+public class ExploreFoodLocationView extends View {    
     
     public ExploreFoodLocationView(){
         super("\n"
@@ -23,15 +20,14 @@ public class ExploreFoodLocationView extends View {
             +"\nB - Buy Food"
             +"\nY - Continue "
             +"\nQ - Return to Game Menu"
-            +"\n------------------------------");
-    /*this.promptMessage = "\nThis location sells popcorn, "
-      + "what would you like to do?";*/
+            +"\n------------------------------"
+            +"\n\n\nThis location sells popcorn, "
+            +"what would you like to do?");
 }
 
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        // remove quitTheOption function if the coding for the next menu is complete
         switch (choice) {
             case "B": //Buy food
                 this.buyFood();

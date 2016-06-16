@@ -4,14 +4,12 @@
  * and open the template in the editor.
  */
 package byui.cit260.hiddenMickeys.view;
-import java.util.Scanner;
 
 /**
  *
  * @author Hannah Mars
  */
 public class ExploreShopLocationView extends View {
-    private String promptMessage;
     
     public ExploreShopLocationView(){
     super("\n"
@@ -21,14 +19,13 @@ public class ExploreShopLocationView extends View {
             +"\nY - Yes, buy a souvenir"
             +"\nN - No, do not buy a souvenir"
             +"\nQ - Return to Game Menu"
-            +"\n------------------------------");
-        //this.promptMessage = "\nThis location sells souvenirs for $10.  Would you like to purchase something?";
-}
+            +"\n------------------------------"
+            +"\n\n\nThis location sells souvenirs for $10.  Would you like to purchase something?");
+    }
 
      @Override
      public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        // remove quitTheOption function if the coding for the next menu is complete
         switch (choice) {
             case "Y": //Yes, buy a souvenir
                 this.buySouvenir();

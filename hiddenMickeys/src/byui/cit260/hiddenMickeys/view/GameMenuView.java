@@ -5,15 +5,11 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Hannah Mars
  */
 public class GameMenuView extends View {
-
-//    private String promptMessage;
     
 public GameMenuView(){
     super("\n"
@@ -29,9 +25,8 @@ public GameMenuView(){
             +"\nS - Save game"
             +"\nH - Help"
             +"\nQ - Quit"
-            +"\n---------------------------------------------------");
-    
-   // this.promptMessage = "\nWhat would you like to do?";
+            +"\n---------------------------------------------------"
+            +"\n\n\nWhat would you like to do?");
 }
 
     @Override
