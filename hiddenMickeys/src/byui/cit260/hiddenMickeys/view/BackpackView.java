@@ -62,8 +62,9 @@ public class BackpackView extends View{
     }
 
     private void useEmergencyWater() {
-        System.out.println("\n Whew, you are feeling refreshed after drinking"
-                + " your emergency water.");
+        UseEmergencyWaterView useWater = new UseEmergencyWaterView();
+        useWater.display();
+        
     }
 
     private void useEmergencySnack() {
