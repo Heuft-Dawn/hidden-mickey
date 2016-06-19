@@ -40,7 +40,7 @@ public class BackpackView extends View{
                 this.useEmergencyWater();
                 break;
             case "S": //Use emergency snack
-                this.useEmergencyWater();
+                this.useEmergencySnack();
                 break;    
             case "Q": //go back to menu
                 break;
