@@ -21,7 +21,7 @@ public GameMenuView(){
             +"\nB-  View backpack"
             +"\nT - View Time spent/Time remaining"
             +"\nL - View Energy Level"
-            +"\nR - Rest for 15 minutes (charges Energy level +20%)"
+            +"\nR - Rest for 15 minutes"
             +"\nS - Save game"
             +"\nH - Help"
             +"\nQ - Quit"
@@ -128,7 +128,8 @@ public GameMenuView(){
     }
 
     private void restAndRecharge() {
-        System.out.println("\n***restAndRecharge()function called***");
+        RestAndRechargeView restMenu = new RestAndRechargeView();
+        restMenu.display();
     }
 
     private void saveGame() {
