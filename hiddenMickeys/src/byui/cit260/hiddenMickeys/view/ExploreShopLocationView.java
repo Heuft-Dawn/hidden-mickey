@@ -45,7 +45,7 @@ public class ExploreShopLocationView extends View {
    
     private void buySouvenir() {
         System.out.println("You bought a souvenir for $10. Enjoy!");
-        //this will update the amount of money left in the player's backpack
+        //this will update the amount of money left in th e player's backpack
         this.updateMoney();
     }
 

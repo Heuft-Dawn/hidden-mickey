@@ -32,7 +32,7 @@ public GameMenuView(){
     @Override
      public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        System.out.println("The choice you entered is " + choice);
+       // System.out.println("The choice you entered is " + choice);
         switch (choice) {
             case "M": //view map or move
                 this.mapAndMove();
@@ -77,7 +77,10 @@ public GameMenuView(){
     }
 
     private void exploreLocation() {
-     String locationType;   
+     //Below is temp code for testing purposes
+     TMPExploreLocationView exploreLocation = new TMPExploreLocationView();
+         exploreLocation.display();    
+        /* String locationType;   
         //get the type of location that the user is currently on
         locationType = this.getLocationType();
         //R=Ride, S=Shop, F=Food
@@ -101,7 +104,7 @@ public GameMenuView(){
                 System.out.println("Invalid Location Type");
                 break;
          }
-
+*/
     }
     
     private String getLocationType() {
