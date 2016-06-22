@@ -38,6 +38,7 @@ public GameMenuView(){
         switch (choice) {
             case "M": //view map or move
                 this.mapAndMove();
+                this.quitTheOption();
                 break;
             case "E": //explore/enter current location
                 this.exploreLocation();

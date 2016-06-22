@@ -6,6 +6,7 @@
 package byui.cit260.hiddenMickeys.control;
 
 import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Land;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
 import byui.cit260.hiddenMickeys.model.Scene;
@@ -350,6 +351,16 @@ public class MapControl {
             thunderMountain.setMickeyLocation("dawn");
             thunderMountain.setWaitTime(30);
             scenes[SceneType.thunder_mountain.ordinal()] = thunderMountain;
+            
+            Scene splashMountain = new Scene();
+            splashMountain.setName("Big Thunder Mountain RailRoad");
+            splashMountain.setDescription("dawn");
+            splashMountain.setLocationType("R");
+            splashMountain.setMapSymbol(">");
+            splashMountain.setMickeyPresent(true);
+            splashMountain.setMickeyLocation("dawn");
+            splashMountain.setWaitTime(40);
+            scenes[SceneType.splash_mountain.ordinal()] = splashMountain;
 
             
             Scene sawyerIsland = new Scene();
@@ -430,26 +441,41 @@ public class MapControl {
         int colChange = Math.abs(curCol - newCol);
         int time = (rowChange * 3) +colChange;
         return time;
+        
     }
     
     public void displayMap() {
         String leftIndicator;
         String rightIndicator;
+        //tmpString used to build equal column widths
+        String tmpString = new String();
+        String tmpString2 = new String();
+        String tmpString3 = new String();
+        String divLine = new String();
+        String typeSymbol = new String();
+        int locationNo = 0;
+        String strName2 = new String();
+        String strName1 = new String();
+        String strName3 = new String();
+        String[][] displayArray = new String[3][13];
         
         Game game = HiddenMickeys.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
         try {
-          System.out.print(" |");
-          for( int column = 0; column < locations[0].length; column++){
-            System.out.print(" " + Land. + " |"); // print col numbers to side of map
+          System.out.print("  |");
+          for( Land land : Land.values()){
+            tmpString = " " + land + "     ";
+            divLine = divLine + "------------------";
+            tmpString = tmpString.substring(0,15);//column = 0; column < Land.values().length; column++){
+            System.out.print(tmpString + " |"); // print col numbers to side of map
           }
           System.out.println();
           for( int row = 0; row < locations.length; row++){
-            System.out.print(row + " "); // print row numbers to side of map
             for( int column = 0; column < locations[row].length; column++){
-              leftIndicator = " ";
-              rightIndicator = " ";
+              typeSymbol = locations[row][column].getScene().getMapSymbol();  
+              leftIndicator = typeSymbol+ typeSymbol + "   ";
+              rightIndicator = "    " + typeSymbol + typeSymbol;
               if(locations[row][column].getLocationNo() == game.getCurrentLocationNo() ){
                 leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
                 rightIndicator = "*"; // same as above
@@ -458,17 +484,53 @@ public class MapControl {
                  leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
                  rightIndicator = "<"; // same as above
               }
-              System.out.print("|"); // start map with a |
+              System.out.print("| | |"); // start map with a |
+              if(locations[row][column].getLocationNo()>= 10){
+              rightIndicator = rightIndicator.substring(rightIndicator.length()-5);}
               if(locations[row][column].getScene() == null)
                 System.out.print(leftIndicator + "??" + rightIndicator);
               else
-                System.out.print(leftIndicator + locations[row][column].getLocationNo() + locations[row][column].getScene().getMapSymbol() + rightIndicator);
+                System.out.print(leftIndicator + locations[row][column].getLocationNo() + rightIndicator);
             }
-            System.out.println("|");
+            System.out.println("| | |");
+            System.out.println(divLine);
           }
         }catch (Exception e) {
           System.out.println("Error");
         }
+        //Now print out the list of locations
+        
+        for(int column = 0; column < 7; column++){
+            for(int row = 0; row < 5; row++){
+               
+                locationNo = locations[row][column].getLocationNo();
+               
+                if(locationNo >26){
+                   displayArray[2][locationNo-27] = locations[row][column].getScene().getName();}
+                else if(locationNo >13){  
+                  displayArray[1][locationNo-14] = locations[row][column].getScene().getName();
+                }
+                else{
+                    displayArray[0][locationNo-1] = locations[row][column].getScene().getName();}
+                     
+            }
+            }
+      for(int y = 0; y< 13 ; y++){
+            strName1 = displayArray[0][y]; 
+            strName2 = displayArray[1][y];
+            strName3 = displayArray[2][y];
+            tmpString = Integer.toString(y+1) + "-" + strName1 + "                                          " ;
+            tmpString = tmpString.substring(0,35);
+            tmpString2 = Integer.toString(y+14) + "-" + strName2 + "                                          " ;
+            tmpString2 = tmpString2.substring(0,35);
+            if(strName3 == null){
+                tmpString3 = "";}
+            else{ 
+            tmpString3 = Integer.toString(y+27) + "-" + strName3;}
+            System.out.println(tmpString + tmpString2 + tmpString3);
+            
+                    }
+       // System.out.println(displayArray);*/
 }
     
 }
