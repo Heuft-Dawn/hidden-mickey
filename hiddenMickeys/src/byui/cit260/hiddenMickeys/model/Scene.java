@@ -14,20 +14,59 @@ import java.util.Objects;
  * @author Dawn
  */
 public class Scene implements Serializable{
+   
+/*needed:
+setName("");
+setDescription("");
+setLocationType();
+setMapSymbol("X");
+setMickeyPresent(false);
+setMickeyLocation("");
+setWaitTime(XX);
+setItemName("");
+setItemPrice("");   */ 
     
     //class instance variables
-    private String description;
-    private String mickeyLocation;
+    private String name;
 
-    public Scene() {
+    public String getName() {
+        return name;
     }
-    
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLocationType() {
+        return locationType;
+    }
+
+    public void setLocationType(String locationType) {
+        this.locationType = locationType;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
+    public boolean isMickeyPresent() {
+        return mickeyPresent;
+    }
+
+    public void setMickeyPresent(boolean mickeyPresent) {
+        this.mickeyPresent = mickeyPresent;
     }
 
     public String getMickeyLocation() {
@@ -37,6 +76,43 @@ public class Scene implements Serializable{
     public void setMickeyLocation(String mickeyLocation) {
         this.mickeyLocation = mickeyLocation;
     }
+
+    public int getWaitTime() {
+        return waitTime;
+    }
+
+    public void setWaitTime(int waitTime) {
+        this.waitTime = waitTime;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public double getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(double itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+    private String description;
+    private String locationType;
+    private String mapSymbol;
+    private boolean mickeyPresent;
+    private String mickeyLocation;
+    private int waitTime;
+    private String itemName;
+    private double itemPrice;
+
+    public Scene() {
+    }
+    
+    
 
     @Override
     public int hashCode() {

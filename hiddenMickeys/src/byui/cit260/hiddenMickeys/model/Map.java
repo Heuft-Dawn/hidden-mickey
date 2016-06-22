@@ -16,8 +16,45 @@ public class Map implements Serializable{
     //class instance variables
     private int rowCount;
     private int columnCount;
+    private Location[][] locations;
 
-    public Map() {
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+    
+
+    public Map(int noOfRows, int noOfColumns) {
+            if (noOfRows < 1 || noOfColumns < 1) {
+               System.out.println("The number of rows and columns must be > zero");
+               return;
+            }
+
+            this.rowCount = noOfRows;
+            this.columnCount = noOfColumns;
+            int locationNo = 1;
+
+            //create 2-D array for Location objects
+            this.locations = new Location[noOfRows][noOfColumns];
+
+            for (int column = 0; column < noOfColumns; column++){
+                for (int row = 0; row < noOfRows; row++) {
+                    //create and initialize new Location object instance      
+                    Location location = new Location();
+                    location.setColumn(column);
+                    location.setRow(row);
+                    location.setVisited(false);
+                    location.setMickeyCollected(false);
+                    location.setLocationNo(locationNo);
+                    locationNo++;
+
+            //assign the Location object to the current position in array
+            locations[row][column] = location;
+		}
+	}
     }
 
     public int getRowCount() {

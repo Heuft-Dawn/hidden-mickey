@@ -17,8 +17,18 @@ public class Backpack implements Serializable{
     private boolean emergencySnackUsed;
     private int numberFastPasses;
     private double moneyBalance;
+    private String description;
+    
 
     public Backpack() {
+        this.description = "\nThis is your Backpack!  \nYou may want to use what is inside to help you during the game.";
+        //initialize the emergency snacks and water
+        this.emergencyWaterUsed = false;
+        this.emergencySnackUsed = false;
+        //set number of Fast Passes to 0
+        this.numberFastPasses = 0;
+        //give the users $50 to start with
+        this.moneyBalance = 50;
     }
 
     

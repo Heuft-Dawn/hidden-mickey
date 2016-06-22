@@ -5,6 +5,8 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.MapControl;
+
 /**
  *
  * @author Hannah Mars
@@ -36,7 +38,6 @@ public GameMenuView(){
         switch (choice) {
             case "M": //view map or move
                 this.mapAndMove();
-                this.quitTheOption();
                 break;
             case "E": //explore/enter current location
                 this.exploreLocation();
@@ -73,7 +74,9 @@ public GameMenuView(){
     }
 
     private void mapAndMove() {
-        System.out.println("\n***mapAndMove()function called***");
+        MapControl control = new MapControl();
+        control.displayMap();
+        
     }
 
     private void exploreLocation() {

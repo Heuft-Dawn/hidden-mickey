@@ -5,6 +5,9 @@
  */
 package byui.cit260.hiddenMickeys.control;
 
+import byui.cit260.hiddenMickeys.model.Backpack;
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Map;
 import byui.cit260.hiddenMickeys.model.Player;
 import hiddenmickeys.HiddenMickeys;
 
@@ -26,7 +29,24 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n***New game created");
+       
+        Game game = new Game();//create new game
+        HiddenMickeys.setCurrentGame(game);//save in HiddenMickeys
+        
+        game.setPlayer(player);//save player in game
+        
+        //Create Character and save in game
+
+        //create Backpack and save in game
+        Backpack backpack = new Backpack();
+        game.setBackpack(backpack);
+        
+        //create Map and save in game
+        Map map = MapControl.createMap(); //create and initialize new map
+        game.setMap(map);//save map in game
+        
+        MapControl.initStartingPosition(map);
+        
     }
     
 }

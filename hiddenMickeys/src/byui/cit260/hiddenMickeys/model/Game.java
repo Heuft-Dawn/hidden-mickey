@@ -13,11 +13,20 @@ public class Game implements Serializable{
    
     private int currentRow;
     private int currentColumn;
+    private int currentLocationNo;
+
     private int energyLevel;
     private int timeExpired;
     private int timeRemaining;
     private int mickeysCollected;
+    private Character character;
+    private Backpack backpack;
+    private Player player;
+    private Map map;
 
+   
+   
+    
     public Game() {
     }
 
@@ -41,6 +50,15 @@ public class Game implements Serializable{
         this.currentColumn = currentColumn;
     }
 
+    
+    public int getCurrentLocationNo() {
+        return currentLocationNo;
+    }
+
+    public void setCurrentLocationNo(int currentLocationNo) {
+        this.currentLocationNo = currentLocationNo;
+    }
+    
     public int getEnergyLevel() {
         return energyLevel;
     }
@@ -71,6 +89,38 @@ public class Game implements Serializable{
 
     public void setMickeysCollected(int mickeysCollected) {
         this.mickeysCollected = mickeysCollected;
+    }
+    
+        public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
+    
+     public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     @Override
