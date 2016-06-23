@@ -65,7 +65,7 @@ public class MapControl {
             scenes[SceneType.fast_pass.ordinal()] = fast_pass;
 
             Scene pieces_eight = new Scene();
-            pieces_eight.setName("");
+            pieces_eight.setName("Pieces of Eight");
             pieces_eight.setDescription("");
             pieces_eight.setMapSymbol("$");
             pieces_eight.setLocationType("S");
@@ -78,7 +78,7 @@ public class MapControl {
 
 
             Scene emporium = new Scene();
-            emporium.setName("");
+            emporium.setName("Emporium Souvenirs");
             emporium.setDescription("");
             emporium.setMapSymbol("$");
             emporium.setLocationType("S");
@@ -91,12 +91,12 @@ public class MapControl {
 
 
             Scene magic_shop = new Scene();
-            magic_shop.setName("");
+            magic_shop.setName("Main Street Magic Shop");
             magic_shop.setDescription("");
             magic_shop.setMapSymbol("$");
             magic_shop.setLocationType("S");
-            magic_shop.setItemName("");
-            magic_shop.setItemPrice(0);
+            magic_shop.setItemName("Magic Tricks and Toys");
+            magic_shop.setItemPrice(15);
             magic_shop.setDescription("");
             magic_shop.setMickeyPresent(false);
             magic_shop.setMickeyLocation("");
@@ -104,78 +104,78 @@ public class MapControl {
 
 
             Scene beignet = new Scene();
-            beignet.setName("");
+            beignet.setName("Mickey Beignet Shop");
             beignet.setDescription("");
             beignet.setMapSymbol("+");
             beignet.setLocationType("F");
-            beignet.setItemName("");
-            beignet.setItemPrice(0);
+            beignet.setItemName("Beignets");
+            beignet.setItemPrice(5);
             beignet.setMickeyPresent(false);
             scenes[SceneType.beignet.ordinal()] = beignet;
 
             Scene village_haus = new Scene();
-            village_haus.setName("");
+            village_haus.setName("Village Haus Restaurant");
             village_haus.setDescription("");
             village_haus.setMapSymbol("+");
             village_haus.setLocationType("F");
-            village_haus.setItemName("");
-            village_haus.setItemPrice(0);
+            village_haus.setItemName("Flatbread pizzas and salad");
+            village_haus.setItemPrice(10);
             village_haus.setMickeyPresent(false);
             scenes[SceneType.village_haus.ordinal()] = village_haus;
 
 
             Scene hungry_bear = new Scene();
-            hungry_bear.setName("");
+            hungry_bear.setName("Hungry Bear Restaurant");
             hungry_bear.setDescription("");
             hungry_bear.setMapSymbol("+");
             hungry_bear.setLocationType("F");
-            hungry_bear.setItemName("");
-            hungry_bear.setItemPrice(0);
+            hungry_bear.setItemName("Burgers");
+            hungry_bear.setItemPrice(10);
             hungry_bear.setMickeyPresent(false);
             scenes[SceneType.hungry_bear.ordinal()] = hungry_bear;
 
             Scene dole_whip = new Scene();
-            dole_whip.setName("");
+            dole_whip.setName("Dole Whip");
             dole_whip.setDescription("");
             dole_whip.setMapSymbol("+");
             dole_whip.setLocationType("F");
-            dole_whip.setItemName("");
-            dole_whip.setItemPrice(0);
+            dole_whip.setItemName("Dole Whip");
+            dole_whip.setItemPrice(5);
             dole_whip.setMickeyPresent(false);
             scenes[SceneType.dole_whip.ordinal()] = dole_whip;
 
             Scene carnation = new Scene();
-            carnation.setName("");
+            carnation.setName("Carnation Ice-cream Shop");
             carnation.setDescription("");
             carnation.setMapSymbol("+");
             carnation.setLocationType("F");
-            carnation.setItemName("");
-            carnation.setItemPrice(0);
+            carnation.setItemName("Ice Cream");
+            carnation.setItemPrice(5);
             carnation.setMickeyPresent(false);
             scenes[SceneType.carnation.ordinal()] = carnation;
 
             Scene pizza_port = new Scene();
-            pizza_port.setName("");
+            pizza_port.setName("Pizza Port");
             pizza_port.setDescription("");
             pizza_port.setMapSymbol("+");
             pizza_port.setLocationType("F");
-            pizza_port.setItemName("");
-            pizza_port.setItemPrice(0);
+            pizza_port.setItemName("Pizza");
+            pizza_port.setItemPrice(10);
             pizza_port.setMickeyPresent(false);
             scenes[SceneType.pizza_port.ordinal()] = pizza_port;
 
             Scene thunder_food = new Scene();
-            thunder_food.setName("");
+            thunder_food.setName("Big Thunder Ranch Food");
             thunder_food.setDescription("");
             thunder_food.setMapSymbol("+");
             thunder_food.setLocationType("F");
-            thunder_food.setItemName("");
-            thunder_food.setItemPrice(0);
+            thunder_food.setItemName("Barbeque");
+            thunder_food.setItemPrice(15);
             thunder_food.setMickeyPresent(false);
             scenes[SceneType.thunder_food.ordinal()] = thunder_food;
 
             Scene bench = new Scene();
-            bench.setName("");
+            bench.setName("Park Bench");
             bench.setDescription("");
             bench.setLocationType("R");
             bench.setMapSymbol("^");
@@ -183,7 +183,7 @@ public class MapControl {
             scenes[SceneType.bench.ordinal()] = bench;
 
             Scene tiki_room = new Scene();
-            tiki_room.setName("");
+            tiki_room.setName("Enchanted Tiki Room");
             tiki_room.setDescription("");
             tiki_room.setLocationType("R");
             tiki_room.setMapSymbol("^");
@@ -191,7 +191,7 @@ public class MapControl {
             scenes[SceneType.tiki_room.ordinal()] = tiki_room;
 
             Scene main_cinema = new Scene();
-            main_cinema.setName("");
+            main_cinema.setName("Main Street Cinema");
             main_cinema.setDescription("");
             main_cinema.setLocationType("R");
             main_cinema.setMapSymbol("^");
@@ -199,7 +199,7 @@ public class MapControl {
             scenes[SceneType.main_cinema.ordinal()] = main_cinema;
 
             Scene mark_twain = new Scene();
-            mark_twain.setName("");
+            mark_twain.setName("Mark Twain Riverboat");
             mark_twain.setDescription("");
             mark_twain.setLocationType("R");
             mark_twain.setMapSymbol("^");
@@ -207,7 +207,7 @@ public class MapControl {
             scenes[SceneType.mark_twain.ordinal()] = mark_twain;
 
             Scene columbia = new Scene();
-            columbia.setName("");
+            columbia.setName("Sailing Ship Columbia");
             columbia.setDescription("");
             columbia.setLocationType("R");
             columbia.setMapSymbol("^");
