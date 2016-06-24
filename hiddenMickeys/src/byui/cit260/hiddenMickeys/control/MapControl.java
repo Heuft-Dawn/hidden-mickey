@@ -48,7 +48,12 @@ public class MapControl {
             
             Scene piratesCaribbean = new Scene();
             piratesCaribbean.setName("Pirates of the Caribbean");
-            piratesCaribbean.setDescription("dawn");
+            piratesCaribbean.setDescription("Board your boat and take a lovely"
+                    + "stroll through the Bayou, when all of the sudden you're caught"
+                    + "in the middle of fight with Pirates.  Be sure to duck as the "
+                    + "cannon balls fly over your head and you continue through the"
+                    + "village.  The Pirates have taken over and are celebrating"
+                    + "their victory");
             piratesCaribbean.setLocationType("R");
             piratesCaribbean.setMapSymbol(">");
             piratesCaribbean.setMickeyPresent(true);
@@ -66,7 +71,8 @@ public class MapControl {
 
             Scene pieces_eight = new Scene();
             pieces_eight.setName("Pieces of Eight");
-            pieces_eight.setDescription("");
+            pieces_eight.setDescription("Want to connect with your inner Pirate?  This is"
+                    + "the place to buy your Pirate Gear.");
             pieces_eight.setMapSymbol("$");
             pieces_eight.setLocationType("S");
             pieces_eight.setItemName("Pirate Sword");
@@ -79,7 +85,9 @@ public class MapControl {
 
             Scene emporium = new Scene();
             emporium.setName("Emporium Souvenirs");
-            emporium.setDescription("");
+            emporium.setDescription("Wow!  There is so much to see.  This is the place"
+                    + "to pick up souvenirs for the family back home, buy your Mouse Ears or "
+                    + "a Disney shirt or two...");
             emporium.setMapSymbol("$");
             emporium.setLocationType("S");
             emporium.setItemName("Mickey T-shirt");
@@ -92,7 +100,8 @@ public class MapControl {
 
             Scene magic_shop = new Scene();
             magic_shop.setName("Main Street Magic Shop");
-            magic_shop.setDescription("");
+            magic_shop.setDescription("Ready for your next career as a magician?  Stroll through"
+                    + "this fabulous store to find fun magic tricks to add to your act.");
             magic_shop.setMapSymbol("$");
             magic_shop.setLocationType("S");
             magic_shop.setItemName("Magic Tricks and Toys");
@@ -105,7 +114,10 @@ public class MapControl {
 
             Scene beignet = new Scene();
             beignet.setName("Mickey Beignet Shop");
-            beignet.setDescription("");
+            beignet.setDescription("You've been walking all over the park.  Surely you've burned"
+                    + "enough calories to indulge in a Mickey Shaped Beignet.  Be careful not to "
+                    + "breathe in too quick when you take a bite... you could end up snorting up some "
+                    + "powdered sugar!  You may want to wash down that beignet with a delicious Mint Julep.");
             beignet.setMapSymbol("+");
             beignet.setLocationType("F");
             beignet.setItemName("Beignets");
@@ -115,7 +127,9 @@ public class MapControl {
 
             Scene village_haus = new Scene();
             village_haus.setName("Village Haus Restaurant");
-            village_haus.setDescription("");
+            village_haus.setDescription("Wow!  Did you just travel to Germany?  This is a great place"
+                    + "to relax and eat some lunch or dinner. The Pastrami Burger is delicious.  Keep"
+                    + "your eye out for Pinnochio!");
             village_haus.setMapSymbol("+");
             village_haus.setLocationType("F");
             village_haus.setItemName("Flatbread pizzas and salad");
@@ -126,7 +140,9 @@ public class MapControl {
 
             Scene hungry_bear = new Scene();
             hungry_bear.setName("Hungry Bear Restaurant");
-            hungry_bear.setDescription("");
+            hungry_bear.setDescription("Welcome to the Hungry Bear Restaurant!  If you're"
+                    + "hungry, this is the place to be.  You can fill up on a Burger, or two..."
+                    + "or try our famous Fried Green Tomato sandwich.  Yummmm");
             hungry_bear.setMapSymbol("+");
             hungry_bear.setLocationType("F");
             hungry_bear.setItemName("Burgers");
@@ -136,7 +152,8 @@ public class MapControl {
 
             Scene dole_whip = new Scene();
             dole_whip.setName("Dole Whip");
-            dole_whip.setDescription("");
+            dole_whip.setDescription("Ah, no trip to Disneyland is complete without a little Dole Whip!"
+                    + "You can enjoy yours in a cup or a float.  Perfect for a Hot Day!");
             dole_whip.setMapSymbol("+");
             dole_whip.setLocationType("F");
             dole_whip.setItemName("Dole Whip");
