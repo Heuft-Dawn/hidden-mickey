@@ -162,8 +162,10 @@ public class MapControl {
             scenes[SceneType.dole_whip.ordinal()] = dole_whip;
 
             Scene carnation = new Scene();
-            carnation.setName("Carnation Ice-cream Shop");
-            carnation.setDescription("");
+            carnation.setName("Carnation Cafe");
+            carnation.setDescription("The Carnation Cafe started out as an indoor ice cream parlor"
+                    + "and has grown to be a full-service cafe.  As a special treat for your Disneyland"
+                    + "experience the cafe is serving Ice Cream today.");
             carnation.setMapSymbol("+");
             carnation.setLocationType("F");
             carnation.setItemName("Ice Cream");
@@ -173,7 +175,9 @@ public class MapControl {
 
             Scene pizza_port = new Scene();
             pizza_port.setName("Pizza Port");
-            pizza_port.setDescription("");
+            pizza_port.setDescription("As you orbit Tomorrowland you take a moment to"
+                    + "land at Pizza Port where they serve Pizza and Star Wars themed"
+                    + "treats like Chewbacca Cheesecake.");
             pizza_port.setMapSymbol("+");
             pizza_port.setLocationType("F");
             pizza_port.setItemName("Pizza");
@@ -183,7 +187,10 @@ public class MapControl {
 
             Scene thunder_food = new Scene();
             thunder_food.setName("Big Thunder Ranch Food");
-            thunder_food.setDescription("");
+            thunder_food.setDescription("Come on down to the ranch and enjoy some fabulous home-stlye"
+                    + "bbq.  All meals are served are all-you-can-eat and served family style.  Enjoy"
+                    + "this soon because it only exists in our memories now...as the new Star Wars"
+                    + "land is being built on this location.");
             thunder_food.setMapSymbol("+");
             thunder_food.setLocationType("F");
             thunder_food.setItemName("Barbeque");
@@ -193,7 +200,8 @@ public class MapControl {
 
             Scene bench = new Scene();
             bench.setName("Park Bench");
-            bench.setDescription("");
+            bench.setDescription("Ahh... rest your weary feet and wait for the parade to go by on"
+                    + "the park bench.");
             bench.setLocationType("R");
             bench.setMapSymbol("^");
             bench.setMickeyPresent(false);
@@ -201,7 +209,9 @@ public class MapControl {
 
             Scene tiki_room = new Scene();
             tiki_room.setName("Enchanted Tiki Room");
-            tiki_room.setDescription("");
+            tiki_room.setDescription("Welcome to the Tiki, Tiki, Tiki, Tiki room.  It's a great"
+                    + "escape when the weather is rough or you need a little break.  Sit back and"
+                    + "relax as you enjoy the songs of the many birds.");
             tiki_room.setLocationType("R");
             tiki_room.setMapSymbol("^");
             tiki_room.setMickeyPresent(false);
@@ -209,7 +219,8 @@ public class MapControl {
 
             Scene main_cinema = new Scene();
             main_cinema.setName("Main Street Cinema");
-            main_cinema.setDescription("");
+            main_cinema.setDescription("Take a step back in time as you watch the cartoons that"
+                    + "started it all.");
             main_cinema.setLocationType("R");
             main_cinema.setMapSymbol("^");
             main_cinema.setMickeyPresent(false);
@@ -217,7 +228,8 @@ public class MapControl {
 
             Scene mark_twain = new Scene();
             mark_twain.setName("Mark Twain Riverboat");
-            mark_twain.setDescription("");
+            mark_twain.setDescription("Climb aboard and cruise around America and get a look at"
+                    + "what like was like over a hundred years ago.... ");
             mark_twain.setLocationType("R");
             mark_twain.setMapSymbol("^");
             mark_twain.setMickeyPresent(false);
@@ -225,7 +237,7 @@ public class MapControl {
 
             Scene columbia = new Scene();
             columbia.setName("Sailing Ship Columbia");
-            columbia.setDescription("");
+            columbia.setDescription("Sail the seas of Disneyland aboard the full-size replica sailing ship.");
             columbia.setLocationType("R");
             columbia.setMapSymbol("^");
             columbia.setMickeyPresent(false);
@@ -234,7 +246,9 @@ public class MapControl {
             
             Scene haunted_mansion = new Scene();
             haunted_mansion.setName("Haunted Mansion");
-            haunted_mansion.setDescription("");
+            haunted_mansion.setDescription("You escaped the incredible stretching room, but how will you get out?"
+                    + "Climb aboard the buggy and wind your way through the house.  Keep your eyes on the "
+                    + "frolicking ghosts!  They have been known to hitch a ride home with you.");
             haunted_mansion.setLocationType("R");
             haunted_mansion.setMapSymbol(">");
             haunted_mansion.setMickeyPresent(true);
@@ -245,7 +259,8 @@ public class MapControl {
 
             Scene winnie_pooh = new Scene();
             winnie_pooh.setName("Winnie the Pooh");
-            winnie_pooh.setDescription("");
+            winnie_pooh.setDescription("Climb aboard the beehive and travel through a hundred acre wood"
+                    + "with Winnie the Pooh and friends.");
             winnie_pooh.setLocationType("R");
             winnie_pooh.setMapSymbol(">");
             winnie_pooh.setMickeyPresent(true);
@@ -256,7 +271,8 @@ public class MapControl {
 
             Scene indiana_jones = new Scene();
             indiana_jones.setName("Indiana Jones");
-            indiana_jones.setDescription("");
+            indiana_jones.setDescription("Adventure time!  Climb aboard the jeep and enter the cursed "
+                    + "Temple of the Forbidden Eye.  Beware of falling bolders that may block your way out.");
             indiana_jones.setLocationType("R");
             indiana_jones.setMapSymbol(">");
             indiana_jones.setMickeyPresent(true);
@@ -266,7 +282,8 @@ public class MapControl {
 
             Scene jungle_cruise = new Scene();
             jungle_cruise.setName("Jungle Cruise");
-            jungle_cruise.setDescription("");
+            jungle_cruise.setDescription("Take a journey through the jungle with your wise-cracking skipper."
+                    + "Avoid the hippos and cannibals and you might make it out alive...");
             jungle_cruise.setLocationType("R");
             jungle_cruise.setMapSymbol(">");
             jungle_cruise.setMickeyPresent(true);
