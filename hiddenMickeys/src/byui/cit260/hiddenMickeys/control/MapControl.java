@@ -455,6 +455,42 @@ public class MapControl {
         
         
          }
+
+    public static String[] getLocationList(Location[][] locations,int numLocations) {
+       String[] tmpLocations = new String[numLocations];
+         for( int row = 0; row < locations.length; row++){
+                for( int column = 0; column < locations[row].length; column++){
+                    tmpLocations[locations[row][column].getLocationNo() - 1] = (locations[row][column].getScene().getName());
+                }
+        }
+         return tmpLocations;
+    }
+
+    public static int calcRowsPerColumn(int noLocations, int numColumns) {
+       //Calculate the number of locations per row
+        int numRows;
+        
+        //test for boundary - must 6 or fewer columns
+        if( numColumns > 6 ){
+            return -999; //number is too high
+        }
+        else if(numColumns<=1) {//there must be at least one column
+            return 1; //number must be at least one
+        }
+        if(noLocations < 1){
+            return -1;
+            //invalid number of locations - there must be at least one
+        }
+        //if the answer has a remainder, add one to the num of rows
+        if(noLocations % numColumns > 0){
+            numRows = (noLocations / numColumns);
+            numRows ++;
+        //otherwise, just take the number of locations divided by the number of columns     
+        }else {
+            numRows = (noLocations / numColumns);
+        }
+        return numRows;
+    }
     
     
     public int calcMoveTime(int curRow, int curCol, int newRow, int newCol) {

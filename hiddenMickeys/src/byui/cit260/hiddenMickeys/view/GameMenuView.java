@@ -204,8 +204,7 @@ public GameMenuView(){
        
 }
     public void displayLocations(int numColumns, int colWidth) {
-    int numRows;    
-     
+       
         // Get the game and locations    
         Game game = HiddenMickeys.getCurrentGame();
          Map map = game.getMap(); // retreive the map from game
@@ -215,26 +214,12 @@ public GameMenuView(){
         int noLocations = map.getColumnCount()* map.getRowCount();
         String tmpString; 
         String tmpName;
-
         
         //create a 1 dimensional array with all the location
-        String[] tmpLocations = new String[noLocations];
-         for( int row = 0; row < locations.length; row++){
-                for( int column = 0; column < locations[row].length; column++){
-                    tmpLocations[locations[row][column].getLocationNo() - 1] = (locations[row][column].getScene().getName());
-                }
-        }
-
-        //Calculate the number of locations per row
-        int noPerColumn = 0;
-        //if the answer has a remainder, add one to the num of rows
-        if(noLocations % numColumns > 0){
-            numRows = (noLocations / numColumns);
-            numRows ++;
-        //otherwise, just take the number of locations divided by the number of columns     
-        }else {
-            numRows = (noLocations / numColumns);
-        }
+        String[] tmpLocations = MapControl.getLocationList(map.getLocations(), noLocations);
+        
+        //run function that calculatesthe number of rows there needs to be per display column
+        int numRows = MapControl.calcRowsPerColumn(noLocations, numColumns);
         
         //Create an array with the correct number of rows and columns
         String[][] displayArray = new String[numColumns][numRows];
