@@ -17,7 +17,7 @@ import hiddenmickeys.HiddenMickeys;
 public class MapAndMoveView extends View{
     
     public MapAndMoveView() {
-        super("\n\nUsing the map above, enter the location # to move to\nor"
+        super("Using the map above, enter the location # to move to or"
               +"\nQ = exit map, W= view ride wait times.");
     }
     

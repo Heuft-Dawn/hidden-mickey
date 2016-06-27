@@ -7,6 +7,7 @@ package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.MapControl;
 import byui.cit260.hiddenMickeys.control.BackpackControl;
+import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.model.*;
 import hiddenmickeys.HiddenMickeys;
 /**
@@ -80,6 +81,8 @@ public GameMenuView(){
         displayMap();
         
         displayLocations(4,30);
+        LocationControl locationControl = new LocationControl();
+        System.out.println("\nYou have visited " + Integer.toString(locationControl.getLocationsVisited()) + " locations.");
         //pull up the map and move menu
         MapAndMoveView moveMenu = new MapAndMoveView();
         moveMenu.display();
