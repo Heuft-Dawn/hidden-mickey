@@ -65,5 +65,6 @@ public class LocationControl {
       }    
       return energyUsed;
       }
-       
+   
+   
 }

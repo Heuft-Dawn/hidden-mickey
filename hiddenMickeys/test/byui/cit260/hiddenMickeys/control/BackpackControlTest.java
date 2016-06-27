@@ -42,7 +42,7 @@ public class BackpackControlTest {
         double expResult = 34.25;
         
         //call function to run test
-        double result = instance.calcNewBalance(price, curBalance);
+        double result = instance.calcNewBalance(price);
         
         //compare expected return value to actual return value
         assertEquals(expResult, result, 0.0);
@@ -64,7 +64,7 @@ public class BackpackControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcNewBalance(price, curBalance);
+        result = instance.calcNewBalance(price);
         
         //compare expected return value to actual return value
         assertEquals(expResult, result, 0.0);
@@ -86,7 +86,7 @@ public class BackpackControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcNewBalance(price, curBalance);
+        result = instance.calcNewBalance(price);
         
         //compare expected return value to actual return value
         assertEquals(expResult, result, 0.0);
@@ -108,7 +108,7 @@ public class BackpackControlTest {
         expResult = 50;
         
         //call function to run test
-        result = instance.calcNewBalance(price, curBalance);
+        result = instance.calcNewBalance(price);
         
         //compare expected return value to actual return value
         assertEquals(expResult, result, 0.0);
@@ -130,7 +130,7 @@ public class BackpackControlTest {
         expResult = 49;
         
         //call function to run test
-        result = instance.calcNewBalance(price, curBalance);
+        result = instance.calcNewBalance(price);
         
         //compare expected return value to actual return value
         assertEquals(expResult, result, 0.0);
@@ -152,7 +152,7 @@ public class BackpackControlTest {
         expResult = 0;
         
         //call function to run test
-        result = instance.calcNewBalance(price, curBalance);
+        result = instance.calcNewBalance(price);
         
         //compare expected return value to actual return value
         assertEquals(expResult, result, 0.0);

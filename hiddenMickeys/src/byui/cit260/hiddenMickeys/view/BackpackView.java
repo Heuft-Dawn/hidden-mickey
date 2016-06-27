@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package byui.cit260.hiddenMickeys.view;
+import byui.cit260.hiddenMickeys.control.BackpackControl;
 
 /**
  *
@@ -17,10 +19,10 @@ public class BackpackView extends View{
             +"\nView Backpack Menu"
             +"\n----------------------------------------------"
             +"\nP - Check number of fast passes"
-            +"\nM - Check Money Balance "
+            +"\nM - Check Money Balance"
             +"\nW - Use Emergency Water"
             +"\nS - Use Emergency Snack"
-            +"\nq - Return to menu"   
+            +"\nQ - Return to menu"   
             +"\n----------------------------------------------"
             +"\n\n\nYou have several items in your backpack,"
             + " which one would you like to check?");
@@ -58,8 +60,11 @@ public class BackpackView extends View{
     
 
     private void viewMoneyBalance() {
-         System.out.println("You have ______ money in your backpack");
+        BackpackControl backpack = new BackpackControl();
+        double newBalance = backpack.calcNewBalance(0);
+        System.out.println("Your current balance is $" + Double.toString(newBalance));
     }
+   
 
     private void useEmergencyWater() {
         System.out.println("\n Whew, you are feeling refreshed after drinking"

@@ -5,6 +5,11 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.BackpackControl;
+import byui.cit260.hiddenMickeys.model.Backpack;
+import byui.cit260.hiddenMickeys.model.Game;
+import hiddenmickeys.HiddenMickeys;
+
 /**
  *
  * @author Hannah Mars
@@ -54,7 +59,10 @@ public class ExploreShopLocationView extends View {
     }
 
     private void updateMoney() {
-        System.out.println("updateMoney() function called. I want this to be able to call the function I already created to calculate the new balance.");
+        Game game = HiddenMickeys.getCurrentGame(); // retreive the game
+        BackpackControl backpackControl = new BackpackControl();
+        double newBalance = backpackControl.calcNewBalance(10);
+        game.getBackpack().setMoneyBalance(newBalance);
     }
     
 }
