@@ -5,6 +5,11 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
+import byui.cit260.hiddenMickeys.model.Map;
+import hiddenmickeys.HiddenMickeys;
+
 /**
  *
  * @author Hannah Mars
@@ -12,9 +17,8 @@ package byui.cit260.hiddenMickeys.view;
 public class MapAndMoveView extends View{
     
     public MapAndMoveView() {
-        super("\nMap under Construction"
-              +"\nUsing the map above, enter a location number that you would "
-              +"\nlike to move to or enter Q to exit map");
+        super("Using the map above, enter the location # to move to or"
+              +"\nQ = exit map, W= view ride wait times.");
     }
     
     /*
@@ -50,6 +54,9 @@ public class MapAndMoveView extends View{
                 break;
             case "8": //move to locatoin 8
                 this.locationEight();
+                break;
+            case "W"://show wait times on rides
+                this.displaySortedWaitTimes();
                 break;
             case "Q":
                 break;
@@ -92,4 +99,50 @@ public class MapAndMoveView extends View{
         System.out.println("locationEight() function called");
     }
 
+ 
+     public void displaySortedWaitTimes(){
+       // Get the game and locations    
+        Game game = HiddenMickeys.getCurrentGame();
+         Map map = game.getMap(); // retreive the map from game
+         Location[][] locations = map.getLocations(); // retreive the locations from map 
+         
+        //get number of locations 
+        int noLocations = map.getColumnCount()* map.getRowCount(); 
+         
+         //create a 2-d dimensional array with all the locations & wait times
+        int[][] tmpLocations = new int[noLocations+1][2];
+        int i=0;
+         for( int row = 0; row < locations.length; row++){
+                for( int column = 0; column < locations[row].length; column++){
+                    if(locations[row][column].getScene().getLocationType().equals("R")){
+                    tmpLocations[i][0]= (locations[row][column].getLocationNo());
+                    tmpLocations[i][1]= (locations[row][column].getScene().getWaitTime())  ;     
+                    i++;
+                    }
+                }
+        }
+         
+         //sort the array by 2nd column
+        java.util.Arrays.sort(tmpLocations, 
+            new java.util.Comparator<int[]>(){
+                public int compare(int[]a,int[]b){
+                    return a[1]-b[1];
+                }
+        }); 
+         
+        //display the results
+          System.out.println("Ride Wait Times");
+          System.out.println("-----------------------");
+          for (int s=0;s<tmpLocations.length;s++){
+            if(tmpLocations[s][0]> 0){  
+            System.out.println("Location #" + Integer.toString(tmpLocations[s][0]) + ": " + Integer.toString(tmpLocations[s][1]) + " min");
+            }
+          }
+          
+        
+}  
+         
+     
+    
+     
 }

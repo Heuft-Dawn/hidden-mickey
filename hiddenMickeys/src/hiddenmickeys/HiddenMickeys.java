@@ -10,18 +10,9 @@ package hiddenmickeys;
  *
  * @author Hannah Mars
  */
+import byui.cit260.hiddenMickeys.model.*;
+        
 
-import byui.cit260.hiddenMickeys.model.Player;
-import byui.cit260.hiddenMickeys.model.Character;
-import byui.cit260.hiddenMickeys.model.Backpack;
-import byui.cit260.hiddenMickeys.model.Map;
-import byui.cit260.hiddenMickeys.model.Game;
-import byui.cit260.hiddenMickeys.model.FastPassStation;
-import byui.cit260.hiddenMickeys.model.Kiosk;
-import byui.cit260.hiddenMickeys.model.Location;
-import byui.cit260.hiddenMickeys.model.Ride;
-import byui.cit260.hiddenMickeys.model.Scene;
-import byui.cit260.hiddenMickeys.model.Shop;
 
 import byui.cit260.hiddenMickeys.view.StartProgramView;
 

@@ -6,7 +6,10 @@
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.MapControl;
-
+import byui.cit260.hiddenMickeys.control.BackpackControl;
+import byui.cit260.hiddenMickeys.control.LocationControl;
+import byui.cit260.hiddenMickeys.model.*;
+import hiddenmickeys.HiddenMickeys;
 /**
  *
  * @author Hannah Mars
@@ -75,8 +78,14 @@ public GameMenuView(){
     }
 
     private void mapAndMove() {
-        MapControl control = new MapControl();
-        control.displayMap();
+        displayMap();
+        
+        displayLocations(4,30);
+        LocationControl locationControl = new LocationControl();
+        System.out.println("\nYou have visited " + Integer.toString(locationControl.getLocationsVisited()) + " locations.");
+        //pull up the map and move menu
+        MapAndMoveView moveMenu = new MapAndMoveView();
+        moveMenu.display();
         
     }
 
@@ -146,7 +155,121 @@ public GameMenuView(){
     }
 
    
+ public void displayMap() {
+        String leftIndicator;
+        String rightIndicator;
+        //tmpString used to build equal column widths
+        String tmpString ;
+        String divLine = new String();
+        String typeSymbol;
+        int locationNo = 0;
+        
+        
+        Game game = HiddenMickeys.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        try {
+          System.out.print("  |");
+          for( Land land : Land.values()){
+            tmpString = " " + land + "     ";
+            divLine = divLine + "------------------";
+            tmpString = tmpString.substring(0,15);//column = 0; column < Land.values().length; column++){
+            System.out.print(tmpString + " |"); // print col numbers to side of map
+          }
+          System.out.println();
+          for( int row = 0; row < locations.length; row++){
+            for( int column = 0; column < locations[row].length; column++){
+              typeSymbol = locations[row][column].getScene().getMapSymbol();  
+              leftIndicator = typeSymbol+ typeSymbol + "   ";
+              rightIndicator = "    " + typeSymbol + typeSymbol;
+              if(locations[row][column].getLocationNo() == game.getCurrentLocationNo() ){
+                leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
+                rightIndicator = "*"; // same as above
+              }
+              else if(locations[row][column].isVisited()){
+                 leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
+                 rightIndicator = "<"; // same as above
+              }
+              System.out.print("| | |"); // start map with a |
+              if(locations[row][column].getLocationNo()>= 10){
+              rightIndicator = rightIndicator.substring(rightIndicator.length()-5);}
+              if(locations[row][column].getScene() == null)
+                System.out.print(leftIndicator + "??" + rightIndicator);
+              else
+                System.out.print(leftIndicator + locations[row][column].getLocationNo() + rightIndicator);
+            }
+            System.out.println("| | |");
+            System.out.println(divLine);
+          }
+        }catch (Exception e) {
+          System.out.println("Error");
+        }
+       
+}
+    public void displayLocations(int numColumns, int colWidth) {
+    int numRows;    
+     
+        // Get the game and locations    
+        Game game = HiddenMickeys.getCurrentGame();
+         Map map = game.getMap(); // retreive the map from game
+         Location[][] locations = map.getLocations(); // retreive the locations from map     
 
+        //get the number of locations in the map
+        int noLocations = map.getColumnCount()* map.getRowCount();
+        String tmpString; 
+        String tmpName;
+
+        
+        //create a 1 dimensional array with all the location
+        String[] tmpLocations = new String[noLocations];
+         for( int row = 0; row < locations.length; row++){
+                for( int column = 0; column < locations[row].length; column++){
+                    tmpLocations[locations[row][column].getLocationNo() - 1] = (locations[row][column].getScene().getName());
+                }
+        }
+
+        //Calculate the number of locations per row
+        int noPerColumn = 0;
+        //if the answer has a remainder, add one to the num of rows
+        if(noLocations % numColumns > 0){
+            numRows = (noLocations / numColumns);
+            numRows ++;
+        //otherwise, just take the number of locations divided by the number of columns     
+        }else {
+            numRows = (noLocations / numColumns);
+        }
+        
+        //Create an array with the correct number of rows and columns
+        String[][] displayArray = new String[numColumns][numRows];
+
+        //populate the display Array with the locations
+         int i=0;
+         for(int y = 0; y < numColumns; y++){
+             for(int x = 0 ; x < numRows ; x++){
+                 if (i < tmpLocations.length){
+                 displayArray[y][x] = tmpLocations[i];}
+                 i++;
+             }
+         }
+
+         //Display the new array
+        for(int y = 0; y < numRows; y++){
+            tmpString = "";
+            //one row at a time,display the location number and name for each column
+             for(int x = 0 ; x < numColumns ; x++){
+                if (displayArray[x][y] == null) {
+                    tmpString += ""; }
+                else{
+                    tmpName = Integer.toString((numRows*x) + (y+1));
+                    tmpName += " - " + displayArray[x][y] + "                              ";
+                    tmpString += tmpName.substring(0,colWidth);
+                }
+                 }
+             System.out.println(tmpString);
+        }
+
+
+    }
 
     
 }

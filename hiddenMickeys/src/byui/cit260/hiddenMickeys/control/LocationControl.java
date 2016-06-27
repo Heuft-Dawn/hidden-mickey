@@ -5,6 +5,12 @@
  */
 package byui.cit260.hiddenMickeys.control;
 
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
+import byui.cit260.hiddenMickeys.model.Map;
+import hiddenmickeys.HiddenMickeys;
+import java.util.Collections;
+
 /**
 Author: Susan Allen
  */
@@ -66,5 +72,19 @@ public class LocationControl {
       return energyUsed;
       }
    
-   
+    public int getLocationsVisited() {
+        Game game = HiddenMickeys.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        int countLocations = 0;
+        for( int row = 0; row < locations.length; row++){
+        for( int column = 0; column < locations[row].length; column++){
+            if (locations[row][column].isVisited()) {
+                countLocations++;
+            }
+    }
+    }
+        return countLocations;
+    }
 }
+

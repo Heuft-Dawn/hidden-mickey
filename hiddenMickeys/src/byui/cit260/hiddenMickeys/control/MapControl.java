@@ -38,7 +38,7 @@ public class MapControl {
         Scene[] scenes = new Scene[SceneType.values().length];
         
             Scene startingScene = new Scene();
-            startingScene.setName("");
+            startingScene.setName("Main Gate");
             startingScene.setDescription("");
             startingScene.setMapSymbol("-");
             startingScene.setLocationType("O");
@@ -48,7 +48,12 @@ public class MapControl {
             
             Scene piratesCaribbean = new Scene();
             piratesCaribbean.setName("Pirates of the Caribbean");
-            piratesCaribbean.setDescription("dawn");
+            piratesCaribbean.setDescription("Board your boat and take a lovely"
+                    + "stroll through the Bayou, when all of the sudden you're caught"
+                    + "in the middle of fight with Pirates.  Be sure to duck as the "
+                    + "cannon balls fly over your head and you continue through the"
+                    + "village.  The Pirates have taken over and are celebrating"
+                    + "their victory");
             piratesCaribbean.setLocationType("R");
             piratesCaribbean.setMapSymbol(">");
             piratesCaribbean.setMickeyPresent(true);
@@ -66,7 +71,8 @@ public class MapControl {
 
             Scene pieces_eight = new Scene();
             pieces_eight.setName("Pieces of Eight");
-            pieces_eight.setDescription("");
+            pieces_eight.setDescription("Want to connect with your inner Pirate?  This is"
+                    + "the place to buy your Pirate Gear.");
             pieces_eight.setMapSymbol("$");
             pieces_eight.setLocationType("S");
             pieces_eight.setItemName("Pirate Sword");
@@ -79,7 +85,9 @@ public class MapControl {
 
             Scene emporium = new Scene();
             emporium.setName("Emporium Souvenirs");
-            emporium.setDescription("");
+            emporium.setDescription("Wow!  There is so much to see.  This is the place"
+                    + "to pick up souvenirs for the family back home, buy your Mouse Ears or "
+                    + "a Disney shirt or two...");
             emporium.setMapSymbol("$");
             emporium.setLocationType("S");
             emporium.setItemName("Mickey T-shirt");
@@ -92,7 +100,8 @@ public class MapControl {
 
             Scene magic_shop = new Scene();
             magic_shop.setName("Main Street Magic Shop");
-            magic_shop.setDescription("");
+            magic_shop.setDescription("Ready for your next career as a magician?  Stroll through"
+                    + "this fabulous store to find fun magic tricks to add to your act.");
             magic_shop.setMapSymbol("$");
             magic_shop.setLocationType("S");
             magic_shop.setItemName("Magic Tricks and Toys");
@@ -105,7 +114,10 @@ public class MapControl {
 
             Scene beignet = new Scene();
             beignet.setName("Mickey Beignet Shop");
-            beignet.setDescription("");
+            beignet.setDescription("You've been walking all over the park.  Surely you've burned"
+                    + "enough calories to indulge in a Mickey Shaped Beignet.  Be careful not to "
+                    + "breathe in too quick when you take a bite... you could end up snorting up some "
+                    + "powdered sugar!  You may want to wash down that beignet with a delicious Mint Julep.");
             beignet.setMapSymbol("+");
             beignet.setLocationType("F");
             beignet.setItemName("Beignets");
@@ -115,7 +127,9 @@ public class MapControl {
 
             Scene village_haus = new Scene();
             village_haus.setName("Village Haus Restaurant");
-            village_haus.setDescription("");
+            village_haus.setDescription("Wow!  Did you just travel to Germany?  This is a great place"
+                    + "to relax and eat some lunch or dinner. The Pastrami Burger is delicious.  Keep"
+                    + "your eye out for Pinnochio!");
             village_haus.setMapSymbol("+");
             village_haus.setLocationType("F");
             village_haus.setItemName("Flatbread pizzas and salad");
@@ -126,7 +140,9 @@ public class MapControl {
 
             Scene hungry_bear = new Scene();
             hungry_bear.setName("Hungry Bear Restaurant");
-            hungry_bear.setDescription("");
+            hungry_bear.setDescription("Welcome to the Hungry Bear Restaurant!  If you're"
+                    + "hungry, this is the place to be.  You can fill up on a Burger, or two..."
+                    + "or try our famous Fried Green Tomato sandwich.  Yummmm");
             hungry_bear.setMapSymbol("+");
             hungry_bear.setLocationType("F");
             hungry_bear.setItemName("Burgers");
@@ -136,7 +152,8 @@ public class MapControl {
 
             Scene dole_whip = new Scene();
             dole_whip.setName("Dole Whip");
-            dole_whip.setDescription("");
+            dole_whip.setDescription("Ah, no trip to Disneyland is complete without a little Dole Whip!"
+                    + "You can enjoy yours in a cup or a float.  Perfect for a Hot Day!");
             dole_whip.setMapSymbol("+");
             dole_whip.setLocationType("F");
             dole_whip.setItemName("Dole Whip");
@@ -145,8 +162,10 @@ public class MapControl {
             scenes[SceneType.dole_whip.ordinal()] = dole_whip;
 
             Scene carnation = new Scene();
-            carnation.setName("Carnation Ice-cream Shop");
-            carnation.setDescription("");
+            carnation.setName("Carnation Cafe");
+            carnation.setDescription("The Carnation Cafe started out as an indoor ice cream parlor"
+                    + "and has grown to be a full-service cafe.  As a special treat for your Disneyland"
+                    + "experience the cafe is serving Ice Cream today.");
             carnation.setMapSymbol("+");
             carnation.setLocationType("F");
             carnation.setItemName("Ice Cream");
@@ -156,7 +175,9 @@ public class MapControl {
 
             Scene pizza_port = new Scene();
             pizza_port.setName("Pizza Port");
-            pizza_port.setDescription("");
+            pizza_port.setDescription("As you orbit Tomorrowland you take a moment to"
+                    + "land at Pizza Port where they serve Pizza and Star Wars themed"
+                    + "treats like Chewbacca Cheesecake.");
             pizza_port.setMapSymbol("+");
             pizza_port.setLocationType("F");
             pizza_port.setItemName("Pizza");
@@ -166,7 +187,10 @@ public class MapControl {
 
             Scene thunder_food = new Scene();
             thunder_food.setName("Big Thunder Ranch Food");
-            thunder_food.setDescription("");
+            thunder_food.setDescription("Come on down to the ranch and enjoy some fabulous home-stlye"
+                    + "bbq.  All meals are served are all-you-can-eat and served family style.  Enjoy"
+                    + "this soon because it only exists in our memories now...as the new Star Wars"
+                    + "land is being built on this location.");
             thunder_food.setMapSymbol("+");
             thunder_food.setLocationType("F");
             thunder_food.setItemName("Barbeque");
@@ -176,40 +200,45 @@ public class MapControl {
 
             Scene bench = new Scene();
             bench.setName("Park Bench");
-            bench.setDescription("");
-            bench.setLocationType("R");
+            bench.setDescription("Ahh... rest your weary feet and wait for the parade to go by on"
+                    + "the park bench.");
+            bench.setLocationType("T");
             bench.setMapSymbol("^");
             bench.setMickeyPresent(false);
             scenes[SceneType.bench.ordinal()] = bench;
 
             Scene tiki_room = new Scene();
             tiki_room.setName("Enchanted Tiki Room");
-            tiki_room.setDescription("");
-            tiki_room.setLocationType("R");
+            tiki_room.setDescription("Welcome to the Tiki, Tiki, Tiki, Tiki room.  It's a great"
+                    + "escape when the weather is rough or you need a little break.  Sit back and"
+                    + "relax as you enjoy the songs of the many birds.");
+            tiki_room.setLocationType("T");
             tiki_room.setMapSymbol("^");
             tiki_room.setMickeyPresent(false);
             scenes[SceneType.tiki_room.ordinal()] = tiki_room;
 
             Scene main_cinema = new Scene();
             main_cinema.setName("Main Street Cinema");
-            main_cinema.setDescription("");
-            main_cinema.setLocationType("R");
+            main_cinema.setDescription("Take a step back in time as you watch the cartoons that"
+                    + "started it all.");
+            main_cinema.setLocationType("T");
             main_cinema.setMapSymbol("^");
             main_cinema.setMickeyPresent(false);
             scenes[SceneType.main_cinema.ordinal()] = main_cinema;
 
             Scene mark_twain = new Scene();
             mark_twain.setName("Mark Twain Riverboat");
-            mark_twain.setDescription("");
-            mark_twain.setLocationType("R");
+            mark_twain.setDescription("Climb aboard and cruise around America and get a look at"
+                    + "what like was like over a hundred years ago.... ");
+            mark_twain.setLocationType("T");
             mark_twain.setMapSymbol("^");
             mark_twain.setMickeyPresent(false);
             scenes[SceneType.mark_twain.ordinal()] = mark_twain;
 
             Scene columbia = new Scene();
             columbia.setName("Sailing Ship Columbia");
-            columbia.setDescription("");
-            columbia.setLocationType("R");
+            columbia.setDescription("Sail the seas of Disneyland aboard the full-size replica sailing ship.");
+            columbia.setLocationType("T");
             columbia.setMapSymbol("^");
             columbia.setMickeyPresent(false);
             scenes[SceneType.columbia.ordinal()] = columbia;            
@@ -217,7 +246,9 @@ public class MapControl {
             
             Scene haunted_mansion = new Scene();
             haunted_mansion.setName("Haunted Mansion");
-            haunted_mansion.setDescription("");
+            haunted_mansion.setDescription("You escaped the incredible stretching room, but how will you get out?"
+                    + "Climb aboard the buggy and wind your way through the house.  Keep your eyes on the "
+                    + "frolicking ghosts!  They have been known to hitch a ride home with you.");
             haunted_mansion.setLocationType("R");
             haunted_mansion.setMapSymbol(">");
             haunted_mansion.setMickeyPresent(true);
@@ -228,7 +259,8 @@ public class MapControl {
 
             Scene winnie_pooh = new Scene();
             winnie_pooh.setName("Winnie the Pooh");
-            winnie_pooh.setDescription("");
+            winnie_pooh.setDescription("Climb aboard the beehive and travel through a hundred acre wood"
+                    + "with Winnie the Pooh and friends.");
             winnie_pooh.setLocationType("R");
             winnie_pooh.setMapSymbol(">");
             winnie_pooh.setMickeyPresent(true);
@@ -239,7 +271,8 @@ public class MapControl {
 
             Scene indiana_jones = new Scene();
             indiana_jones.setName("Indiana Jones");
-            indiana_jones.setDescription("");
+            indiana_jones.setDescription("Adventure time!  Climb aboard the jeep and enter the cursed "
+                    + "Temple of the Forbidden Eye.  Beware of falling bolders that may block your way out.");
             indiana_jones.setLocationType("R");
             indiana_jones.setMapSymbol(">");
             indiana_jones.setMickeyPresent(true);
@@ -249,7 +282,8 @@ public class MapControl {
 
             Scene jungle_cruise = new Scene();
             jungle_cruise.setName("Jungle Cruise");
-            jungle_cruise.setDescription("");
+            jungle_cruise.setDescription("Take a journey through the jungle with your wise-cracking skipper."
+                    + "Avoid the hippos and cannibals and you might make it out alive...");
             jungle_cruise.setLocationType("R");
             jungle_cruise.setMapSymbol(">");
             jungle_cruise.setMickeyPresent(true);
@@ -259,7 +293,7 @@ public class MapControl {
 
 
             Scene tarzan_treehouse = new Scene();
-            tarzan_treehouse.setName("Tarzan’s Treehouse");
+            tarzan_treehouse.setName("Tarzan's Treehouse");
             tarzan_treehouse.setDescription("");
             tarzan_treehouse.setLocationType("R");
             tarzan_treehouse.setMapSymbol(">");
@@ -270,7 +304,7 @@ public class MapControl {
 
 
             Scene small_world = new Scene();
-            small_world.setName("It’s a Small World");
+            small_world.setName("It's a Small World");
             small_world.setDescription("");
             small_world.setLocationType("R");
             small_world.setMapSymbol(">");
@@ -290,7 +324,7 @@ public class MapControl {
             scenes[SceneType.matterhorn.ordinal()] = matterhorn;
 
             Scene peter_pan = new Scene();
-            peter_pan.setName("Peter Pan’s Flight");
+            peter_pan.setName("Peter Pan's Flight");
             peter_pan.setDescription("");
             peter_pan.setLocationType("R");
             peter_pan.setMapSymbol(">");
@@ -343,7 +377,7 @@ public class MapControl {
 
 
             Scene thunderMountain = new Scene();
-            thunderMountain.setName("Big Thunder Mountain RailRoad");
+            thunderMountain.setName("Big Thunder Mtn RailRoad");
             thunderMountain.setDescription("dawn");
             thunderMountain.setLocationType("R");
             thunderMountain.setMapSymbol(">");
@@ -353,7 +387,7 @@ public class MapControl {
             scenes[SceneType.thunder_mountain.ordinal()] = thunderMountain;
             
             Scene splashMountain = new Scene();
-            splashMountain.setName("Big Thunder Mountain RailRoad");
+            splashMountain.setName("Splash Mountain");
             splashMountain.setDescription("dawn");
             splashMountain.setLocationType("R");
             splashMountain.setMapSymbol(">");
@@ -444,93 +478,5 @@ public class MapControl {
         
     }
     
-    public void displayMap() {
-        String leftIndicator;
-        String rightIndicator;
-        //tmpString used to build equal column widths
-        String tmpString = new String();
-        String tmpString2 = new String();
-        String tmpString3 = new String();
-        String divLine = new String();
-        String typeSymbol = new String();
-        int locationNo = 0;
-        String strName2 = new String();
-        String strName1 = new String();
-        String strName3 = new String();
-        String[][] displayArray = new String[3][13];
-        
-        Game game = HiddenMickeys.getCurrentGame(); // retreive the game
-        Map map = game.getMap(); // retreive the map from game
-        Location[][] locations = map.getLocations(); // retreive the locations from map
-        try {
-          System.out.print("  |");
-          for( Land land : Land.values()){
-            tmpString = " " + land + "     ";
-            divLine = divLine + "------------------";
-            tmpString = tmpString.substring(0,15);//column = 0; column < Land.values().length; column++){
-            System.out.print(tmpString + " |"); // print col numbers to side of map
-          }
-          System.out.println();
-          for( int row = 0; row < locations.length; row++){
-            for( int column = 0; column < locations[row].length; column++){
-              typeSymbol = locations[row][column].getScene().getMapSymbol();  
-              leftIndicator = typeSymbol+ typeSymbol + "   ";
-              rightIndicator = "    " + typeSymbol + typeSymbol;
-              if(locations[row][column].getLocationNo() == game.getCurrentLocationNo() ){
-                leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
-                rightIndicator = "*"; // same as above
-              }
-              else if(locations[row][column].isVisited()){
-                 leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-                 rightIndicator = "<"; // same as above
-              }
-              System.out.print("| | |"); // start map with a |
-              if(locations[row][column].getLocationNo()>= 10){
-              rightIndicator = rightIndicator.substring(rightIndicator.length()-5);}
-              if(locations[row][column].getScene() == null)
-                System.out.print(leftIndicator + "??" + rightIndicator);
-              else
-                System.out.print(leftIndicator + locations[row][column].getLocationNo() + rightIndicator);
-            }
-            System.out.println("| | |");
-            System.out.println(divLine);
-          }
-        }catch (Exception e) {
-          System.out.println("Error");
-        }
-        //Now print out the list of locations
-        
-        for(int column = 0; column < 7; column++){
-            for(int row = 0; row < 5; row++){
-               
-                locationNo = locations[row][column].getLocationNo();
-               
-                if(locationNo >26){
-                   displayArray[2][locationNo-27] = locations[row][column].getScene().getName();}
-                else if(locationNo >13){  
-                  displayArray[1][locationNo-14] = locations[row][column].getScene().getName();
-                }
-                else{
-                    displayArray[0][locationNo-1] = locations[row][column].getScene().getName();}
-                     
-            }
-            }
-      for(int y = 0; y< 13 ; y++){
-            strName1 = displayArray[0][y]; 
-            strName2 = displayArray[1][y];
-            strName3 = displayArray[2][y];
-            tmpString = Integer.toString(y+1) + "-" + strName1 + "                                          " ;
-            tmpString = tmpString.substring(0,35);
-            tmpString2 = Integer.toString(y+14) + "-" + strName2 + "                                          " ;
-            tmpString2 = tmpString2.substring(0,35);
-            if(strName3 == null){
-                tmpString3 = "";}
-            else{ 
-            tmpString3 = Integer.toString(y+27) + "-" + strName3;}
-            System.out.println(tmpString + tmpString2 + tmpString3);
-            
-                    }
-       // System.out.println(displayArray);*/
-}
-    
+   
 }
