@@ -5,6 +5,12 @@
  */
 package byui.cit260.hiddenMickeys.control;
 
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
+import byui.cit260.hiddenMickeys.model.Map;
+import hiddenmickeys.HiddenMickeys;
+import java.util.Collections;
+
 /**
 Author: Susan Allen
  */
@@ -65,5 +71,8 @@ public class LocationControl {
       }    
       return energyUsed;
       }
-       
+   
+  
+         
+
 }

@@ -38,7 +38,7 @@ public class MapControl {
         Scene[] scenes = new Scene[SceneType.values().length];
         
             Scene startingScene = new Scene();
-            startingScene.setName("");
+            startingScene.setName("Main Gate");
             startingScene.setDescription("");
             startingScene.setMapSymbol("-");
             startingScene.setLocationType("O");
@@ -202,7 +202,7 @@ public class MapControl {
             bench.setName("Park Bench");
             bench.setDescription("Ahh... rest your weary feet and wait for the parade to go by on"
                     + "the park bench.");
-            bench.setLocationType("R");
+            bench.setLocationType("T");
             bench.setMapSymbol("^");
             bench.setMickeyPresent(false);
             scenes[SceneType.bench.ordinal()] = bench;
@@ -212,7 +212,7 @@ public class MapControl {
             tiki_room.setDescription("Welcome to the Tiki, Tiki, Tiki, Tiki room.  It's a great"
                     + "escape when the weather is rough or you need a little break.  Sit back and"
                     + "relax as you enjoy the songs of the many birds.");
-            tiki_room.setLocationType("R");
+            tiki_room.setLocationType("T");
             tiki_room.setMapSymbol("^");
             tiki_room.setMickeyPresent(false);
             scenes[SceneType.tiki_room.ordinal()] = tiki_room;
@@ -221,7 +221,7 @@ public class MapControl {
             main_cinema.setName("Main Street Cinema");
             main_cinema.setDescription("Take a step back in time as you watch the cartoons that"
                     + "started it all.");
-            main_cinema.setLocationType("R");
+            main_cinema.setLocationType("T");
             main_cinema.setMapSymbol("^");
             main_cinema.setMickeyPresent(false);
             scenes[SceneType.main_cinema.ordinal()] = main_cinema;
@@ -230,7 +230,7 @@ public class MapControl {
             mark_twain.setName("Mark Twain Riverboat");
             mark_twain.setDescription("Climb aboard and cruise around America and get a look at"
                     + "what like was like over a hundred years ago.... ");
-            mark_twain.setLocationType("R");
+            mark_twain.setLocationType("T");
             mark_twain.setMapSymbol("^");
             mark_twain.setMickeyPresent(false);
             scenes[SceneType.mark_twain.ordinal()] = mark_twain;
@@ -238,7 +238,7 @@ public class MapControl {
             Scene columbia = new Scene();
             columbia.setName("Sailing Ship Columbia");
             columbia.setDescription("Sail the seas of Disneyland aboard the full-size replica sailing ship.");
-            columbia.setLocationType("R");
+            columbia.setLocationType("T");
             columbia.setMapSymbol("^");
             columbia.setMickeyPresent(false);
             scenes[SceneType.columbia.ordinal()] = columbia;            
@@ -293,7 +293,7 @@ public class MapControl {
 
 
             Scene tarzan_treehouse = new Scene();
-            tarzan_treehouse.setName("Tarzan’s Treehouse");
+            tarzan_treehouse.setName("Tarzan's Treehouse");
             tarzan_treehouse.setDescription("");
             tarzan_treehouse.setLocationType("R");
             tarzan_treehouse.setMapSymbol(">");
@@ -304,7 +304,7 @@ public class MapControl {
 
 
             Scene small_world = new Scene();
-            small_world.setName("It’s a Small World");
+            small_world.setName("It's a Small World");
             small_world.setDescription("");
             small_world.setLocationType("R");
             small_world.setMapSymbol(">");
@@ -324,7 +324,7 @@ public class MapControl {
             scenes[SceneType.matterhorn.ordinal()] = matterhorn;
 
             Scene peter_pan = new Scene();
-            peter_pan.setName("Peter Pan’s Flight");
+            peter_pan.setName("Peter Pan's Flight");
             peter_pan.setDescription("");
             peter_pan.setLocationType("R");
             peter_pan.setMapSymbol(">");
@@ -377,7 +377,7 @@ public class MapControl {
 
 
             Scene thunderMountain = new Scene();
-            thunderMountain.setName("Big Thunder Mountain RailRoad");
+            thunderMountain.setName("Big Thunder Mtn RailRoad");
             thunderMountain.setDescription("dawn");
             thunderMountain.setLocationType("R");
             thunderMountain.setMapSymbol(">");
@@ -387,7 +387,7 @@ public class MapControl {
             scenes[SceneType.thunder_mountain.ordinal()] = thunderMountain;
             
             Scene splashMountain = new Scene();
-            splashMountain.setName("Big Thunder Mountain RailRoad");
+            splashMountain.setName("Splash Mountain");
             splashMountain.setDescription("dawn");
             splashMountain.setLocationType("R");
             splashMountain.setMapSymbol(">");
@@ -478,93 +478,5 @@ public class MapControl {
         
     }
     
-    public void displayMap() {
-        String leftIndicator;
-        String rightIndicator;
-        //tmpString used to build equal column widths
-        String tmpString = new String();
-        String tmpString2 = new String();
-        String tmpString3 = new String();
-        String divLine = new String();
-        String typeSymbol = new String();
-        int locationNo = 0;
-        String strName2 = new String();
-        String strName1 = new String();
-        String strName3 = new String();
-        String[][] displayArray = new String[3][13];
-        
-        Game game = HiddenMickeys.getCurrentGame(); // retreive the game
-        Map map = game.getMap(); // retreive the map from game
-        Location[][] locations = map.getLocations(); // retreive the locations from map
-        try {
-          System.out.print("  |");
-          for( Land land : Land.values()){
-            tmpString = " " + land + "     ";
-            divLine = divLine + "------------------";
-            tmpString = tmpString.substring(0,15);//column = 0; column < Land.values().length; column++){
-            System.out.print(tmpString + " |"); // print col numbers to side of map
-          }
-          System.out.println();
-          for( int row = 0; row < locations.length; row++){
-            for( int column = 0; column < locations[row].length; column++){
-              typeSymbol = locations[row][column].getScene().getMapSymbol();  
-              leftIndicator = typeSymbol+ typeSymbol + "   ";
-              rightIndicator = "    " + typeSymbol + typeSymbol;
-              if(locations[row][column].getLocationNo() == game.getCurrentLocationNo() ){
-                leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
-                rightIndicator = "*"; // same as above
-              }
-              else if(locations[row][column].isVisited()){
-                 leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-                 rightIndicator = "<"; // same as above
-              }
-              System.out.print("| | |"); // start map with a |
-              if(locations[row][column].getLocationNo()>= 10){
-              rightIndicator = rightIndicator.substring(rightIndicator.length()-5);}
-              if(locations[row][column].getScene() == null)
-                System.out.print(leftIndicator + "??" + rightIndicator);
-              else
-                System.out.print(leftIndicator + locations[row][column].getLocationNo() + rightIndicator);
-            }
-            System.out.println("| | |");
-            System.out.println(divLine);
-          }
-        }catch (Exception e) {
-          System.out.println("Error");
-        }
-        //Now print out the list of locations
-        
-        for(int column = 0; column < 7; column++){
-            for(int row = 0; row < 5; row++){
-               
-                locationNo = locations[row][column].getLocationNo();
-               
-                if(locationNo >26){
-                   displayArray[2][locationNo-27] = locations[row][column].getScene().getName();}
-                else if(locationNo >13){  
-                  displayArray[1][locationNo-14] = locations[row][column].getScene().getName();
-                }
-                else{
-                    displayArray[0][locationNo-1] = locations[row][column].getScene().getName();}
-                     
-            }
-            }
-      for(int y = 0; y< 13 ; y++){
-            strName1 = displayArray[0][y]; 
-            strName2 = displayArray[1][y];
-            strName3 = displayArray[2][y];
-            tmpString = Integer.toString(y+1) + "-" + strName1 + "                                          " ;
-            tmpString = tmpString.substring(0,35);
-            tmpString2 = Integer.toString(y+14) + "-" + strName2 + "                                          " ;
-            tmpString2 = tmpString2.substring(0,35);
-            if(strName3 == null){
-                tmpString3 = "";}
-            else{ 
-            tmpString3 = Integer.toString(y+27) + "-" + strName3;}
-            System.out.println(tmpString + tmpString2 + tmpString3);
-            
-                    }
-       // System.out.println(displayArray);*/
-}
-    
+   
 }
