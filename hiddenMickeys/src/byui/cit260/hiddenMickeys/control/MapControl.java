@@ -295,7 +295,9 @@ public class MapControl {
 
             Scene tarzan_treehouse = new Scene();
             tarzan_treehouse.setName("Tarzan's Treehouse");
-            tarzan_treehouse.setDescription("");
+            tarzan_treehouse.setDescription("A great way to burn off some extra energy and get in a little stair climbing. "
+                    + "Check out Tarzan's Treehouse and get a view from above Frontierland.  If you listen closely you'll "
+                    + "hear a tribute to the original Swiss Family Robinson Treehouse.");
             tarzan_treehouse.setLocationType("R");
             tarzan_treehouse.setMapSymbol(">");
             tarzan_treehouse.setMickeyPresent(true);
@@ -306,7 +308,9 @@ public class MapControl {
 
             Scene small_world = new Scene();
             small_world.setName("It's a Small World");
-            small_world.setDescription("");
+            small_world.setDescription("Climb aboard the boat and take a tour around the world.  Enjoy the dancing characters"
+                    + " in various costumes representative of different places and cultures.  Beware though...the song may"
+                    + " get stuck in your head.  It's a Small World after all... It's a Small World after all...");
             small_world.setLocationType("R");
             small_world.setMapSymbol(">");
             small_world.setMickeyPresent(true);
@@ -316,7 +320,8 @@ public class MapControl {
 
             Scene matterhorn = new Scene();
             matterhorn.setName("The Matterhorn");
-            matterhorn.setDescription("");
+            matterhorn.setDescription("Climb aboard your bobsled and head to the top of the mountain.  Keep your eyes out "
+                    + "for the Abominable Snowman as the roller coaster twists and turns it's way down the mountain.");
             matterhorn.setLocationType("R");
             matterhorn.setMapSymbol(">");
             matterhorn.setMickeyPresent(true);
@@ -326,7 +331,10 @@ public class MapControl {
 
             Scene peter_pan = new Scene();
             peter_pan.setName("Peter Pan's Flight");
-            peter_pan.setDescription("");
+            peter_pan.setDescription("Join Peter Pan as you fly over the rooftops of London.  Check out"
+                    + " St. Paul's Cathedral, Big Ben and the River Thames as you head toward the second"
+                    + " star to the right and straight on til morning into Neverland where you'll see the Lost Boys,"
+                    + " Skull Rock and even Captain Hook himself.");
             peter_pan.setLocationType("R");
             peter_pan.setMapSymbol(">");
             peter_pan.setMickeyPresent(true);
@@ -336,7 +344,9 @@ public class MapControl {
 
             Scene alice_wonderland = new Scene();
             alice_wonderland.setName("Alice in Wonderland");
-            alice_wonderland.setDescription("");
+            alice_wonderland.setDescription("Where did that Rabbit Go?  Hop down the Rabbit Hole and head"
+                    + "into Wonderland. You'll visit White Rabbit's House the Queen's Garden and see the "
+                    + "Cheshire Cat, Tweedledee and Tweedledum...beware of the Queen of Hearts!! ");
             alice_wonderland.setLocationType("R");
             alice_wonderland.setMapSymbol(">");
             alice_wonderland.setMickeyPresent(true);
@@ -346,7 +356,9 @@ public class MapControl {
 
             Scene space_mountain = new Scene();
             space_mountain.setName("Space Mountain");
-            space_mountain.setDescription("");
+            space_mountain.setDescription("Oh no, it's dogfight between Rebel X-wing starfighters and"
+                    + " Imperial TIE fighters.  Steer clear of the trap that awaits you and attempt to"
+                    + "complete your mission.  Twist and turn on the rollercoaster to avoid getting hit.");
             space_mountain.setLocationType("R");
             space_mountain.setMapSymbol(">");
             space_mountain.setMickeyPresent(true);
@@ -357,7 +369,9 @@ public class MapControl {
                         
             Scene starTours = new Scene();	
             starTours.setName("Star Tours");
-            starTours.setDescription("dawn");
+            starTours.setDescription("Climb aboard the Starspeeder 1000 and enjoy an intergalactic adventure."
+                    + " Beware of mishaps.  Hopefully your droid, C-3PO can help you avoide being intercepted"
+                    + " by Imperial forces!");
             starTours.setLocationType("R");
             starTours.setMapSymbol(">");
             starTours.setMickeyPresent(true);
@@ -368,7 +382,8 @@ public class MapControl {
             
             Scene astroBlasters = new Scene();
             astroBlasters.setName("Buzz Lightyear Astro Blasters");
-            astroBlasters.setDescription("dawn");
+            astroBlasters.setDescription("To Infinity and Beyond!  Grab your guns and compete with your neighbor to"
+                    + "see who can fire lasers to stop the Zung and score more points.");
             astroBlasters.setLocationType("R");
             astroBlasters.setMapSymbol(">");
             astroBlasters.setMickeyPresent(true);
@@ -379,7 +394,8 @@ public class MapControl {
 
             Scene thunderMountain = new Scene();
             thunderMountain.setName("Big Thunder Mtn RailRoad");
-            thunderMountain.setDescription("dawn");
+            thunderMountain.setDescription("Take a Ride on the Railroad on this rollercoaster that winds"
+                    + "through the old west.  Hold on to your hat or it will fly off on this fast ride!");
             thunderMountain.setLocationType("R");
             thunderMountain.setMapSymbol(">");
             thunderMountain.setMickeyPresent(true);
@@ -389,7 +405,9 @@ public class MapControl {
             
             Scene splashMountain = new Scene();
             splashMountain.setName("Splash Mountain");
-            splashMountain.setDescription("dawn");
+            splashMountain.setDescription("Glide through the bayou on your hollowed out log, enjoying the "
+                    + "scenery when Br'er Bear and Br'er Fox start pursuing a rabbit!! You'll end up "
+                    + "splashing down the mountain.  Refreshing on a hot day!");
             splashMountain.setLocationType("R");
             splashMountain.setMapSymbol(">");
             splashMountain.setMickeyPresent(true);
@@ -400,7 +418,9 @@ public class MapControl {
             
             Scene sawyerIsland = new Scene();
             sawyerIsland.setName("Tom Sawyer Island");
-            sawyerIsland.setDescription("");
+            sawyerIsland.setDescription("Climb aboard the log raft and head over to the island where you'll"
+                    + " wander dusty dirt roads and creaky suspension bridges and find an old fort.  Keep your "
+                    + "eyes out for Smuggler's Cove, Dead Man's Grotto and Castle Rock.");
             sawyerIsland.setLocationType("R");
             sawyerIsland.setMapSymbol(">");
             sawyerIsland.setMickeyPresent(true);
