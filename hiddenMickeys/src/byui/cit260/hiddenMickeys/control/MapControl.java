@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.control;
 
+import byui.cit260.hiddenMickeys.exceptions.MapControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Land;
 import byui.cit260.hiddenMickeys.model.Location;
@@ -466,19 +467,20 @@ public class MapControl {
          return tmpLocations;
     }
 
-    public static int calcRowsPerColumn(int noLocations, int numColumns) {
+    public static int calcRowsPerColumn(int noLocations, int numColumns)
+            throws MapControlException {
        //Calculate the number of locations per row
         int numRows;
         
         //test for boundary - must 6 or fewer columns
         if( numColumns > 6 ){
-            return -999; //number is too high
+            throw new MapControlException("Number of columns entered is too high."); //number is too high
         }
         else if(numColumns<=1) {//there must be at least one column
-            return 1; //number must be at least one
+            throw new MapControlException("There must be at least one column."); //number must be at least one
         }
         if(noLocations < 1){
-            return -1;
+            throw new MapControlException("There must be at least one location.");
             //invalid number of locations - there must be at least one
         }
         //if the answer has a remainder, add one to the num of rows
@@ -493,18 +495,19 @@ public class MapControl {
     }
     
     
-    public int calcMoveTime(int curRow, int curCol, int newRow, int newCol) {
+    public int calcMoveTime(int curRow, int curCol, int newRow, int newCol)
+        throws MapControlException {
         if (curRow < 0 || curCol < 0 || newRow < 0 || newCol < 0) {
             //check for negative inputs
-            return -1;
+            throw new MapControlException("Rows and columns must be positive.");
         }
-        if (curRow > 6 || curCol > 10 || newRow > 6 || newCol > 10) {
+        if (curRow > 5 || curCol > 7 || newRow > 5 || newCol > 7) {
             //check for out of range values
-            return 999;
+            throw new MapControlException("Number cannot be out of map range.");
         }
         if (curRow < 1 || curCol < 1 || newRow < 1 || newCol < 1) {
             //check for 0 values
-            return 999;
+            throw new MapControlException("Number cannot be zero.");
             
         }
         int rowChange = Math.abs(curRow - newRow);

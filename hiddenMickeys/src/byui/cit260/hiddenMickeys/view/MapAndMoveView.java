@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.exceptions.MapControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
@@ -31,7 +32,7 @@ public class MapAndMoveView extends View{
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         switch (choice) {
-            case "1": //move to location 1
+        /*    case "1": //move to location 1
                 this.locationOne();
                 break;
             case "2": //move to location 2
@@ -54,15 +55,25 @@ public class MapAndMoveView extends View{
                 break;
             case "8": //move to locatoin 8
                 this.locationEight();
-                break;
+                break;  */
             case "W"://show wait times on rides
                 this.displaySortedWaitTimes();
                 break;
             case "Q":
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                int number = 0;
+                try {
+                number = Integer.parseInt(choice);
+                } catch (NumberFormatException nf) {
+                System.out.println("\n***You must enter a valid number or option.");
+                }
+                if (number < 36 && number > 0) {
+                this.goToLocation(number);
                 break;
+                } else {
+                    System.out.println("Number entered is not a valid location.");                 
+                }
         }
         return false;
     }
@@ -103,9 +114,9 @@ public class MapAndMoveView extends View{
      public void displaySortedWaitTimes(){
        // Get the game and locations    
         Game game = HiddenMickeys.getCurrentGame();
-         Map map = game.getMap(); // retreive the map from game
-         Location[][] locations = map.getLocations(); // retreive the locations from map 
-         
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map 
+        
         //get number of locations 
         int noLocations = map.getColumnCount()* map.getRowCount(); 
          
@@ -141,6 +152,10 @@ public class MapAndMoveView extends View{
           
         
 }  
+
+    private void goToLocation(int number) {
+        System.out.println("goToLocation function called");
+    }
          
      
     
