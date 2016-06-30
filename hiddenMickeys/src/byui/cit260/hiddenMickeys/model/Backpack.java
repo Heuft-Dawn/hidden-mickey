@@ -18,6 +18,9 @@ public class Backpack implements Serializable{
     private int numberFastPasses;
     private double moneyBalance;
     private String description;
+    private Mickey[] mickeysCollected;
+
+    
     
 
     public Backpack() {
@@ -63,6 +66,21 @@ public class Backpack implements Serializable{
 
     public void setMoneyBalance(double moneyBalance) {
         this.moneyBalance = moneyBalance;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Mickey[] getMickeysCollected() {
+        return mickeysCollected;
+    }
+
+    public void setMickeysCollected(Mickey[] mickeysCollected) {
+        this.mickeysCollected = mickeysCollected;
     }
 
     @Override

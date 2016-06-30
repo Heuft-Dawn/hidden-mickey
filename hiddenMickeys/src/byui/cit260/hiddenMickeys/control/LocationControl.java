@@ -86,5 +86,32 @@ public class LocationControl {
     }
         return countLocations;
     }
+       public int[] getLocationCoordinates(int locationNum) {
+        // Get the game and locations    
+       Game game = HiddenMickeys.getCurrentGame();
+       Map map = game.getMap(); // retreive the map from game
+       Location[][] locations = map.getLocations(); // retreive the locations from map
+       int myRow = 0;
+       int myColumn = 0;
+       
+          //search array for entered location
+        for (int row = 0; row < locations.length; row++){
+        for( int column = 0; column < locations[row].length; column++) {
+            if (locations[row][column].getLocationNo()==(locationNum)) {
+            myRow = row + 1;
+            myColumn = column + 1;
+            }
+        }
+        }
+        // create temporary two dimensional array
+        int[] coordArray = new int[2];
+        coordArray[0] = myRow;
+        coordArray[1] = myColumn;
+        return coordArray;
+     
+    }
 }
+
+
+
 

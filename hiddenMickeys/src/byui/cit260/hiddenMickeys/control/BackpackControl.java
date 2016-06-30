@@ -7,6 +7,8 @@ package byui.cit260.hiddenMickeys.control;
 
 import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
+import byui.cit260.hiddenMickeys.model.Map;
 import hiddenmickeys.HiddenMickeys;
 
 /**
@@ -24,5 +26,11 @@ public class BackpackControl {
         curBalance = curBalance - price;
         return curBalance;	
 
+    }
+     public int getMickeysCollected() {
+        Game game = HiddenMickeys.getCurrentGame(); // retrieve the game
+        // retrieve the Mickeys collected
+        int countMickeys = game.getBackpack().getMickeysCollected().length;
+        return countMickeys;
     }
 }

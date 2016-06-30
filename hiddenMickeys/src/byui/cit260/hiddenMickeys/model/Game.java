@@ -27,8 +27,7 @@ public class Game implements Serializable{
    
    
     
-    public Game() {
-    }
+    
 
    //Getter and Setter functions 
     public int getCurrentRow() {

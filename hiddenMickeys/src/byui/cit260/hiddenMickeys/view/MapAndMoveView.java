@@ -5,6 +5,8 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.LocationControl;
+import byui.cit260.hiddenMickeys.control.MapControl;
 import byui.cit260.hiddenMickeys.exceptions.MapControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
@@ -22,40 +24,10 @@ public class MapAndMoveView extends View{
               +"\nQ = exit map, W= view ride wait times.");
     }
     
-    /*
-    Ladies, I don't know how many locations we will have, or what their names 
-    will be so for right now, I am just doing it like this. I know this will cause
-    a little more work later, but this is what we have to roll with right now.
-    */
-    
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         switch (choice) {
-        /*    case "1": //move to location 1
-                this.locationOne();
-                break;
-            case "2": //move to location 2
-                this.locationTwo();
-                break;   
-            case "3": //move to location 3
-                this.locationThree();
-                break;
-            case "4": //move to location 4
-                this.locationFour();
-                break;
-            case "5": //move to location 5
-                this.locationFive();
-                break;
-            case "6": //move to location 6
-                this.locationSix();
-                break;
-            case "7": //move to location 7
-                this.locationSeven();
-                break;
-            case "8": //move to locatoin 8
-                this.locationEight();
-                break;  */
             case "W"://show wait times on rides
                 this.displaySortedWaitTimes();
                 break;
@@ -76,38 +48,6 @@ public class MapAndMoveView extends View{
                 }
         }
         return false;
-    }
-
-    private void locationOne() {
-        System.out.println("locationOne() function called");
-    }
-
-    private void locationTwo() {
-        System.out.println("locationTwo() function called");
-    }
-
-    private void locationThree() {
-        System.out.println("locationThree() function called");    
-    }
-
-    private void locationFour() {
-        System.out.println("locationFour() function called");
-    }
-
-    private void locationFive() {
-        System.out.println("locationFive() function called");
-    }
-
-    private void locationSix() {
-        System.out.println("locationSix() function called");
-    }
-
-    private void locationSeven() {
-        System.out.println("locationSeven() function called");
-    }
-
-    private void locationEight() {
-        System.out.println("locationEight() function called");
     }
 
  
@@ -154,7 +94,31 @@ public class MapAndMoveView extends View{
 }  
 
     private void goToLocation(int number) {
-        System.out.println("goToLocation function called");
+        
+         int[] coordArray = new int[2];//initialize array to store coordinates
+         
+         //get coordinates for new location
+         LocationControl lc = new LocationControl();//create location control object
+         coordArray = lc.getLocationCoordinates(number);//pass location num to function
+         int newRow = coordArray[0];
+         int newCol = coordArray[1];
+         
+         //get coordinates for current location
+         Game game = HiddenMickeys.getCurrentGame();
+         int curRow = game.getCurrentRow();//retrieve the current row location
+         int curCol = game.getCurrentColumn();//retrieve the current column location
+        
+        MapControl mpcontrol = new MapControl();//create map control object
+        try{
+        int moveTime = mpcontrol.calcMoveTime(curRow, curCol, newRow, newCol);
+         System.out.println("It will take " + Integer.toString(moveTime) + " minutes to "
+         + "get to the new location");
+        } catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }
+       
+        
+       
     }
          
      

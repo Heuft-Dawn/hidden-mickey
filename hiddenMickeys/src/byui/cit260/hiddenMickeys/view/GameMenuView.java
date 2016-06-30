@@ -8,6 +8,7 @@ package byui.cit260.hiddenMickeys.view;
 import byui.cit260.hiddenMickeys.control.MapControl;
 import byui.cit260.hiddenMickeys.control.BackpackControl;
 import byui.cit260.hiddenMickeys.control.LocationControl;
+import byui.cit260.hiddenMickeys.exceptions.MapControlException;
 import byui.cit260.hiddenMickeys.model.*;
 import hiddenmickeys.HiddenMickeys;
 /**
@@ -220,9 +221,13 @@ public GameMenuView(){
         
         //create a 1 dimensional array with all the location
         String[] tmpLocations = MapControl.getLocationList(map.getLocations(), noLocations);
-        
+        int numRows = 0;
         //run function that calculatesthe number of rows there needs to be per display column
-        int numRows = MapControl.calcRowsPerColumn(noLocations, numColumns);
+        try {
+         numRows = MapControl.calcRowsPerColumn(noLocations, numColumns);
+         } catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }
         
         //Create an array with the correct number of rows and columns
         String[][] displayArray = new String[numColumns][numRows];
