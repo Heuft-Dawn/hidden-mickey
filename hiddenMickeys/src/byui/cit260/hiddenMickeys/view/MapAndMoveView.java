@@ -109,7 +109,8 @@ public class MapAndMoveView extends View{
          int curCol = game.getCurrentColumn();//retrieve the current column location
         
          //get the location name to display
-         String locationName = lc.lookupLocationName(number);
+         Location locationInfo = lc.getLocationByNumber(number);
+         String locationName = locationInfo.getScene().getName();
          
         MapControl mpcontrol = new MapControl();//create map control object
         try{
