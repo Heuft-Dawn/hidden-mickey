@@ -30,22 +30,34 @@ public class ExploreShopLocationView extends View {
 
      @Override
      public boolean doAction(String choice) {
-        choice = choice.toUpperCase();
+     choice = choice.toUpperCase();
         switch (choice) {
-            case "Y": //Yes, buy a souvenir
-                this.buySouvenir();
+            case "Q": //Yes, buy a souvenir
+                
                 break;
-            case "N": //No, do not buy a souvenir
-                this.notBuySouvenir();
-                break;
-            case "Q": //go back to menu
-                break;
+            
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+            int choiceNum = 0;    
+            try {
+                choiceNum = Integer.parseInt(choice);
+                switch (choiceNum){
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        System.out.println("\n***You must enter a valid number or option.");
+                        break;
+                }
+            } catch (NumberFormatException nf) {
+                
+            }
                 break;
         }
         return false;
-    }
+        }
 
    
     private void buySouvenir() {
