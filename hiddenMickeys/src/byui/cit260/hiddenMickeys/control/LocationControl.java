@@ -127,6 +127,25 @@ public class LocationControl {
        }
         return locationName;
     }
+    
+    public Location getLocationByNumber(int locationNum){
+    Game game = HiddenMickeys.getCurrentGame();
+    Map map = game.getMap();
+    Location[][] locations = map.getLocations();
+    Location myLocation = new Location();
+    
+       for (Location[] location : locations) {
+        for (Location location1 : location) {
+            if (location1.getLocationNo() == locationNum) {
+                myLocation = location1;
+                break;
+            }
+        }
+       }
+        return myLocation;
+        
+    }
+    
 }
 
 
