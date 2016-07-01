@@ -17,12 +17,12 @@ public class ExploreFoodLocationView extends View {
             +"\n------------------------------"
             +"\nFood Menu"
             +"\n------------------------------"
-            +"\nB - Buy Food"
-            +"\nY - Continue "
+            +"\n1 - Purchase Item 1"
+            +"\n2 - Purchase Item 2"
+            +"\n3 - Purchase Item 3"
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
-            +"\n\n\nThis location sells popcorn, "
-            +"what would you like to do?");
+            +"\n Please enter your choice.");
 }
 
     @Override
@@ -32,9 +32,6 @@ public class ExploreFoodLocationView extends View {
             case "B": //Buy food
                 this.buyFood();
                 break;
-            case "Y": //Continue and explore
-                this.exploreFood();
-                break;   
             case "N": //go back to menu
                 break;
             case "Q": //go back to menu

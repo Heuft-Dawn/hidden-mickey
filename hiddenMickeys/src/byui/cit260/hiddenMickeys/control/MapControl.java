@@ -37,6 +37,7 @@ public class MapControl {
 
     private static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
+        String[] items = {"", "", ""};
         
             Scene startingScene = new Scene();
             startingScene.setName("Main Gate");
@@ -76,7 +77,10 @@ public class MapControl {
                     + "the place to buy your Pirate Gear.");
             pieces_eight.setMapSymbol("$");
             pieces_eight.setLocationType("S");
-            pieces_eight.setItemName("Pirate Sword");
+            items [0] = "Pirate Sword";
+            items [1] = "Eye Patch";
+            items [2] = "Parrot";
+            pieces_eight.setItemName(items);
             pieces_eight.setItemPrice(3.50);
             pieces_eight.setDescription("");
             pieces_eight.setMickeyPresent(false);
@@ -91,7 +95,10 @@ public class MapControl {
                     + "a Disney shirt or two...");
             emporium.setMapSymbol("$");
             emporium.setLocationType("S");
-            emporium.setItemName("Mickey T-shirt");
+            items [0] = "Mickey T-Shirt";
+            items [1] = "Trading Pin";
+            items [2] = "Keychain Set";
+            emporium.setItemName(items);
             emporium.setItemPrice(12);
             emporium.setDescription("");
             emporium.setMickeyPresent(false);
@@ -105,11 +112,14 @@ public class MapControl {
                     + "this fabulous store to find fun magic tricks to add to your act.");
             magic_shop.setMapSymbol("$");
             magic_shop.setLocationType("S");
-            magic_shop.setItemName("Magic Tricks and Toys");
+            items [0] = "Card Trick";
+            items [1] = "Wizard Hat";
+            items [2] = "Magic Wand";
+            magic_shop.setItemName(items);
             magic_shop.setItemPrice(15);
             magic_shop.setDescription("");
             magic_shop.setMickeyPresent(false);
-            magic_shop.setMickeyLocation("");
+            magic_shop.setMickeyLocation("Look up on the wall...");
             scenes[SceneType.magic_shop.ordinal()] = magic_shop;
 
 
@@ -121,7 +131,10 @@ public class MapControl {
                     + "powdered sugar!  You may want to wash down that beignet with a delicious Mint Julep.");
             beignet.setMapSymbol("+");
             beignet.setLocationType("F");
-            beignet.setItemName("Beignets");
+            items [0] = "Mickey Beignet";
+            items [1] = "Mint Julep";
+            items [2] = "Both";
+            beignet.setItemName(items);
             beignet.setItemPrice(5);
             beignet.setMickeyPresent(false);
             scenes[SceneType.beignet.ordinal()] = beignet;
@@ -133,7 +146,10 @@ public class MapControl {
                     + "your eye out for Pinnochio!");
             village_haus.setMapSymbol("+");
             village_haus.setLocationType("F");
-            village_haus.setItemName("Flatbread pizzas and salad");
+            items [0] = "Pastrami Burger";
+            items [1] = "Salad";
+            items [2] = "Flatbread Pizza";
+            village_haus.setItemName(items);
             village_haus.setItemPrice(10);
             village_haus.setMickeyPresent(false);
             scenes[SceneType.village_haus.ordinal()] = village_haus;
@@ -146,7 +162,10 @@ public class MapControl {
                     + "or try our famous Fried Green Tomato sandwich.  Yummmm");
             hungry_bear.setMapSymbol("+");
             hungry_bear.setLocationType("F");
-            hungry_bear.setItemName("Burgers");
+            items [0] = "Burger";
+            items [1] = "Fried Green Tomato Sandwich";
+            items [2] = "Drink";
+            hungry_bear.setItemName(items);
             hungry_bear.setItemPrice(10);
             hungry_bear.setMickeyPresent(false);
             scenes[SceneType.hungry_bear.ordinal()] = hungry_bear;
@@ -157,7 +176,10 @@ public class MapControl {
                     + "You can enjoy yours in a cup or a float.  Perfect for a Hot Day!");
             dole_whip.setMapSymbol("+");
             dole_whip.setLocationType("F");
-            dole_whip.setItemName("Dole Whip");
+            items [0] = "Dole Whip";
+            items [1] = "Dole Whip Float";
+            items [2] = "Pineapple Spears";
+            dole_whip.setItemName(items);
             dole_whip.setItemPrice(5);
             dole_whip.setMickeyPresent(false);
             scenes[SceneType.dole_whip.ordinal()] = dole_whip;
@@ -169,7 +191,10 @@ public class MapControl {
                     + "experience the cafe is serving Ice Cream today.");
             carnation.setMapSymbol("+");
             carnation.setLocationType("F");
-            carnation.setItemName("Ice Cream");
+            items [0] = "Chocolate Sundae";
+            items [1] = "Mint Chocolate Chip Shake";
+            items [2] = "Strawberry Waffle Cone";
+            carnation.setItemName(items);
             carnation.setItemPrice(5);
             carnation.setMickeyPresent(false);
             scenes[SceneType.carnation.ordinal()] = carnation;
@@ -181,7 +206,10 @@ public class MapControl {
                     + "treats like Chewbacca Cheesecake.");
             pizza_port.setMapSymbol("+");
             pizza_port.setLocationType("F");
-            pizza_port.setItemName("Pizza");
+            items [0] = "Pizza";
+            items [1] = "Chewbacca Cheesecake";
+            items [2] = "Drink";
+            pizza_port.setItemName(items);
             pizza_port.setItemPrice(10);
             pizza_port.setMickeyPresent(false);
             scenes[SceneType.pizza_port.ordinal()] = pizza_port;
@@ -194,7 +222,10 @@ public class MapControl {
                     + "land is being built on this location.");
             thunder_food.setMapSymbol("+");
             thunder_food.setLocationType("F");
-            thunder_food.setItemName("Barbeque");
+            items [0] = "BBQ Chicken";
+            items [1] = "BBQ Ribs";
+            items [2] = "Drink";
+            thunder_food.setItemName(items);
             thunder_food.setItemPrice(15);
             thunder_food.setMickeyPresent(false);
             scenes[SceneType.thunder_food.ordinal()] = thunder_food;
@@ -370,7 +401,7 @@ public class MapControl {
             Scene starTours = new Scene();	
             starTours.setName("Star Tours");
             starTours.setDescription("Climb aboard the Starspeeder 1000 and enjoy an intergalactic adventure."
-                    + " Beware of mishaps.  Hopefully your droid, C-3PO can help you avoide being intercepted"
+                    + " Beware of mishaps.  Hopefully your droid, C-3PO can help you avoid being intercepted"
                     + " by Imperial forces!");
             starTours.setLocationType("R");
             starTours.setMapSymbol(">");

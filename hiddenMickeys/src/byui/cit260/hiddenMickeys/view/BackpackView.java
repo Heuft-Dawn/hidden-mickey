@@ -18,11 +18,12 @@ public class BackpackView extends View{
             +"\n----------------------------------------------"
             +"\nView Backpack Menu"
             +"\n----------------------------------------------"
-            +"\nP - Check number of fast passes"
-            +"\nM - Check Money Balance"
-            +"\nW - Use Emergency Water"
-            +"\nS - Use Emergency Snack"
-            +"\nQ - Return to menu"   
+            +"\n1 - Check number of fast passes"
+            +"\n2 - Check Money Balance"
+            +"\n3 - Use Emergency Water"
+            +"\n4 - Use Emergency Snack"
+            +"\n5 - Display List of Mickeys Found" 
+            +"\n6 - Return to menu"   
             +"\n----------------------------------------------"
             +"\n\n\nYou have several items in your backpack,"
             + " which one would you like to check?");
@@ -32,19 +33,22 @@ public class BackpackView extends View{
    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         switch (choice) {
-            case "P": //View Fast Passes
+            case "1": //View Fast Passes
                 this.viewFastPass();
                 break;
-            case "M": //Check Money balance
+            case "2": //Check Money balance
                 this.viewMoneyBalance();
                 break;   
-            case "W": //Use emergency water
+            case "3": //Use emergency water
                 this.useEmergencyWater();
                 break;
-            case "S": //Use emergency snack
+            case "4": //Use emergency snack
                 this.useEmergencySnack();
                 break;    
-            case "Q": //go back to menu
+            case "5": //Display Hidden Mickey's Found
+                this.displayMickeys();
+                break;  
+            case "6": //go back to menu
                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
@@ -74,6 +78,11 @@ public class BackpackView extends View{
     private void useEmergencySnack() {
         System.out.println("\nYummy, You have eaten your emergency snack and "
                 + " it was delicious.");
+    }
+
+    private void displayMickeys() {
+        
+        System.out.println("\nNot supported yet."); 
     }
     
 }

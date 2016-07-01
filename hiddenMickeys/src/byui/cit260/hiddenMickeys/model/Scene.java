@@ -15,16 +15,14 @@ import java.util.Objects;
  */
 public class Scene implements Serializable{
    
-/*needed:
-setName("");
-setDescription("");
-setLocationType();
-setMapSymbol("X");
-setMickeyPresent(false);
-setMickeyLocation("");
-setWaitTime(XX);
-setItemName("");
-setItemPrice("");   */ 
+    private String description;
+    private String locationType;
+    private String mapSymbol;
+    private boolean mickeyPresent;
+    private String mickeyLocation;
+    private int waitTime;
+    private String[] itemName;
+    private double itemPrice;
     
     //class instance variables
     private String name;
@@ -85,11 +83,11 @@ setItemPrice("");   */
         this.waitTime = waitTime;
     }
 
-    public String getItemName() {
+    public String[] getItemName() {
         return itemName;
     }
 
-    public void setItemName(String itemName) {
+    public void setItemName(String[] itemName) {
         this.itemName = itemName;
     }
 
@@ -100,14 +98,7 @@ setItemPrice("");   */
     public void setItemPrice(double itemPrice) {
         this.itemPrice = itemPrice;
     }
-    private String description;
-    private String locationType;
-    private String mapSymbol;
-    private boolean mickeyPresent;
-    private String mickeyLocation;
-    private int waitTime;
-    private String itemName;
-    private double itemPrice;
+    
 
     public Scene() {
     }

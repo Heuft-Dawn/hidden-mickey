@@ -21,11 +21,12 @@ public class ExploreShopLocationView extends View {
             +"\n------------------------------"
             +"\nShop Menu"
             +"\n------------------------------"
-            +"\nY - Yes, buy a souvenir"
-            +"\nN - No, do not buy a souvenir"
+            +"\n1 - Purchase Item 1"
+            +"\n2 - Purchase Item 2"
+            +"\n3 - Purchase Item 3"
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
-            +"\n\n\nThis location sells souvenirs for $10.  Would you like to purchase something?");
+            +"\n\n\nPlease enter your choice.");
     }
 
      @Override
@@ -34,9 +35,6 @@ public class ExploreShopLocationView extends View {
         switch (choice) {
             case "Y": //Yes, buy a souvenir
                 this.buySouvenir();
-                break;
-            case "N": //No, do not buy a souvenir
-                this.notBuySouvenir();
                 break;
             case "Q": //go back to menu
                 break;

@@ -120,6 +120,9 @@ public class MapAndMoveView extends View{
         } catch (MapControlException me) {
             System.out.println(me.getMessage());
         }
+       //load proceed view
+       ProceedView proceed = new ProceedView(number);
+       proceed.display();
        
         
        
