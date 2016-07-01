@@ -9,6 +9,7 @@ import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
+import byui.cit260.hiddenMickeys.model.Mickey;
 import hiddenmickeys.HiddenMickeys;
 
 /**
@@ -33,4 +34,22 @@ public class BackpackControl {
         int countMickeys = game.getBackpack().getMickeysCollected().length;
         return countMickeys;
     }
-}
+    
+     public String[] getMickeysCollectedList() {
+         Game game = HiddenMickeys.getCurrentGame();
+         Mickey[] mickeysCollected = game.getBackpack().getMickeysCollected();
+         String[] tmpArray = new String[mickeysCollected.length];
+         LocationControl lc = new LocationControl();
+         String locationName = new String();
+         int i=0;
+         for(Mickey mickey : mickeysCollected) {
+             locationName = lc.lookupLocationName(mickey.getLocationNum());
+             tmpArray[i] = locationName;
+             i++;
+         }
+         return tmpArray;
+         }
+         
+     } 
+     
+

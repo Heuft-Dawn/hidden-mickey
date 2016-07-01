@@ -108,11 +108,14 @@ public class MapAndMoveView extends View{
          int curRow = game.getCurrentRow();//retrieve the current row location
          int curCol = game.getCurrentColumn();//retrieve the current column location
         
+         //get the location name to display
+         String locationName = lc.lookupLocationName(number);
+         
         MapControl mpcontrol = new MapControl();//create map control object
         try{
         int moveTime = mpcontrol.calcMoveTime(curRow, curCol, newRow, newCol);
          System.out.println("It will take " + Integer.toString(moveTime) + " minutes to "
-         + "get to the new location");
+         + "get to " + locationName);
         } catch (MapControlException me) {
             System.out.println(me.getMessage());
         }

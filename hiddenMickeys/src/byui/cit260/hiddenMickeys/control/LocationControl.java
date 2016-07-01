@@ -110,6 +110,23 @@ public class LocationControl {
         return coordArray;
      
     }
+
+    public String lookupLocationName(int locationNum) {
+    Game game = HiddenMickeys.getCurrentGame();
+    Map map = game.getMap();
+    Location[][] locations = map.getLocations();
+    String locationName = new String();
+    
+       for (Location[] location : locations) {
+        for (Location location1 : location) {
+            if (location1.getLocationNo() == locationNum) {
+                locationName = location1.getScene().getName();
+                break;
+            }
+        }
+       }
+        return locationName;
+    }
 }
 
 

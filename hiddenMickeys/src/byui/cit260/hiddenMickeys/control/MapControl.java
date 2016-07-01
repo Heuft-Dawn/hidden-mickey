@@ -532,7 +532,7 @@ public class MapControl {
         }
         int rowChange = Math.abs(curRow - newRow);
         int colChange = Math.abs(curCol - newCol);
-        int time = (rowChange * 3) +colChange;
+        int time = (colChange * 3) +rowChange;
         return time;
         
     }
