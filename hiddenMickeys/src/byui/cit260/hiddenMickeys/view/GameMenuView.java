@@ -77,11 +77,21 @@ public GameMenuView(){
     }
 
     private void mapAndMove() {
+        //display the map/grid
         displayMap();
         
+        //display the locations
         displayLocations(4,30);
+        
+        //print the map key 
+        String mapKey = "-----------------------------------------------------------------------------------------------"
+                        +"\n|     Key: >>-Ride  ^^-Rest  $$-Shop  **-FastPass  ++-Food  ==-Visited  ##-CurrentLocation    |"
+                        + "\n-----------------------------------------------------------------------------------------------";
+        System.out.println(mapKey);
+                            
         LocationControl locationControl = new LocationControl();
-        System.out.println("\nYou have visited " + Integer.toString(locationControl.getLocationsVisited()) + " locations.");
+        
+        System.out.println("You have visited " + Integer.toString(locationControl.getLocationsVisited()) + " location(s).");
         //pull up the map and move menu
         MapAndMoveView moveMenu = new MapAndMoveView();
         moveMenu.display();
