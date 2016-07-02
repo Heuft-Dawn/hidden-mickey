@@ -15,8 +15,7 @@ public class HelpMenuView extends View{
 private String promptMessage;
     
 public HelpMenuView() {//Constructor Function
-   super("\n"
-        + "\n---------------------------------------------------"
+   super("---------------------------------------------------"
         +"\n|  Help Menu                                      |"
         +"\n---------------------------------------------------"
         +"\nG - What is the goal/objective of the game?"

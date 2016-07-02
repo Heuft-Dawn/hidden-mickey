@@ -13,8 +13,7 @@ package byui.cit260.hiddenMickeys.view;
 public class ExploreFoodLocationView extends View {    
     
     public ExploreFoodLocationView(){
-        super("\n"
-            +"\n------------------------------"
+        super("------------------------------"
             +"\nFood Menu"
             +"\n------------------------------"
             +"\n1 - Purchase Item 1"

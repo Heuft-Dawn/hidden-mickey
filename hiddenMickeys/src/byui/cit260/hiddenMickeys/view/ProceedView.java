@@ -19,15 +19,13 @@ import hiddenmickeys.HiddenMickeys;
  */
 public class ProceedView extends View {
     private int locationNum;
+    
     public ProceedView(int locationNum){
-        super("\n Continue? (Y/N)\n");
+        super("Continue? (Y/N)\n");
         this.locationNum = locationNum;
     }
 
-    ProceedView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+       
     @Override
        public boolean doAction(String choice){
        choice = choice.toUpperCase();
@@ -85,15 +83,15 @@ public class ProceedView extends View {
             System.out.println(me.getMessage());
          }
        // explore the location based on the location type 
-       this.exploreLocationType(this.locationNum);
+       this.exploreLocationType();
     
     }
     
     
-    public void exploreLocationType(int locationNum) {
+    public void exploreLocationType() {
     LocationControl lc = new LocationControl();    
         // determine whether location is food, ride or shop
-    Location myloc = lc.getLocationByNumber(locationNum);
+    Location myloc = lc.getLocationByNumber(this.locationNum);
     String locationType = myloc.getScene().getLocationType();
     
     switch (locationType) {

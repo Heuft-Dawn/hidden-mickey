@@ -34,9 +34,12 @@ public class GameControl {
         HiddenMickeys.setCurrentGame(game);//save in HiddenMickeys
         
         game.setPlayer(player);//save player in game
+        
+        //set player at main gate
         game.setCurrentRow(1);
         game.setCurrentColumn(4);
         game.setCurrentLocationNo(16);
+                
         //Create Character and save in game
 
         //create Backpack and save in game

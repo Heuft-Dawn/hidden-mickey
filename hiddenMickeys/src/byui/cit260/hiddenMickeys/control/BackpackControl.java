@@ -54,7 +54,7 @@ public class BackpackControl {
 
     public void updateMoney(double price) {
         Game game = HiddenMickeys.getCurrentGame(); // retreive the game
-        double newBalance = this.calcNewBalance(10);
+        double newBalance = this.calcNewBalance(price);
         game.getBackpack().setMoneyBalance(newBalance);
     }
      

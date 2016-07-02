@@ -502,8 +502,8 @@ public class MapControl {
             locations[3][6].setScene(scenes[SceneType.columbia.ordinal()]);
             locations[4][6].setScene(scenes[SceneType.sawyer_island.ordinal()]);
 
-
-        
+        //mark main gate as visited, since it is the starting position
+        locations[0][3].setVisited(true);
         
         
          }

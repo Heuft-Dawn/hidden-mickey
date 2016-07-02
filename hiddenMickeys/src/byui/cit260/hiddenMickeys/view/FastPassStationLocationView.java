@@ -12,7 +12,7 @@ package byui.cit260.hiddenMickeys.view;
 public class FastPassStationLocationView extends View {
     
     public FastPassStationLocationView(){
-        super("\nYou have arrived at a Fast Pass Kiosk. Would you like to get a Fast Pass now?");
+        super("You have arrived at a Fast Pass Kiosk. Would you like to get a Fast Pass now?");
     }
     
     @Override

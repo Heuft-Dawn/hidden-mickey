@@ -18,8 +18,7 @@ import hiddenmickeys.HiddenMickeys;
 public class ExploreRideLocationView extends View {
     
     public ExploreRideLocationView(){
-        super("\n"
-            +"\n------------------------------"
+        super("------------------------------"
             +"\nRide Menu"
             +"\n------------------------------"
             +"\nP - Use Fast Pass"

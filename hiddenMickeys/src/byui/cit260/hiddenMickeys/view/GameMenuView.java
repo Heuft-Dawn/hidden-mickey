@@ -18,8 +18,7 @@ import hiddenmickeys.HiddenMickeys;
 public class GameMenuView extends View {
     
 public GameMenuView(){
-    super("\n"
-            +"\n---------------------------------------------------"
+    super("---------------------------------------------------"
             +"\n|  Game Menu                                      |"
             +"\n---------------------------------------------------"
             +"\nM - View Map or Move  (to move to new location)"
@@ -165,7 +164,7 @@ public GameMenuView(){
                 
               }
               else if(locations[row][column].isVisited()){
-                 typeSymbol = "^"; // can be stars or whatever these are indicators showing visited
+                 typeSymbol = "="; // can be stars or whatever these are indicators showing visited
                  }
               leftIndicator = typeSymbol+ typeSymbol + "   ";
               rightIndicator = "    " + typeSymbol + typeSymbol;

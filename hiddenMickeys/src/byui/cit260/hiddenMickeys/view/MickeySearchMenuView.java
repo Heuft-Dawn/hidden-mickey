@@ -16,8 +16,7 @@ public class MickeySearchMenuView extends View {
  
        
     public MickeySearchMenuView(){//constructor Function
-    super("\n"
-            +"\n-----------------------------------------------------"
+    super("-----------------------------------------------------"
             +"\nInstructions"
             +"\n-----------------------------------------------------"
             +"\nEnter a location where you believe the Mickey is hidden."

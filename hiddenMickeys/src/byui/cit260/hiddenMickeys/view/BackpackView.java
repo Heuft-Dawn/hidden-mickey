@@ -14,8 +14,7 @@ import byui.cit260.hiddenMickeys.control.BackpackControl;
 public class BackpackView extends View{
    
    public BackpackView() {
-       super("\n"
-            +"\n----------------------------------------------"
+       super("----------------------------------------------"
             +"\nView Backpack Menu"
             +"\n----------------------------------------------"
             +"\n1 - Check number of fast passes"

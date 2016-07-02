@@ -115,7 +115,7 @@ public class MapAndMoveView extends View{
         MapControl mpcontrol = new MapControl();//create map control object
         try{
         int moveTime = mpcontrol.calcMoveTime(curRow, curCol, newRow, newCol);
-         System.out.println("It will take " + Integer.toString(moveTime) + " minutes to "
+         System.out.println("\nIt will take " + Integer.toString(moveTime) + " minutes to "
          + "get to " + locationName);
         } catch (MapControlException me) {
             System.out.println(me.getMessage());

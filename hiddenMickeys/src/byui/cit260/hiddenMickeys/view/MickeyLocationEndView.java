@@ -15,8 +15,7 @@ public class MickeyLocationEndView extends View{
    private String promptMessage; 
     //Constructor function
     public MickeyLocationEndView(){//constructor Function
-        super("\n"
-            +"\n------------------------------"
+        super("------------------------------"
             +"\nRide Exit Menu"
             +"\n------------------------------"
             +"\nS - Search for Mickey Head"
