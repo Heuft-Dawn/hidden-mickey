@@ -93,10 +93,10 @@ public GameMenuView(){
      //get the game to find the current location number
      Game game = HiddenMickeys.getCurrentGame();
      
-     ProceedView pv = new ProceedView();//get the location control
+     ProceedView pv = new ProceedView(game.getCurrentLocationNo());//get the location control
      
      //the below function will check the location type and go to the appropriate menu
-     pv.exploreLocationType(game.getCurrentLocationNo());
+     pv.exploreLocationType();
     }
     
     private String getLocationType() {
