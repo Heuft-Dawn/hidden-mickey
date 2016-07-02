@@ -17,6 +17,7 @@ public class Backpack implements Serializable{
     private boolean emergencySnackUsed;
     private int numberFastPasses;
     private double moneyBalance;
+    private double time;
     private String description;
     private Mickey[] mickeysCollected;
 
@@ -32,6 +33,7 @@ public class Backpack implements Serializable{
         this.numberFastPasses = 0;
         //give the users $50 to start with
         this.moneyBalance = 50;
+        this.time = 600;
     }
 
     
