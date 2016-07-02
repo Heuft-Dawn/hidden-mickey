@@ -5,6 +5,11 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.LocationControl;
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
+import hiddenmickeys.HiddenMickeys;
+
 
 /**
  *
@@ -30,6 +35,7 @@ public class ExploreRideLocationView extends View {
         switch (choice) {
             case "P": //Use FastPass
                 this.useFastPass();
+                
                 break;
             case "Y": //Continue and explore
                 this.exploreRide();
@@ -42,15 +48,24 @@ public class ExploreRideLocationView extends View {
                 System.out.println("\n***Invalid selection. Try again.");
                 break;
         }
-        return false;
+        return true;
     }
 
   
 
     private void useFastPass() {
         System.out.println("\nYou used a Fast Pass.\n");
+        
+        //loading current game, location and get location number
+        Game game = HiddenMickeys.getCurrentGame();
+        int locationNum = game.getCurrentLocationNo();
+        LocationControl lc = new LocationControl();
+        Location mylocation = lc.getLocationByNumber(locationNum);
+        
         //print a description of the ride
-        this.getRideDescription();
+        String description = mylocation.getScene().getDescription();
+        System.out.println(description);
+        
         //Go to the end of ride menu that allows Mickey Searching
         MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
         locationEndMenu.display();

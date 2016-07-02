@@ -8,6 +8,11 @@ package byui.cit260.hiddenMickeys.control;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
+import byui.cit260.hiddenMickeys.view.ExploreFoodLocationView;
+import byui.cit260.hiddenMickeys.view.ExploreRestView;
+import byui.cit260.hiddenMickeys.view.ExploreRideLocationView;
+import byui.cit260.hiddenMickeys.view.ExploreShopLocationView;
+import byui.cit260.hiddenMickeys.view.FastPassStationLocationView;
 import hiddenmickeys.HiddenMickeys;
 import java.util.Collections;
 
@@ -145,6 +150,9 @@ public class LocationControl {
         return myLocation;
         
     }
+    
+    
+
     
 }
 

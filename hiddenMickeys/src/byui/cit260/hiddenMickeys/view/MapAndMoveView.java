@@ -47,7 +47,7 @@ public class MapAndMoveView extends View{
                     System.out.println("Number entered is not a valid location.");                 
                 }
         }
-        return false;
+        return true;
     }
 
  
@@ -120,6 +120,9 @@ public class MapAndMoveView extends View{
         } catch (MapControlException me) {
             System.out.println(me.getMessage());
         }
+       //load proceed view
+       ProceedView proceed = new ProceedView(number);
+       proceed.display();
        
         
        

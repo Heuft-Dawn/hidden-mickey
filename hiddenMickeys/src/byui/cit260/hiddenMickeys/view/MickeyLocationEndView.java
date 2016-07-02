@@ -40,7 +40,7 @@ public class MickeyLocationEndView extends View{
                 System.out.println("\n***Invalid selection. Try again.");
                 break;
                         }
-        return false;
+        return true;
     }
     
     

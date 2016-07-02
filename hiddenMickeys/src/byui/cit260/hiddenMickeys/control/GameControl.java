@@ -36,6 +36,7 @@ public class GameControl {
         game.setPlayer(player);//save player in game
         game.setCurrentRow(1);
         game.setCurrentColumn(4);
+        game.setCurrentLocationNo(16);
         //Create Character and save in game
 
         //create Backpack and save in game

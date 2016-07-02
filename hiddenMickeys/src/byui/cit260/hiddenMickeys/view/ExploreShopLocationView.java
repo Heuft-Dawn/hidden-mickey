@@ -6,9 +6,13 @@
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.BackpackControl;
+import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
+import byui.cit260.hiddenMickeys.model.Scene;
 import hiddenmickeys.HiddenMickeys;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -16,36 +20,36 @@ import hiddenmickeys.HiddenMickeys;
  */
 public class ExploreShopLocationView extends View {
     
-    public ExploreShopLocationView(){
+    public ExploreShopLocationView(Scene scene){
+    
     super("\n"
             +"\n------------------------------"
             +"\nShop Menu"
             +"\n------------------------------"
-            +"\nY - Yes, buy a souvenir"
-            +"\nN - No, do not buy a souvenir"
+            +"\n1 - Purchase " + scene.getItemName()[0]
+            +"\n2 - Purchase " + scene.getItemName()[1]
+            +"\n3 - Purchase " + scene.getItemName()[2]
+            +"\n    All items are $" + Double.toString(scene.getItemPrice())
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
-            +"\n\n\nThis location sells souvenirs for $10.  Would you like to purchase something?");
+            +"\n\n\nPlease enter your choice.");
     }
 
      @Override
      public boolean doAction(String choice) {
      choice = choice.toUpperCase();
         switch (choice) {
-            case "Q": //Yes, buy a souvenir
-                
+            case "Q": //go back to menu
                 break;
-            
             default:
             int choiceNum = 0;    
             try {
                 choiceNum = Integer.parseInt(choice);
                 switch (choiceNum){
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
+                    case 1: //if the item is 1
+                    case 2: //or 2
+                    case 3: //or 3
+                        this.buyItem();
                         break;
                     default:
                         System.out.println("\n***You must enter a valid number or option.");
@@ -56,25 +60,37 @@ public class ExploreShopLocationView extends View {
             }
                 break;
         }
-        return false;
+        return true;
         }
 
    
-    private void buySouvenir() {
-        System.out.println("You bought a souvenir for $10. Enjoy!");
+    private void buyItem() {
+        Game game = HiddenMickeys.getCurrentGame();
+        int locationNum = game.getCurrentLocationNo();
+        
+        LocationControl lc = new LocationControl();
+        Location myLocation = lc.getLocationByNumber(locationNum);
+        
+        DecimalFormat df = new DecimalFormat("###,###,###.00");
+        
+        double price = myLocation.getScene().getItemPrice();
+        System.out.println("You bought a souvenir for $"+  df.format(price) + " Enjoy!");
         //this will update the amount of money left in th e player's backpack
-        this.updateMoney();
+        BackpackControl bc = new BackpackControl();
+        bc.updateMoney(price);
+        
+        System.out.println("Your purchase is complete.  You may look around the shop.");
+        System.out.println(myLocation.getScene().getDescription());
+        
+        //update the location as visited
+        myLocation.setVisited(true);
+        
+        MickeyLocationEndView endView = new MickeyLocationEndView();
+        endView.display();
+        
     }
 
-    private void notBuySouvenir() {
-        System.out.println("You did not buy a souvenir. Enjoy the rest of your time!");
-    }
-
-    private void updateMoney() {
-        Game game = HiddenMickeys.getCurrentGame(); // retreive the game
-        BackpackControl backpackControl = new BackpackControl();
-        double newBalance = backpackControl.calcNewBalance(10);
-        game.getBackpack().setMoneyBalance(newBalance);
-    }
+   
+    
     
 }

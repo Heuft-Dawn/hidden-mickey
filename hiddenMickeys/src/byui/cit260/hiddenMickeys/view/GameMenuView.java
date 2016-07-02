@@ -42,7 +42,6 @@ public GameMenuView(){
         switch (choice) {
             case "M": //view map or move
                 this.mapAndMove();
-                this.quitTheOption();
                 break;
             case "E": //explore/enter current location
                 this.exploreLocation();
@@ -91,34 +90,13 @@ public GameMenuView(){
     }
 
     private void exploreLocation() {
-     //Below is temp code for testing purposes
-     TMPExploreLocationView exploreLocation = new TMPExploreLocationView();
-         exploreLocation.display();    
-        /* String locationType;   
-        //get the type of location that the user is currently on
-        locationType = this.getLocationType();
-        //R=Ride, S=Shop, F=Food
-        switch (locationType) {
-            case "R":
-                //open the menu for a ride location 
-                ExploreRideLocationView exploreRideView = new ExploreRideLocationView();
-                exploreRideView.display();
-                break;
-            case "S":
-                //open menu for a shop location
-                ExploreShopLocationView exploreShopView = new ExploreShopLocationView();
-                exploreShopView.display();
-                break;
-            case "F":
-                //open menu for a food location
-                ExploreFoodLocationView exploreFoodView = new ExploreFoodLocationView();
-                exploreFoodView.display();
-                break;
-            default:
-                System.out.println("Invalid Location Type");
-                break;
-         }
-*/
+     //get the game to find the current location number
+     Game game = HiddenMickeys.getCurrentGame();
+     
+     ProceedView pv = new ProceedView();//get the location control
+     
+     //the below function will check the location type and go to the appropriate menu
+     pv.exploreLocationType(game.getCurrentLocationNo());
     }
     
     private String getLocationType() {
@@ -181,16 +159,16 @@ public GameMenuView(){
           for( int row = 0; row < locations.length; row++){
             for( int column = 0; column < locations[row].length; column++){
               typeSymbol = locations[row][column].getScene().getMapSymbol();  
-              leftIndicator = typeSymbol+ typeSymbol + "   ";
-              rightIndicator = "    " + typeSymbol + typeSymbol;
+              
               if(locations[row][column].getLocationNo() == game.getCurrentLocationNo() ){
-                leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
-                rightIndicator = "*"; // same as above
+                typeSymbol = "#"; // can be stars or whatever these are indicators showing visited
+                
               }
               else if(locations[row][column].isVisited()){
-                 leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-                 rightIndicator = "<"; // same as above
-              }
+                 typeSymbol = "^"; // can be stars or whatever these are indicators showing visited
+                 }
+              leftIndicator = typeSymbol+ typeSymbol + "   ";
+              rightIndicator = "    " + typeSymbol + typeSymbol;
               System.out.print("| | |"); // start map with a |
               if(locations[row][column].getLocationNo()>= 10){
               rightIndicator = rightIndicator.substring(rightIndicator.length()-5);}
