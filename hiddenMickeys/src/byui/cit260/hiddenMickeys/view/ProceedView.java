@@ -122,4 +122,8 @@ public class ProceedView extends View {
                 break;
         }
     }
+
+    void exploreLocationType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

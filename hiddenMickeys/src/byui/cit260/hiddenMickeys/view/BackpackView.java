@@ -23,7 +23,7 @@ public class BackpackView extends View{
             +"\n3 - Use Emergency Water"
             +"\n4 - Use Emergency Snack"
             +"\n5 - Display List of Mickeys Found" 
-            +"\n6 - Return to menu"   
+            +"\nQ - Return to menu"   
             +"\n----------------------------------------------"
             +"\n\n\nYou have several items in your backpack,"
             + " which one would you like to check?");
@@ -33,6 +33,16 @@ public class BackpackView extends View{
    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         switch (choice) {
+            case "Q":
+                break;
+            default:
+                int number = 0;
+                try {
+                number = Integer.parseInt(choice);
+                } catch (NumberFormatException nf) {
+                System.out.println("\n***You must enter a valid number or option.");
+                }
+                switch (choice) {
             case "1": //View Fast Passes
                 this.viewFastPass();
                 break;
@@ -47,14 +57,14 @@ public class BackpackView extends View{
                 break;    
             case "5": //Display Hidden Mickey's Found
                 this.displayMickeys();
-                break;  
-            case "6": //go back to menu
                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
                 break;
+                }
         }
         return false;
+        
     }
    
     private void viewFastPass() {
@@ -77,7 +87,7 @@ public class BackpackView extends View{
 
     private void useEmergencySnack() {
         System.out.println("\nYummy, You have eaten your emergency snack and "
-                + " it was delicious.");
+                + "it was delicious.");
     }
 
     private void displayMickeys() {
