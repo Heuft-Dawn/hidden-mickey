@@ -18,6 +18,7 @@ public class RestAndRechargeView extends View {
     @Override
        public boolean doAction(String choice){
        choice = choice.toUpperCase();
+       boolean returnToMenu = false;
        switch(choice){
            case "Y":
                System.out.println("\n Whew!  You feel much better after resting! \n Your energy has increased 20%. \n");
@@ -29,8 +30,9 @@ public class RestAndRechargeView extends View {
                break;
            default:
                System.out.println("/nInvalid choice try again");
+               returnToMenu = true;
                break;
        }
-       return true;
+      return !returnToMenu;
    }
 }

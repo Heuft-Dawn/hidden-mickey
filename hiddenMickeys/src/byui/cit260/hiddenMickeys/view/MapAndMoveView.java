@@ -27,6 +27,7 @@ public class MapAndMoveView extends View{
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
+        boolean returnToMenu = false;
         switch (choice) {
             case "W"://show wait times on rides
                 this.displaySortedWaitTimes();
@@ -44,10 +45,11 @@ public class MapAndMoveView extends View{
                 this.goToLocation(number);
                 break;
                 } else {
-                    System.out.println("Number entered is not a valid location.");                 
+                    System.out.println("Number entered is not a valid location.");  
+                    returnToMenu = true;
                 }
         }
-        return true;
+        return !returnToMenu;
     }
 
  

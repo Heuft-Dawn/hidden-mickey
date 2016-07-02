@@ -5,7 +5,9 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.GameControl;
 import byui.cit260.hiddenMickeys.control.LocationControl;
+import byui.cit260.hiddenMickeys.exceptions.GameControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import hiddenmickeys.HiddenMickeys;
@@ -16,8 +18,11 @@ import hiddenmickeys.HiddenMickeys;
  * @author Administrator
  */
 public class ExploreRideLocationView extends View {
-    
-    public ExploreRideLocationView(){
+    private int waitTime;
+    private int fastPassTime;
+
+    public ExploreRideLocationView(int waitTime, int fastPassTime){
+        
         super("------------------------------"
             +"\nRide Menu"
             +"\n------------------------------"
@@ -25,12 +30,16 @@ public class ExploreRideLocationView extends View {
             +"\nY - Continue "
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
-            +"\n\n\nThe current Ride wait time is _____.  What would you like to do?");
-}
+            +"\n\n\nThe current Ride wait time is " + Integer.toString(waitTime) + ".  "
+        + "A Fast Pass would make the wait time " + Integer.toString(fastPassTime) + " minutes.\nWhat would you like to do?");
+        this.waitTime = waitTime;
+        this.fastPassTime = fastPassTime;
+    }
 
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
+        boolean returnToMenu = false;
         switch (choice) {
             case "P": //Use FastPass
                 this.useFastPass();
@@ -45,41 +54,67 @@ public class ExploreRideLocationView extends View {
                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
+                returnToMenu = true;
                 break;
         }
-        return true;
+        return !returnToMenu;
     }
 
   
 
     private void useFastPass() {
-        System.out.println("\nYou used a Fast Pass.\n");
-        
-        //loading current game, location and get location number
+       
+        try{
+            //loading current game, location and get location number
         Game game = HiddenMickeys.getCurrentGame();
         int locationNum = game.getCurrentLocationNo();
         LocationControl lc = new LocationControl();
         Location mylocation = lc.getLocationByNumber(locationNum);
-        
+        GameControl gc = new GameControl();
         //print a description of the ride
         String description = mylocation.getScene().getDescription();
         System.out.println(description);
+            //update wait time
+            int waitTime = mylocation.getScene().getWaitTime();
+            int fastPassTime = this.fastPassTime;
+            int energyLevel;
+            int timeRemaining;
+            energyLevel = gc.updateEnergyLevels(fastPassTime);
+            timeRemaining = gc.updateTimeRemaining(fastPassTime);
+            System.out.println("\n\nYou have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
+            //Go to the end of ride menu that allows Mickey Searching
+            MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
+            locationEndMenu.display();
+        }catch (GameControlException ge) {
+            System.out.println(ge.getMessage());
+        }
         
-        //Go to the end of ride menu that allows Mickey Searching
-        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
-        locationEndMenu.display();
     }
 
     private void exploreRide() {
-        //this will update the player's amount of time spent
-        this.updateTime();
-        //this will display a description for the user - telling them what they experienced during the ride
-        this.getRideDescription();
-        //This calls a menu that gives the player a chance to search for Mickeys or exit.
-        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
-        locationEndMenu.display();
-                
- 
+        try{
+            //loading current game, location and get location number
+        Game game = HiddenMickeys.getCurrentGame();
+        int locationNum = game.getCurrentLocationNo();
+        LocationControl lc = new LocationControl();
+        Location mylocation = lc.getLocationByNumber(locationNum);
+        GameControl gc = new GameControl();
+        //print a description of the ride
+        String description = mylocation.getScene().getDescription();
+        System.out.println(description);
+            //update wait time
+            int waitTime = mylocation.getScene().getWaitTime();
+            int energyLevel;
+            int timeRemaining;
+            energyLevel = gc.updateEnergyLevels(waitTime);
+            timeRemaining = gc.updateTimeRemaining(waitTime);
+            System.out.println("You have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
+            //Go to the end of ride menu that allows Mickey Searching
+            MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
+            locationEndMenu.display();
+        }catch (GameControlException ge) {
+            System.out.println(ge.getMessage());
+        }
     }
 
     private void getRideDescription() {

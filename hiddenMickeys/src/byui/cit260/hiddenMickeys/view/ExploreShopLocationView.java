@@ -39,6 +39,7 @@ public class ExploreShopLocationView extends View {
      @Override
      public boolean doAction(String choice) {
      choice = choice.toUpperCase();
+     boolean returnToMenu = false;
         switch (choice) {
             case "Q": //go back to menu
                 break;
@@ -50,19 +51,23 @@ public class ExploreShopLocationView extends View {
                     case 1: //if the item is 1
                     case 2: //or 2
                     case 3: //or 3
-                        //pass the position of the item in the array
+                        //Buy the item and pass the position of the item in the array
                         this.buyItem(choiceNum-1);
                         break;
                     default:
-                        System.out.println("\n***You must enter a valid number or option.");
+                        System.out.println("\nYou must enter a valid option.");
+                        returnToMenu = true;
                         break;
+                        
                 }
             } catch (NumberFormatException nf) {
-                
+                System.out.println("\nYou must enter a valid number or Q");
+                //prompt the user to try again
+                return false;
             }
-                break;
+           break;     
         }
-        return true;
+        return !returnToMenu;
         }
 
    
@@ -89,7 +94,7 @@ public class ExploreShopLocationView extends View {
         
         //get the item name from the position in the array
         String item = myLocation.getScene().getItemName()[arrayPosition];
-        System.out.println("You bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");
+        System.out.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");
         System.out.println("Now you may look around the shop.");
         System.out.println(myLocation.getScene().getDescription());
         

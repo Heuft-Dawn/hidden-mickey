@@ -21,7 +21,7 @@ public class ProceedView extends View {
     private int locationNum;
     
     public ProceedView(int locationNum){
-        super("Continue? (Y/N)\n");
+        super("Continue? (Y/N)");
         this.locationNum = locationNum;
     }
 
@@ -29,6 +29,7 @@ public class ProceedView extends View {
     @Override
        public boolean doAction(String choice){
        choice = choice.toUpperCase();
+       boolean returnToMenu = false;
        switch(choice){
            case "Y":
                this.movePlayer();
@@ -39,9 +40,10 @@ public class ProceedView extends View {
                break;
            default:
                System.out.println("/nInvalid choice try again");
+               returnToMenu = true;
                break;
        }
-       return true;
+       return !returnToMenu;
    } {
     
 }
@@ -96,7 +98,9 @@ public class ProceedView extends View {
     
     switch (locationType) {
             case "R": //Ride
-                ExploreRideLocationView rideView = new ExploreRideLocationView();
+                int waitTime = myloc.getScene().getWaitTime();
+                int fastPassTime = lc.calcFastPassTime(waitTime);
+                ExploreRideLocationView rideView = new ExploreRideLocationView(waitTime, fastPassTime);
                 rideView.display();
                 break;
             case "T": //Rest View

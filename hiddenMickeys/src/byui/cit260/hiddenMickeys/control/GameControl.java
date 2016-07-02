@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.control;
 
+import byui.cit260.hiddenMickeys.exceptions.GameControlException;
 import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Map;
@@ -39,6 +40,8 @@ public class GameControl {
         game.setCurrentRow(1);
         game.setCurrentColumn(4);
         game.setCurrentLocationNo(16);
+        game.setTimeRemaining(600);
+        game.setEnergyLevel(100);
                 
         //Create Character and save in game
 
@@ -54,6 +57,69 @@ public class GameControl {
         
     }
     
+    public void updateGameValues(int curRow, int curCol, int curLocation)
+            throws GameControlException {
+        Game game = HiddenMickeys.getCurrentGame();
+        int numLocations = game.getMap().getColumnCount() * game.getMap().getRowCount();
+        
+        if( curRow < 1 || curCol < 1 ){
+        throw new GameControlException("Number of rows or columns can not be blank or equal to zero"); 
+        }
+        if ( curLocation < 1 ){
+            throw new GameControlException("Location Number can not be blank or equal to zero"); //null or zero location number
+        }
+        
+        if( curLocation > numLocations){
+        //the location number is too high
+        throw new GameControlException("Number of columns entered is too high."); //location number is too high
+        }
+        
+        game.setCurrentRow(curRow);
+        game.setCurrentColumn(curCol);
+        game.setCurrentLocationNo(curLocation);
+        
+    }
+    
+    public int updateEnergyLevels(int minutes)
+            throws GameControlException {
+        Game game = HiddenMickeys.getCurrentGame();
+        int curEnergyLevel = game.getEnergyLevel();
+        int energyDecrease = this.calcEnergyUsed(minutes);
+        if (energyDecrease>curEnergyLevel){
+            throw new GameControlException("Sorry - You are out of Energy."); //null or zero location number
+        }else{
+            curEnergyLevel = curEnergyLevel - energyDecrease;
+            game.setEnergyLevel(curEnergyLevel);
+        }
+            return game.getEnergyLevel();
+}
+    
+     public int calcEnergyUsed (int timeUsed) 
+            throws GameControlException {
+      if(timeUsed<1){
+           throw new GameControlException("Cannot calculate energy used on time less than 1"); 
+      }else{
+         
+      int energyUsed = timeUsed/5;
+      
+      return energyUsed;
+      }
+      }
+    
+    public  int updateTimeRemaining(int minutes)
+            throws GameControlException {
+        Game game = HiddenMickeys.getCurrentGame();
+        int curTime = game.getTimeRemaining();
+        int energyDecrease;
+        if (minutes>curTime){
+            throw new GameControlException("\nSorry, you do not have enough time to ride this ride!"); //null or zero location number
+        }else{
+            curTime = curTime - minutes;
+            game.setTimeRemaining(curTime);
+            
+        }
+       return game.getTimeRemaining();
+    }
 }
 
 
