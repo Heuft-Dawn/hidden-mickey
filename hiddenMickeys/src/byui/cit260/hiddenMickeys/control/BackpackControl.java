@@ -17,12 +17,13 @@ import hiddenmickeys.HiddenMickeys;
  * @author Hannah Mars
  */
 public class BackpackControl {
-    public double calcNewBalance(double price) {
+    public double calcNewBalance(double price)
+        throws BackpackControlException {
         Game game = HiddenMickeys.getCurrentGame(); // retreive the game
         Backpack backpack = game.getBackpack();
         double curBalance = backpack.getMoneyBalance();
         if (price > curBalance || price < 0 || curBalance == 0) {
-            return -1;
+            throw new BackpackControlException("You cannot buy something that costs more money than you have.");
         }
         curBalance = curBalance - price;
         return curBalance;	
@@ -52,7 +53,8 @@ public class BackpackControl {
          
      
 
-    public void updateMoney(double price) {
+    public void updateMoney(double price)
+            throws BackpackControlException {
         Game game = HiddenMickeys.getCurrentGame(); // retreive the game
         double newBalance = this.calcNewBalance(price);
         game.getBackpack().setMoneyBalance(newBalance);
