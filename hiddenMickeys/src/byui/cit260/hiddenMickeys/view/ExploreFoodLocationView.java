@@ -5,7 +5,13 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.BackpackControl;
+import byui.cit260.hiddenMickeys.control.LocationControl;
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Scene;
+import hiddenmickeys.HiddenMickeys;
+import java.text.DecimalFormat;
 
 
 /**
@@ -16,14 +22,18 @@ public class ExploreFoodLocationView extends View {
     
     public ExploreFoodLocationView(Scene scene){
         super("------------------------------"
-            +"\nFood Menu"
+            +"\n" + scene.getName() +" Food Menu"
+            +"\n" + scene.getDescription()
             +"\n------------------------------"
             +"\n1 - Purchase Item 1 " + scene.getItemName()[0]
-            +"\n2 - Purchase Item 2 " + scene.getItemName()[1]
+            +"\n2 - Purchase Item 2 " + scene.getItemName()[1] 
             +"\n3 - Purchase Item 3 " + scene.getItemName()[2]
+            +"\n------------------------------"
+            +"\n    All items are $" + Double.toString(scene.getItemPrice()) + "0"
+            +"\n------------------------------"
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
-            +"\n Please enter your choice.");
+            +"\n\n You may choose one item. Please enter your choice.");
 }
 
     @Override
@@ -38,11 +48,11 @@ public class ExploreFoodLocationView extends View {
             try {
                 choiceNum = Integer.parseInt(choice);
                 switch (choiceNum){
-                    case 1: 
-                    case 2: 
-                    case 3: 
+                    case 1: //for item 1
+                    case 2: //for item 2
+                    case 3: //for item 3
                         //Buy item and pass the position in the array
-                        //this.buyItem(choiceNum-1);
+                        this.buyFood(choiceNum-1);
                         break;
                     default:
                         System.out.println("\nYou must enter a valid option.");
@@ -84,8 +94,39 @@ public class ExploreFoodLocationView extends View {
        System.out.println("\n***updateEnergy()function called***");
     }
 
-    private void buyFood() {
-        System.out.println("\n***buyFood()function called***");
+    private void buyFood(int arrayPosition) {
+        //System.out.println("\n***buyFood()function called***");
+        Game game = HiddenMickeys.getCurrentGame();
+        int locationNum = game.getCurrentLocationNo();
+        
+        //get the location information
+        LocationControl lc = new LocationControl();
+        Location myLocation = lc.getLocationByNumber(locationNum);
+        
+        //get item price and update balance
+        double price = myLocation.getScene().getItemPrice();
+        
+        //update backpack
+         BackpackControl bc = new BackpackControl();
+        try {
+        bc.updateMoney(price);  
+        } catch (Throwable backpackc) {
+            System.out.println(backpackc.getMessage());
+        }
+        //use decimal format object to format money
+        DecimalFormat df = new DecimalFormat("###,###,###.00");
+        
+        //get the remaining balance from the backpack
+        double remaining = game.getBackpack().getMoneyBalance();
+        
+        //get the item name from the position in the array
+        String item = myLocation.getScene().getItemName()[arrayPosition];
+        System.out.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");     
+        //update the location as visited
+        myLocation.setVisited(true);
+        
+        //Decide whether to search for a Mickey
+        MickeyLocationEndView endView = new MickeyLocationEndView();
+        endView.display();
     }
-
-}
+} 
