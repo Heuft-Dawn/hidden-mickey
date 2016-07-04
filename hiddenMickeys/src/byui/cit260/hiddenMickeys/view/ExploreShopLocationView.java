@@ -83,9 +83,13 @@ public class ExploreShopLocationView extends View {
         double price = myLocation.getScene().getItemPrice();
         
         //this will update the amount of money left in th e player's backpack
-        BackpackControl bc = new BackpackControl();
-        bc.updateMoney(price);
         
+        BackpackControl bc = new BackpackControl();
+        try {
+        bc.updateMoney(price);
+        } catch (Throwable backpackc) {
+            System.out.println(backpackc.getMessage());
+        }
         //use decimal format object to format money
         DecimalFormat df = new DecimalFormat("###,###,###.00");
         
@@ -105,9 +109,9 @@ public class ExploreShopLocationView extends View {
         MickeyLocationEndView endView = new MickeyLocationEndView();
         endView.display();
         
-    }
+     
 
-   
+    }
     
     
 }

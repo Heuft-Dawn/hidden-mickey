@@ -6,7 +6,8 @@
 
 package byui.cit260.hiddenMickeys.view;
 import byui.cit260.hiddenMickeys.control.BackpackControl;
-
+import byui.cit260.hiddenMickeys.exceptions.BackpackControlException;
+  
 /**
  *
  * @author Dawn
@@ -73,12 +74,15 @@ public class BackpackView extends View{
     
 
     private void viewMoneyBalance() {
+        try{
         BackpackControl backpack = new BackpackControl();
         double newBalance = backpack.calcNewBalance(0);
         System.out.println("Your current balance is $" + Double.toString(newBalance));
+        }catch (BackpackControlException be) {
+            System.out.println(be.getMessage());
+        }
     }
-   
-
+  
     private void useEmergencyWater() {
         System.out.println("\n Whew, you are feeling refreshed after drinking"
                 + " your emergency water.");

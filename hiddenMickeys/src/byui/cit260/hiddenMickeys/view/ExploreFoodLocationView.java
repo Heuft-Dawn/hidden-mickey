@@ -5,6 +5,8 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.model.Scene;
+
 
 /**
  *
@@ -12,13 +14,13 @@ package byui.cit260.hiddenMickeys.view;
  */
 public class ExploreFoodLocationView extends View {    
     
-    public ExploreFoodLocationView(){
+    public ExploreFoodLocationView(Scene scene){
         super("------------------------------"
             +"\nFood Menu"
             +"\n------------------------------"
-            +"\n1 - Purchase Item 1"
-            +"\n2 - Purchase Item 2"
-            +"\n3 - Purchase Item 3"
+            +"\n1 - Purchase Item 1 " + scene.getItemName()[0]
+            +"\n2 - Purchase Item 2 " + scene.getItemName()[1]
+            +"\n3 - Purchase Item 3 " + scene.getItemName()[2]
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
             +"\n Please enter your choice.");
@@ -27,25 +29,43 @@ public class ExploreFoodLocationView extends View {
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
+        boolean returnToMenu = false;
         switch (choice) {
-            case "B": //Buy food
-                this.buyFood();
-                break;
-            case "N": //go back to menu
-                break;
             case "Q": //go back to menu
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
-                break;
+            int choiceNum = 0;    
+            try {
+                choiceNum = Integer.parseInt(choice);
+                switch (choiceNum){
+                    case 1: 
+                    case 2: 
+                    case 3: 
+                        //Buy item and pass the position in the array
+                        //this.buyItem(choiceNum-1);
+                        break;
+                    default:
+                        System.out.println("\nYou must enter a valid option.");
+                        returnToMenu = true;
+                        break;
+                        
+                }
+            } catch (NumberFormatException nf) {
+                System.out.println("\nYou must enter a valid number or Q");
+                //prompt the user to try again
+                return false;
+            }
+           break;     
         }
-        return false;
-    }
+        return !returnToMenu;
+        }
 
- 
+       
+            
 
     private void exploreFood() {
-        //this will display a description for the user - telling them what they experienced during the ride
+        //this will display a description for the user - telling them 
+        //about the food location and what is available
         this.getFoodDescription();
         //This calls a menu that gives the player a chance to search for Mickeys or exit.
         MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
@@ -67,4 +87,5 @@ public class ExploreFoodLocationView extends View {
     private void buyFood() {
         System.out.println("\n***buyFood()function called***");
     }
+
 }

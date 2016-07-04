@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.control;
 
+import byui.cit260.hiddenMickeys.exceptions.LocationControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
@@ -21,7 +22,7 @@ Author: Susan Allen
  */
 public class LocationControl {
     
-   public int calcFastPassTime(int time) {
+   public int calcFastPassTime(int time) throws LocationControlException {
     /**
      * This function calculates fast pass time by dividing the 
      * current wait time in half and rounding it down to a 
@@ -30,15 +31,15 @@ public class LocationControl {
        
 	//check for negatives
        if (time < 0) {
-            return -1;
+            throw new LocationControlException ("Wait time cannot be negative.");
             }
        //check for blank values
 	if (time == 0) {
-            return -2;
+            throw new LocationControlException ("Value must be present");
             }
         //check for values less than 5
 	if (time < 5) {
-            return 999;
+            throw new LocationControlException ("Wait time must be at least 5 minutes.");
             }
 	
         //calculate what half the time would be
@@ -59,12 +60,12 @@ public class LocationControl {
    
    // author - Dawn Heuft
    
-   public int calcEnergyUsed (int timeUsed, int curEnergy) {
+   public int calcEnergyUsed (int timeUsed, int curEnergy) throws LocationControlException {
        if (timeUsed < 5 || timeUsed > 120) { // check range
-          return -1;
+          throw new LocationControlException ("Energy cannot be negative.");
        }
       if (curEnergy < 1 || curEnergy > 300) { // check range
-          return -2;
+          throw new LocationControlException ("Energy must be greater than 1, but less than 300.");
       }
       int energyUsed = timeUsed/5;
       int level = curEnergy - energyUsed;

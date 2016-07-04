@@ -7,6 +7,7 @@ package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.control.MapControl;
+import byui.cit260.hiddenMickeys.exceptions.LocationControlException;
 import byui.cit260.hiddenMickeys.exceptions.MapControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
@@ -91,6 +92,8 @@ public class ProceedView extends View {
     
     
     public void exploreLocationType() {
+        
+    try{
     LocationControl lc = new LocationControl();    
         // determine whether location is food, ride or shop
     Location myloc = lc.getLocationByNumber(this.locationNum);
@@ -116,13 +119,15 @@ public class ProceedView extends View {
                 fastPassView.display();
                 break;
             case "F": //Food View
-                ExploreFoodLocationView foodView = new ExploreFoodLocationView();
+                ExploreFoodLocationView foodView = new ExploreFoodLocationView(myloc.getScene());
                 foodView.display();
                 break;
             default:
                 System.out.println("\n***Invalid selection. Try again.");
                 break;
         }
+        } catch (LocationControlException le) {
+        System.out.println(le.getMessage());
+        }
     }
-
    }
