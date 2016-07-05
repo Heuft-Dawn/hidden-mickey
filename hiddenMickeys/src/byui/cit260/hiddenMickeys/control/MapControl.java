@@ -65,59 +65,58 @@ public class MapControl {
             
             Scene fast_pass = new Scene();
             fast_pass.setName("Fast Pass Machine");
-            fast_pass.setDescription("");
             fast_pass.setMapSymbol("*");
             fast_pass.setLocationType("P");
             fast_pass.setMickeyPresent(false);
             scenes[SceneType.fast_pass.ordinal()] = fast_pass;
 
             Scene pieces_eight = new Scene();
+            String[] itemsPirate = {"", "", ""};
             pieces_eight.setName("Pieces of Eight");
             pieces_eight.setDescription("Want to connect with your inner Pirate?  This is"
                     + "\nthe place to buy your Pirate Gear.");
             pieces_eight.setMapSymbol("$");
             pieces_eight.setLocationType("S");
-            items [0] = "Pirate Sword";
-            items [1] = "Eye Patch";
-            items [2] = "Parrot";
-            pieces_eight.setItemName(items);
+            itemsPirate [0] = "Pirate Sword";
+            itemsPirate [1] = "Eye Patch";
+            itemsPirate [2] = "Parrot";
+            pieces_eight.setItemName(itemsPirate);
             pieces_eight.setItemPrice(3.50);
-            pieces_eight.setDescription("");
             pieces_eight.setMickeyPresent(false);
             pieces_eight.setMickeyLocation("");
             scenes[SceneType.pieces_eight.ordinal()] = pieces_eight;
 
 
             Scene emporium = new Scene();
+            String[] itemsEmporium = {"", "", ""};
             emporium.setName("Emporium Souvenirs");
             emporium.setDescription("Wow!  There is so much to see.  This is the place"
                     + "\nto pick up souvenirs for the family back home, buy your Mouse Ears or "
                     + "\na Disney shirt or two...");
             emporium.setMapSymbol("$");
             emporium.setLocationType("S");
-            items [0] = "Mickey T-Shirt";
-            items [1] = "Trading Pin";
-            items [2] = "Keychain Set";
-            emporium.setItemName(items);
-            emporium.setItemPrice(12);
-            emporium.setDescription("");
+            itemsEmporium [0] = "Mickey T-Shirt";
+            itemsEmporium [1] = "Trading Pin";
+            itemsEmporium [2] = "Keychain Set";
+            emporium.setItemName(itemsEmporium);
+            emporium.setItemPrice(5);
             emporium.setMickeyPresent(false);
             emporium.setMickeyLocation("");
             scenes[SceneType.emporium.ordinal()] = emporium;
 
 
             Scene magic_shop = new Scene();
+            String[] itemsMagic = {"", "", ""};
             magic_shop.setName("Main Street Magic Shop");
             magic_shop.setDescription("Ready for your next career as a magician?  Stroll through"
                     + "\nthis fabulous store to find fun magic tricks to add to your act.");
             magic_shop.setMapSymbol("$");
             magic_shop.setLocationType("S");
-            items [0] = "Card Trick";
-            items [1] = "Wizard Hat";
-            items [2] = "Magic Wand";
-            magic_shop.setItemName(items);
+            itemsMagic [0] = "Card Trick";
+            itemsMagic [1] = "Wizard Hat";
+            itemsMagic [2] = "Magic Wand";
+            magic_shop.setItemName(itemsMagic);
             magic_shop.setItemPrice(15);
-            magic_shop.setDescription("");
             magic_shop.setMickeyPresent(false);
             magic_shop.setMickeyLocation("Look up on the wall...");
             scenes[SceneType.magic_shop.ordinal()] = magic_shop;

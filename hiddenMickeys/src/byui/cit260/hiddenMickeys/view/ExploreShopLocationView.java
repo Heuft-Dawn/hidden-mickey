@@ -23,7 +23,8 @@ public class ExploreShopLocationView extends View {
     public ExploreShopLocationView(Scene scene){
     
     super("------------------------------"
-            +"\nShop Menu"
+            +"\n" + scene.getName() +" Food Menu"
+            +"\n" + scene.getDescription()
             +"\n------------------------------"
             +"\n1 - Purchase " + scene.getItemName()[0]
             +"\n2 - Purchase " + scene.getItemName()[1]
@@ -100,7 +101,7 @@ public class ExploreShopLocationView extends View {
         String item = myLocation.getScene().getItemName()[arrayPosition];
         System.out.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");
         System.out.println("Now you may look around the shop.");
-        System.out.println(myLocation.getScene().getDescription());
+        System.out.println("Description:" + myLocation.getScene().getDescription());
         
         //update the location as visited
         myLocation.setVisited(true);
