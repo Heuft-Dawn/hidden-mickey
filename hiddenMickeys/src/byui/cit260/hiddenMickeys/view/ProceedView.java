@@ -115,8 +115,16 @@ public class ProceedView extends View {
                 shopView.display();
                 break;
             case "P": //Fast Pass View
-                FastPassStationLocationView fastPassView = new FastPassStationLocationView();
-                fastPassView.display();
+                
+                //check to see if the user is allowed a fast pass yet
+                boolean proceed = this.checkFastPassAvailability();
+                if(proceed){
+                    FastPassStationLocationView fastPassView = new FastPassStationLocationView();
+                    fastPassView.display();}
+                else{
+                    //tell user "sorry, you cannot get another fast pass for another ___ minutes
+                    this.notifyNextFastPassTime();
+                }
                 break;
             case "F": //Food View
                 ExploreFoodLocationView foodView = new ExploreFoodLocationView(myloc.getScene());
@@ -129,5 +137,13 @@ public class ProceedView extends View {
         } catch (LocationControlException le) {
         System.out.println(le.getMessage());
         }
+    }
+
+    private boolean checkFastPassAvailability() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void notifyNextFastPassTime() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    }

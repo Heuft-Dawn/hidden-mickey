@@ -83,7 +83,7 @@ public class ExploreRideLocationView extends View {
             timeRemaining = gc.updateTimeRemaining(fastPassTime);
             System.out.println("\n\nYou have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
             //Go to the end of ride menu that allows Mickey Searching
-            MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
+            MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
             locationEndMenu.display();
         }catch (GameControlException ge) {
             System.out.println(ge.getMessage());
@@ -110,7 +110,7 @@ public class ExploreRideLocationView extends View {
             timeRemaining = gc.updateTimeRemaining(waitTime);
             System.out.println("You have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
             //Go to the end of ride menu that allows Mickey Searching
-            MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
+            MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
             locationEndMenu.display();
         }catch (GameControlException ge) {
             System.out.println(ge.getMessage());

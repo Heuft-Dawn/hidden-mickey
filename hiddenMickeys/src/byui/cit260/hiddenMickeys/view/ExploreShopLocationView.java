@@ -107,7 +107,7 @@ public class ExploreShopLocationView extends View {
         myLocation.setVisited(true);
         
         //Decide whether to search for a Mickey
-        MickeyLocationEndView endView = new MickeyLocationEndView();
+        MickeyLocationEndView endView = new MickeyLocationEndView(myLocation.getScene());
         endView.display();
         
      

@@ -19,7 +19,7 @@ import java.text.DecimalFormat;
  * @author Dawn
  */
 public class ExploreFoodLocationView extends View {    
-    
+    private Scene myScene;
     public ExploreFoodLocationView(Scene scene){
         super("------------------------------"
             +"\n" + scene.getName() +" Food Menu"
@@ -34,6 +34,7 @@ public class ExploreFoodLocationView extends View {
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
             +"\n\n You may choose one item. Please enter your choice.");
+        this.myScene = scene;
 }
 
     @Override
@@ -78,7 +79,8 @@ public class ExploreFoodLocationView extends View {
         //about the food location and what is available
         this.getFoodDescription();
         //This calls a menu that gives the player a chance to search for Mickeys or exit.
-        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView();
+                
+        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(this.myScene);
         locationEndMenu.display();
                 
  
@@ -125,8 +127,5 @@ public class ExploreFoodLocationView extends View {
         //update the location as visited
         myLocation.setVisited(true);
         
-        //Decide whether to search for a Mickey
-        MickeyLocationEndView endView = new MickeyLocationEndView();
-        endView.display();
     }
 } 

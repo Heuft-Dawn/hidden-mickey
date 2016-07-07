@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.model.Scene;
 import java.util.Scanner;
 
 /**
@@ -12,19 +13,38 @@ import java.util.Scanner;
  * @author Administrator
  */
 public class MickeySearchMenuView extends View {
-    private String promptMessage;  
+    private String promptMessage; 
+    private Scene myScene;
  
        
-    public MickeySearchMenuView(){//constructor Function
-    super("-----------------------------------------------------"
-            +"\nInstructions"
-            +"\n-----------------------------------------------------"
-            +"\nEnter a location where you believe the Mickey is hidden."
+    public MickeySearchMenuView(Scene myScene){//constructor Function
+    super("       .:::::::::.                    .:::::::::."
+            +"\n     :::::::::::::::                :::::::::::::::"
+            +"\n    :::::::::::::::::              :::::::::::::::::"
+            +"\n   ::::::::::::::::::              ::::::::::::::::::"
+            +"\n    :::::::::::::::::ud$$b;::;d$$bu:::::::::::::::::"
+            +"\n     ::::::::::::::d$$F,$$$ii$$$,?$$h::::::::::::::"
+            +"\n      `'::::::::::d$$,d$$$$$$$$$$b,$$b::::::::::'`"
+            +"\n               ::d$$$$$F\'?$$$$P\'?$$$$$b:"
+            +"\n              :::$$$$$'d$b`$$'d$b`$$$$$::"
+            +"\n              :::?$$$$ $$$ $$ $$$ $$$$F:::"
+            +"\n              ::::$$$$,\' ' $$ ' \',$$$$::::"
+            +"\n              ;d$$$$$$$\',='\'\''=,\'$$$$$$$b;"
+            +"\n             <$$,`$$$$$$  \'**\'  $$$$$$`,$$>"
+            +"\n              ?$$$,?$$$$$e....e$$$$$F,$$$F"
+            +"\n               `?$$$c.\'?$$$$$$$$F\'.c$$$F"
+            +"\n                   \'?$e          e$F\'"
+            +"\n                      ?$g      g$F"
+            +"\n                         \'#**#\'"
             +"\n"
-            +"\nQ - Exit Ride/ Stop Exploring"
-            +"\n-----------------------------------------------------"
-            +"\n \n"
-            +"\n Enter your choice:");    
+            +"\n " + myScene.getMickeySearchDescription() 
+            +"\n "
+            +"\n Congratulations, you found a Mickey!  Current Mickey Count = INSERT COUNT HERE"
+            +"\n\n Press Q to Return to Game Menu"
+            
+            
+            );    
+            this.myScene = myScene;
 }
 
     @Override

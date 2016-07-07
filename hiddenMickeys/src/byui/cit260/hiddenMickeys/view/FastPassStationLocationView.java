@@ -23,7 +23,6 @@ public class FastPassStationLocationView extends View {
                 this.addFastpass();
                 break;
             case "N": //No, do not add a Fast Pass to your backpack
-                this.doNotAddFastPass();
                 break;
             case "Q":
                 break;
@@ -35,10 +34,11 @@ public class FastPassStationLocationView extends View {
 }
 
     private void addFastpass() {
-        System.out.println("addFastPass() function called. Should also say You have added another Fast Pass to your backpack. You now have ___ Fast Passes.");
+         //update fast pass number and next availability time is in 90 minutes
+        //display the number of fast passes
+        //notify user when the next fast pass will be available
+        System.out.println("TODO: Should say You have added another Fast Pass to your backpack. You now have ___ Fast Passes.");
     }
 
-    private void doNotAddFastPass() {
-        System.out.println("doNotAddFastPass() function called. Should say you decided not to add a fast pass. and then have them return to the location on the map and they can decide what to do next.");
-    }
+   
 }

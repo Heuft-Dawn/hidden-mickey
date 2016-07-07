@@ -5,6 +5,9 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Scene;
+import hiddenmickeys.HiddenMickeys;
 import java.util.Scanner;
 
 /**
@@ -13,8 +16,9 @@ import java.util.Scanner;
  */
 public class MickeyLocationEndView extends View{
    private String promptMessage; 
+   private Scene myScene;
     //Constructor function
-    public MickeyLocationEndView(){//constructor Function
+    public MickeyLocationEndView(Scene myScene){//constructor Function
         super("------------------------------"
             +"\nRide Exit Menu"
             +"\n------------------------------"
@@ -23,6 +27,7 @@ public class MickeyLocationEndView extends View{
             +"\n------------------------------"
             +"\n \n"
             +"\n Enter your choice");
+        this.myScene = myScene;
 }
 
    @Override
@@ -32,6 +37,7 @@ public class MickeyLocationEndView extends View{
         //System.out.println("The choice you entered is " + choice);
         switch (choice) {
             case "S": //Search for Mickey
+                
                 this.displayMickeySearch();
                 break;
             case "Q": //go back to menu
@@ -48,7 +54,9 @@ public class MickeyLocationEndView extends View{
      
 
     private void displayMickeySearch() {
-        MickeySearchMenuView  mickeySearchMenu = new MickeySearchMenuView();
+        
+        
+        MickeySearchMenuView  mickeySearchMenu = new MickeySearchMenuView(this.myScene);
         mickeySearchMenu.display();
     }
 }

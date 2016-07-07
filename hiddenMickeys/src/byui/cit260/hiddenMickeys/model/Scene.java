@@ -20,10 +20,12 @@ public class Scene implements Serializable{
     private String mapSymbol;
     private boolean mickeyPresent;
     private String mickeyLocation;
+    private String mickeySearchDescription;
     private int waitTime;
     private String[] itemName;
     private double itemPrice;
-    
+    private int fastPassReturnTime;
+
     //class instance variables
     private String name;
 
@@ -55,6 +57,15 @@ public class Scene implements Serializable{
         return mapSymbol;
     }
 
+    public String getMickeySearchDescription() {
+        return mickeySearchDescription;
+    }
+
+    public void setMickeySearchDescription(String mickeySearchDescription) {
+        this.mickeySearchDescription = mickeySearchDescription;
+    }
+
+    
     public void setMapSymbol(String mapSymbol) {
         this.mapSymbol = mapSymbol;
     }
@@ -99,7 +110,15 @@ public class Scene implements Serializable{
         this.itemPrice = itemPrice;
     }
     
+    
+    public int getFastPassReturnTime() {
+        return fastPassReturnTime;
+    }
 
+    public void setFastPassReturnTime(int fastPassReturnTime) {
+        this.fastPassReturnTime = fastPassReturnTime;
+    }
+    
     public Scene() {
     }
     
