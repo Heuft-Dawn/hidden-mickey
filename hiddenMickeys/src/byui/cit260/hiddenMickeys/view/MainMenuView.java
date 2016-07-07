@@ -70,7 +70,21 @@ public MainMenuView() {
     }
 
     private void startExistingGame() {
-       System.out.println("\n***startExistingGame()function called***");
+       //prompt for and get the name of the file to save the game in
+       this.console.println("\n\nEnter the file path for fole where the game "
+       + "is to be saved.");
+       
+       String filePath = this.getInput();
+       
+       try {
+           //start a saved game
+           GameControl.getSavedGame(filePath);
+       } catch (Exception ex) {
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
+       //display the game menu
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.display();
     }
 
     private void showHelpMenu() {
@@ -82,7 +96,17 @@ public MainMenuView() {
     }
 
     private void saveGame() {
-       System.out.println("\n***saveGame()function called***");
+      //prompt for and get the name of the file to save the game in
+      this.console.println("\n\nEnter the file path for file where the game "
+      + "is to be saved.");
+      String filePath = this.getInput();
+      
+      try {
+          //save the game to the specified file
+          GameControl.saveGame(HiddenMickeys.getCurrentGame(), filePath);
+      } catch (Exception ex) {
+          ErrorView.display("MainMenuView", ex.getMessage());
+      }
     }
 
    

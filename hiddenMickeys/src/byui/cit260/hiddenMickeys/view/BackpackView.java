@@ -40,7 +40,8 @@ public class BackpackView extends View{
                 try {
                 number = Integer.parseInt(choice);
                 } catch (NumberFormatException nf) {
-                System.out.println("\n***You must enter a valid number or option.");
+                ErrorView.display(this.getClass().getName(),
+                        "\n***You must enter a valid number or option.");
                 }
                 switch (choice) {
             case "1": //View Fast Passes
@@ -59,7 +60,8 @@ public class BackpackView extends View{
                 this.displayMickeys();
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(),
+                        "\n***Invalid selection. Try again.");
                 break;
                 }
         }
@@ -68,7 +70,8 @@ public class BackpackView extends View{
     }
    
     private void viewFastPass() {
-         System.out.println("\n***viewFastPasses()function called***");
+        ErrorView.display(this.getClass().getName(),
+                "\n***viewFastPasses()function called***");
     }
 
     
@@ -77,25 +80,25 @@ public class BackpackView extends View{
         try{
         BackpackControl backpack = new BackpackControl();
         double newBalance = backpack.calcNewBalance(0);
-        System.out.println("Your current balance is $" + Double.toString(newBalance));
+        this.console.println("Your current balance is $" + Double.toString(newBalance));
         }catch (BackpackControlException be) {
-            System.out.println(be.getMessage());
+            ErrorView.display(this.getClass().getName(),be.getMessage());
         }
     }
   
     private void useEmergencyWater() {
-        System.out.println("\n Whew, you are feeling refreshed after drinking"
+        this.console.println("\n Whew, you are feeling refreshed after drinking"
                 + " your emergency water.");
     }
 
     private void useEmergencySnack() {
-        System.out.println("\nYummy, You have eaten your emergency snack and "
+        this.console.println("\nYummy, You have eaten your emergency snack and "
                 + "it was delicious.");
     }
 
     private void displayMickeys() {
         
-        System.out.println("\nNot supported yet."); 
+        this.console.println("\nNot supported yet."); 
     }
     
 }

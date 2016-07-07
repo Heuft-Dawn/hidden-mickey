@@ -9,6 +9,7 @@ import byui.cit260.hiddenMickeys.exceptions.LocationControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
+import byui.cit260.hiddenMickeys.view.ErrorView;
 import byui.cit260.hiddenMickeys.view.ExploreFoodLocationView;
 import byui.cit260.hiddenMickeys.view.ExploreRestView;
 import byui.cit260.hiddenMickeys.view.ExploreRideLocationView;
@@ -72,7 +73,8 @@ public class LocationControl {
       curEnergy = level;
       
       if (curEnergy < 10){ //check energy level
-          System.out.println ("Caution energy level is below 10, replenish soon");
+          ErrorView.display(this.getClass().getName(),
+                  "Caution energy level is below 10, replenish soon");
           return energyUsed; 
       }    
       return energyUsed;
