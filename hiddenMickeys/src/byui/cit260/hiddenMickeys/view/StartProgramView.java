@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Hannah Mars
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     private String promptMessage;    
     public StartProgramView() {
         
@@ -82,14 +82,14 @@ public class StartProgramView {
     }
 
     private String getPlayerName() {
-        Scanner keyboard = new Scanner(System.in); //get in file for keyboard
+    
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
-        
+        try {
         while (!valid) { //loop while an invalid value is entered
             System.out.println("\n" + this.promptMessage);
             
-            value = keyboard.nextLine(); //get next line typed on keyboard
+            value = this.keyboard.readLine(); //get next line typed on keyboard
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
@@ -98,10 +98,14 @@ public class StartProgramView {
             }
             break; //end the loop
         }
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
         return value; //return the value entered
     }
     
-     private boolean doAction(String playerName) {
+    @Override
+     public boolean doAction(String playerName) {
         if (playerName.length() < 2) {
             System.out.println("\nInvalid player's name: "
             + "The name must be greater than one character in length.");

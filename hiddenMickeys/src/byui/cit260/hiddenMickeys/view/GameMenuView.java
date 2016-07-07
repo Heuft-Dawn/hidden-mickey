@@ -27,7 +27,6 @@ public GameMenuView(){
             +"\nT - View Time spent/Time remaining"
             +"\nL - View Energy Level"
             +"\nR - Rest for 15 minutes"
-            +"\nS - Save game"
             +"\nH - Help"
             +"\nQ - Quit"
             +"\n---------------------------------------------------"
@@ -58,10 +57,6 @@ public GameMenuView(){
                 break;
             case "R": //rest for 15 minutes (charges energy level +20)
                 this.restAndRecharge();
-                this.quitTheOption();
-                break;
-            case "S": //save current game
-                this.saveGame();
                 this.quitTheOption();
                 break;
             case "H": //save current game
@@ -131,10 +126,6 @@ public GameMenuView(){
     private void restAndRecharge() {
         RestAndRechargeView restMenu = new RestAndRechargeView();
         restMenu.display();
-    }
-
-    private void saveGame() {
-        System.out.println("\n***saveGame()function called***");
     }
 
     private void showHelpMenu() {
