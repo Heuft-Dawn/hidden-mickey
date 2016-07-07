@@ -81,7 +81,8 @@ public class ExploreRideLocationView extends View {
             int timeRemaining;
             energyLevel = gc.updateEnergyLevels(fastPassTime);
             timeRemaining = gc.updateTimeRemaining(fastPassTime);
-            this.console.println("\n\nYou have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
+            this.displayCurrentTimeAndEnergy();
+            mylocation.setVisited(true);
             //Go to the end of ride menu that allows Mickey Searching
             MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
             locationEndMenu.display();
@@ -108,7 +109,8 @@ public class ExploreRideLocationView extends View {
             int timeRemaining;
             energyLevel = gc.updateEnergyLevels(waitTime);
             timeRemaining = gc.updateTimeRemaining(waitTime);
-            this.console.println("You have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
+            this.displayCurrentTimeAndEnergy();
+            mylocation.setVisited(true);
             //Go to the end of ride menu that allows Mickey Searching
             MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
             locationEndMenu.display();
@@ -117,12 +119,5 @@ public class ExploreRideLocationView extends View {
         }
     }
 
-    private void getRideDescription() {
-       this.console.println("Here is a description of the ride you just went on.  You saw"
-                    +"\nTHIS and THIS and THIS and it was a blast.");
-    }
-
-    private void updateTime() {
-       this.console.println("\n***updateTime()function called***");
-    }
+   
 }

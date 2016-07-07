@@ -140,7 +140,8 @@ public class ProceedView extends View {
     }
 
     private boolean checkFastPassAvailability() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("Code the check to see if fast passes are available.  Default right now is true.");
+        return true;
     }
 
     private void notifyNextFastPassTime() {

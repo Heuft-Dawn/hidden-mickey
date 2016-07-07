@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.model.Game;
 import hiddenmickeys.HiddenMickeys;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -77,5 +78,12 @@ public abstract class View implements ViewInterface {
           
                 this.doAction(option);
             
+    }
+    
+    @Override
+    public void displayCurrentTimeAndEnergy() {
+        Game game = HiddenMickeys.getCurrentGame();
+          this.console.println("\nCurrent Time Remaining: " + Integer.toString(game.getTimeRemaining()) 
+                  + "  Current Energy: " + Integer.toString(game.getEnergyLevel()) + "%");
     }
 }

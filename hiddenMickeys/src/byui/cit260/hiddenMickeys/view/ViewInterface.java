@@ -18,5 +18,7 @@ public interface ViewInterface {
     public boolean doAction(String value);
     
     public void quitTheOption();
+    
+    public void displayCurrentTimeAndEnergy();
 
 }

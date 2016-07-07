@@ -5,6 +5,11 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.LocationControl;
+import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Location;
+import hiddenmickeys.HiddenMickeys;
+
 /**
  *
  * @author Hannah Mars
@@ -34,6 +39,10 @@ public class FastPassStationLocationView extends View {
 }
 
     private void addFastpass() {
+        Game game = HiddenMickeys.getCurrentGame();
+        int locationNum = game.getCurrentLocationNo();
+        Location myLocation = LocationControl.getLocationByNumber(locationNum);
+        myLocation.setVisited(true);
          //update fast pass number and next availability time is in 90 minutes
         //display the number of fast passes
         //notify user when the next fast pass will be available

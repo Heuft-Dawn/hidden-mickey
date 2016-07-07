@@ -154,7 +154,12 @@ public class LocationControl {
         
     }
     
-    
+    public static void markCurrentLocationVisited() {
+        Game game = HiddenMickeys.getCurrentGame();
+        int locationNum = game.getCurrentLocationNo();
+        Location myLocation = LocationControl.getLocationByNumber(locationNum);
+        myLocation.setVisited(true);
+    }
 
     
 }
