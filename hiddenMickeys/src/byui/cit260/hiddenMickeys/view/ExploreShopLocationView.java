@@ -56,13 +56,15 @@ public class ExploreShopLocationView extends View {
                         this.buyItem(choiceNum-1);
                         break;
                     default:
-                        System.out.println("\nYou must enter a valid option.");
+                        ErrorView.display(this.getClass().getName(),
+                                "\nYou must enter a valid item number.");
                         returnToMenu = true;
-                        break;
+                        return !returnToMenu;
+                        
                         
                 }
             } catch (NumberFormatException nf) {
-                System.out.println("\nYou must enter a valid number or Q");
+                ErrorView.display(this.getClass().getName(),"\nYou must enter a valid number or Q");
                 //prompt the user to try again
                 return false;
             }
@@ -89,7 +91,7 @@ public class ExploreShopLocationView extends View {
         try {
         bc.updateMoney(price);
         } catch (Throwable backpackc) {
-            System.out.println(backpackc.getMessage());
+            ErrorView.display(this.getClass().getName(),backpackc.getMessage());
         }
         //use decimal format object to format money
         DecimalFormat df = new DecimalFormat("###,###,###.00");
@@ -99,9 +101,9 @@ public class ExploreShopLocationView extends View {
         
         //get the item name from the position in the array
         String item = myLocation.getScene().getItemName()[arrayPosition];
-        System.out.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");
-        System.out.println("Now you may look around the shop.");
-        System.out.println("Description:" + myLocation.getScene().getDescription());
+        this.console.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining."
+                            + "\nNow you may look around the shop."
+                            + "\nDescription:" + myLocation.getScene().getDescription());
         
         //update the location as visited
         myLocation.setVisited(true);

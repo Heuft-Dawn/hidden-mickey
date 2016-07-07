@@ -28,7 +28,7 @@ public class ExploreRestView extends View {
                     this.markAsVisited();
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(),"\n***Invalid selection. Try again.");
                 break;
         }
         return false;
@@ -48,6 +48,6 @@ public class ExploreRestView extends View {
     }
 
     private void markAsVisited() {
-        System.out.println("TODO write mark as visited function");
+        this.console.println("TODO write mark as visited function");
     }
 }

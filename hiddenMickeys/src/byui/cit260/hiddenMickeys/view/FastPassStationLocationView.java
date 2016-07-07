@@ -27,7 +27,7 @@ public class FastPassStationLocationView extends View {
             case "Q":
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(),"\n***Invalid selection. Try again.");
                 break;
         }
         return false;
@@ -37,7 +37,7 @@ public class FastPassStationLocationView extends View {
          //update fast pass number and next availability time is in 90 minutes
         //display the number of fast passes
         //notify user when the next fast pass will be available
-        System.out.println("TODO: Should say You have added another Fast Pass to your backpack. You now have ___ Fast Passes.");
+        this.console.println("TODO: Should say You have added another Fast Pass to your backpack. You now have ___ Fast Passes.");
     }
 
    

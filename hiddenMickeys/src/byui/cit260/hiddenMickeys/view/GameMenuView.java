@@ -36,7 +36,7 @@ public GameMenuView(){
     @Override
      public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-       // System.out.println("The choice you entered is " + choice);
+       
         switch (choice) {
             case "M": //view map or move
                 this.mapAndMove();
@@ -65,7 +65,7 @@ public GameMenuView(){
             case "Q":
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(),"\n***Invalid selection. Try again.");
                 break;
         }
         return false;
@@ -82,11 +82,11 @@ public GameMenuView(){
         String mapKey = "-----------------------------------------------------------------------------------------------"
                         +"\n|     Key: >>-Ride  ^^-Rest  $$-Shop  **-FastPass  ++-Food  ==-Visited  ##-CurrentLocation    |"
                         + "\n-----------------------------------------------------------------------------------------------";
-        System.out.println(mapKey);
+        this.console.println(mapKey);
                             
         LocationControl locationControl = new LocationControl();
         
-        System.out.println("You have visited " + Integer.toString(locationControl.getLocationsVisited()) + " location(s).");
+        this.console.println("You have visited " + Integer.toString(locationControl.getLocationsVisited()) + " location(s).");
         //pull up the map and move menu
         MapAndMoveView moveMenu = new MapAndMoveView();
         moveMenu.display();
@@ -112,15 +112,14 @@ public GameMenuView(){
     private void viewBackpack() {
        BackpackView backpack = new BackpackView();
        backpack.display();
-        System.out.println("\n***viewBackpack()function called***");
-    }
+           }
 
     private void viewTime() {
-        System.out.println("\n***viewTime()function called***");
+        this.console.println("\n***viewTime()function called***");
     }
 
     private void energyLevel() {
-        System.out.println("\n***energyLevel()function called***");
+        this.console.println("\n***energyLevel()function called***");
     }
 
     private void restAndRecharge() {
@@ -148,14 +147,14 @@ public GameMenuView(){
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
         try {
-          System.out.print("  |");
+          this.console.print("  |");
           for( Land land : Land.values()){
             tmpString = " " + land + "     ";
             divLine = divLine + "------------------";
             tmpString = tmpString.substring(0,15);//column = 0; column < Land.values().length; column++){
-            System.out.print(tmpString + " |"); // print col numbers to side of map
+            this.console.print(tmpString + " |"); // print col numbers to side of map
           }
-          System.out.println();
+          this.console.println();
           for( int row = 0; row < locations.length; row++){
             for( int column = 0; column < locations[row].length; column++){
               typeSymbol = locations[row][column].getScene().getMapSymbol();  
@@ -169,19 +168,19 @@ public GameMenuView(){
                  }
               leftIndicator = typeSymbol+ typeSymbol + "   ";
               rightIndicator = "    " + typeSymbol + typeSymbol;
-              System.out.print("| | |"); // start map with a |
+              this.console.print("| | |"); // start map with a |
               if(locations[row][column].getLocationNo()>= 10){
               rightIndicator = rightIndicator.substring(rightIndicator.length()-5);}
               if(locations[row][column].getScene() == null)
-                System.out.print(leftIndicator + "??" + rightIndicator);
+                this.console.print(leftIndicator + "??" + rightIndicator);
               else
-                System.out.print(leftIndicator + locations[row][column].getLocationNo() + rightIndicator);
+                this.console.print(leftIndicator + locations[row][column].getLocationNo() + rightIndicator);
             }
-            System.out.println("| | |");
-            System.out.println(divLine);
+            this.console.println("| | |");
+            this.console.println(divLine);
           }
         }catch (Exception e) {
-          System.out.println("Error");
+          ErrorView.display(this.getClass().getName(),e.getMessage());
         }
        
 }
@@ -204,7 +203,7 @@ public GameMenuView(){
         try {
          numRows = MapControl.calcRowsPerColumn(noLocations, numColumns);
          } catch (MapControlException me) {
-            System.out.println(me.getMessage());
+            ErrorView.display(this.getClass().getName(),me.getMessage());
         }
         
         //Create an array with the correct number of rows and columns
@@ -233,7 +232,7 @@ public GameMenuView(){
                     tmpString += tmpName.substring(0,colWidth);
                 }
                  }
-             System.out.println(tmpString);
+             this.console.println(tmpString);
         }
 
 

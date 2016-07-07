@@ -53,7 +53,7 @@ public class ExploreRideLocationView extends View {
             case "Q": //go back to menu
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(),"\n***Invalid selection. Try again.");
                 returnToMenu = true;
                 break;
         }
@@ -73,7 +73,7 @@ public class ExploreRideLocationView extends View {
         GameControl gc = new GameControl();
         //print a description of the ride
         String description = mylocation.getScene().getDescription();
-        System.out.println(description);
+        this.console.println(description);
             //update wait time
             int waitTime = mylocation.getScene().getWaitTime();
             int fastPassTime = this.fastPassTime;
@@ -81,12 +81,12 @@ public class ExploreRideLocationView extends View {
             int timeRemaining;
             energyLevel = gc.updateEnergyLevels(fastPassTime);
             timeRemaining = gc.updateTimeRemaining(fastPassTime);
-            System.out.println("\n\nYou have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
+            this.console.println("\n\nYou have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
             //Go to the end of ride menu that allows Mickey Searching
             MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
             locationEndMenu.display();
         }catch (GameControlException ge) {
-            System.out.println(ge.getMessage());
+            this.console.println(ge.getMessage());
         }
         
     }
@@ -101,28 +101,28 @@ public class ExploreRideLocationView extends View {
         GameControl gc = new GameControl();
         //print a description of the ride
         String description = mylocation.getScene().getDescription();
-        System.out.println(description);
+        this.console.println(description);
             //update wait time
             int waitTime = mylocation.getScene().getWaitTime();
             int energyLevel;
             int timeRemaining;
             energyLevel = gc.updateEnergyLevels(waitTime);
             timeRemaining = gc.updateTimeRemaining(waitTime);
-            System.out.println("You have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
+            this.console.println("You have " + Integer.toString(timeRemaining)+ " minutes left. Energy Level = " + Integer.toString(energyLevel) + "%");
             //Go to the end of ride menu that allows Mickey Searching
             MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
             locationEndMenu.display();
         }catch (GameControlException ge) {
-            System.out.println(ge.getMessage());
+            ErrorView.display(this.getClass().getName(),ge.getMessage());
         }
     }
 
     private void getRideDescription() {
-       System.out.println("Here is a description of the ride you just went on.  You saw"
+       this.console.println("Here is a description of the ride you just went on.  You saw"
                     +"\nTHIS and THIS and THIS and it was a blast.");
     }
 
     private void updateTime() {
-       System.out.println("\n***updateTime()function called***");
+       this.console.println("\n***updateTime()function called***");
     }
 }
