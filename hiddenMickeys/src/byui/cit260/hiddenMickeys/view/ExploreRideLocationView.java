@@ -68,8 +68,8 @@ public class ExploreRideLocationView extends View {
             //loading current game, location and get location number
         Game game = HiddenMickeys.getCurrentGame();
         int locationNum = game.getCurrentLocationNo();
-        LocationControl lc = new LocationControl();
-        Location mylocation = lc.getLocationByNumber(locationNum);
+        //LocationControl lc = new LocationControl();
+        Location mylocation = LocationControl.getLocationByNumber(locationNum);
         GameControl gc = new GameControl();
         //print a description of the ride
         String description = mylocation.getScene().getDescription();
@@ -96,8 +96,8 @@ public class ExploreRideLocationView extends View {
             //loading current game, location and get location number
         Game game = HiddenMickeys.getCurrentGame();
         int locationNum = game.getCurrentLocationNo();
-        LocationControl lc = new LocationControl();
-        Location mylocation = lc.getLocationByNumber(locationNum);
+        //LocationControl lc = new LocationControl();
+        Location mylocation = LocationControl.getLocationByNumber(locationNum);
         GameControl gc = new GameControl();
         //print a description of the ride
         String description = mylocation.getScene().getDescription();

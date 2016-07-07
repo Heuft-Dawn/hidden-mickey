@@ -23,7 +23,7 @@ Author: Susan Allen
  */
 public class LocationControl {
     
-   public int calcFastPassTime(int time) throws LocationControlException {
+   public static int calcFastPassTime(int time) throws LocationControlException {
     /**
      * This function calculates fast pass time by dividing the 
      * current wait time in half and rounding it down to a 
@@ -94,7 +94,7 @@ public class LocationControl {
     }
         return countLocations;
     }
-       public int[] getLocationCoordinates(int locationNum) {
+       public static int[] getLocationCoordinates(int locationNum) {
         // Get the game and locations    
        Game game = HiddenMickeys.getCurrentGame();
        Map map = game.getMap(); // retreive the map from game
@@ -119,7 +119,7 @@ public class LocationControl {
      
     }
 
-    public String lookupLocationName(int locationNum) {
+    public static String lookupLocationName(int locationNum) {
     Game game = HiddenMickeys.getCurrentGame();
     Map map = game.getMap();
     Location[][] locations = map.getLocations();
@@ -136,7 +136,7 @@ public class LocationControl {
         return locationName;
     }
     
-    public Location getLocationByNumber(int locationNum){
+    public static Location getLocationByNumber(int locationNum){
     Game game = HiddenMickeys.getCurrentGame();
     Map map = game.getMap();
     Location[][] locations = map.getLocations();

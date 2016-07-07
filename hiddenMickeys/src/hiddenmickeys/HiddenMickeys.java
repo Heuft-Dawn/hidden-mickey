@@ -78,7 +78,7 @@ public class HiddenMickeys {
              System.out.println("Error closing files");
              return;
          }
-         
+        
      }
 }
 

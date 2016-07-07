@@ -100,8 +100,8 @@ public class MapAndMoveView extends View{
          int[] coordArray = new int[2];//initialize array to store coordinates
          
          //get coordinates for new location
-         LocationControl lc = new LocationControl();//create location control object
-         coordArray = lc.getLocationCoordinates(number);//pass location num to function
+         //LocationControl lc = new LocationControl();//create location control object
+         coordArray = LocationControl.getLocationCoordinates(number);//pass location num to function
          int newRow = coordArray[0];
          int newCol = coordArray[1];
          
@@ -111,7 +111,7 @@ public class MapAndMoveView extends View{
          int curCol = game.getCurrentColumn();//retrieve the current column location
         
          //get the location name to display
-         Location locationInfo = lc.getLocationByNumber(number);
+         Location locationInfo = LocationControl.getLocationByNumber(number);
          String locationName = locationInfo.getScene().getName();
          
         MapControl mpcontrol = new MapControl();//create map control object

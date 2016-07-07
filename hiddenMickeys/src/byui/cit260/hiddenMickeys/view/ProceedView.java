@@ -60,8 +60,8 @@ public class ProceedView extends View {
         int newRow = 0;
         int newColumn = 0;
         // get location coordinates
-        LocationControl lc = new LocationControl();
-        coordArray = lc.getLocationCoordinates(this.locationNum);
+        //LocationControl lc = new LocationControl();
+        coordArray = LocationControl.getLocationCoordinates(this.locationNum);
         
         newRow = coordArray[0];
         newColumn = coordArray[1];
@@ -94,15 +94,15 @@ public class ProceedView extends View {
     public void exploreLocationType() {
         
     try{
-    LocationControl lc = new LocationControl();    
+       
         // determine whether location is food, ride or shop
-    Location myloc = lc.getLocationByNumber(this.locationNum);
+    Location myloc = LocationControl.getLocationByNumber(this.locationNum);
     String locationType = myloc.getScene().getLocationType();
     
     switch (locationType) {
             case "R": //Ride
                 int waitTime = myloc.getScene().getWaitTime();
-                int fastPassTime = lc.calcFastPassTime(waitTime);
+                int fastPassTime = LocationControl.calcFastPassTime(waitTime);
                 ExploreRideLocationView rideView = new ExploreRideLocationView(waitTime, fastPassTime);
                 rideView.display();
                 break;

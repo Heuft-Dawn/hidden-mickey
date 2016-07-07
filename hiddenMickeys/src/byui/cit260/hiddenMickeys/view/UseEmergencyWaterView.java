@@ -36,6 +36,6 @@ public class UseEmergencyWaterView extends View {
        return true;
    }
 
-    private void updateBackpackWater() {
+    public static void updateBackpackWater() {
         System.out.println("TODO: UpdateBackpackWater"); }
 }

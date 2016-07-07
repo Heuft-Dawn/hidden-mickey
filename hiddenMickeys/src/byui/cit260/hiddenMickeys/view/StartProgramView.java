@@ -63,23 +63,7 @@ public class StartProgramView extends View {
             
         } while (!done);
         
-        /*
-        do
-            Prompt for and get the player's name
-            if (playersName == "Q") then
-            exit
-        
-            do the action and display the next view
-        
-        while the action is not successful
-        */
-        
-        
-        
-        
-        //Do the action
-        //Determine and display the next view
-    }
+ }
 
     private String getPlayerName() {
     

@@ -38,6 +38,7 @@ public class FastPassStationLocationView extends View {
         //display the number of fast passes
         //notify user when the next fast pass will be available
         this.console.println("TODO: Should say You have added another Fast Pass to your backpack. You now have ___ Fast Passes.");
+   
     }
 
    

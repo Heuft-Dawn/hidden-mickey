@@ -79,8 +79,8 @@ public class ExploreShopLocationView extends View {
         int locationNum = game.getCurrentLocationNo();
         
         //get the location object to extract data from
-        LocationControl lc = new LocationControl();
-        Location myLocation = lc.getLocationByNumber(locationNum);
+        //LocationControl lc = new LocationControl();
+        Location myLocation = LocationControl.getLocationByNumber(locationNum);
         
         //get the item price to update remaining balance and to display on screen
         double price = myLocation.getScene().getItemPrice();

@@ -102,8 +102,8 @@ public class ExploreFoodLocationView extends View {
         int locationNum = game.getCurrentLocationNo();
         
         //get the location information
-        LocationControl lc = new LocationControl();
-        Location myLocation = lc.getLocationByNumber(locationNum);
+        //LocationControl lc = new LocationControl();
+        Location myLocation = LocationControl.getLocationByNumber(locationNum);
         
         //get item price and update balance
         double price = myLocation.getScene().getItemPrice();
