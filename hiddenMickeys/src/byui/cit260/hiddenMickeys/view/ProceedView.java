@@ -40,7 +40,7 @@ public class ProceedView extends View {
            case "Q":
                break;
            default:
-               System.out.println("/nInvalid choice try again");
+               this.console.println("/nInvalid choice try again");
                returnToMenu = true;
                break;
        }
@@ -71,7 +71,7 @@ public class ProceedView extends View {
         game.setCurrentRow(newRow);
         game.setCurrentColumn(newColumn);
         game.setCurrentLocationNo(this.locationNum);
-        System.out.println("Player will now move to " + Integer.toString(this.locationNum) + ".");
+        this.console.println("Player will now move to " + Integer.toString(this.locationNum) + ".");
         
         //update time left in game
         MapControl mc = new MapControl();
@@ -81,9 +81,9 @@ public class ProceedView extends View {
         int curTimeRemain = game.getTimeRemaining();
         game.setTimeRemaining(curTimeRemain - moveTime);
         curTimeRemain = game.getTimeRemaining();
-        System.out.println ("You have " + Integer.toString(curTimeRemain) + " minutes left before your time expires.");
+        this.console.println ("You have " + Integer.toString(curTimeRemain) + " minutes left before your time expires.");
          } catch (MapControlException me) {
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
          }
        // explore the location based on the location type 
        this.exploreLocationType();
@@ -131,11 +131,12 @@ public class ProceedView extends View {
                 foodView.display();
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(), "\n***Invalid selection. Try again.");
                 break;
         }
+               
         } catch (LocationControlException le) {
-        System.out.println(le.getMessage());
+        ErrorView.display(this.getClass().getName(), "Error reading input: " + le.getMessage());
         }
     }
 

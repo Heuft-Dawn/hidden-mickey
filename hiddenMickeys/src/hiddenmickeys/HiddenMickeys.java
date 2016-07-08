@@ -11,6 +11,7 @@ package hiddenmickeys;
  * @author Hannah Mars
  */
 import byui.cit260.hiddenMickeys.model.*;
+import byui.cit260.hiddenMickeys.view.ErrorView;
         
 
 
@@ -77,6 +78,7 @@ public class HiddenMickeys {
          } catch (IOException ex) {
              System.out.println("Error closing files");
              return;
+                     
          }
         
      }

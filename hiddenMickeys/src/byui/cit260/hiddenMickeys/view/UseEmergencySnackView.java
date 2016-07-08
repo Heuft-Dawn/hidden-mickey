@@ -21,7 +21,7 @@ public class UseEmergencySnackView extends View {
        switch(choice){
            case "Y":
                this.updateBackpackSnack();
-               System.out.println("/n Whew!  You feel much better after eating the snack! /nYour energy has increased./n/");
+               this.console.println("/n Whew!  You feel much better after eating the snack! /nYour energy has increased./n/");
                this.quitTheOption();
                break;
            case "N":
@@ -29,12 +29,12 @@ public class UseEmergencySnackView extends View {
            case "Q":
                break;
            default:
-               System.out.println("/nInvalid choice try again");
+               this.console.println("/nInvalid choice try again");
                break;
        }
        return true;
    }
 
     private void updateBackpackSnack() {
-        System.out.println("TODO: UpdateBackpackSnack"); }
+        this.console.println("TODO: UpdateBackpackSnack"); }
 }
