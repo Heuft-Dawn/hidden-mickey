@@ -11,6 +11,7 @@ package hiddenmickeys;
  * @author Hannah Mars
  */
 import byui.cit260.hiddenMickeys.model.*;
+import byui.cit260.hiddenMickeys.view.ErrorView;
         
 
 
@@ -39,6 +40,7 @@ public class HiddenMickeys {
     public static void main(String[] args) {
        
      try {
+         
         //open character stream files for end user input and output
         HiddenMickeys.inFile = 
                 new BufferedReader(new InputStreamReader(System.in));

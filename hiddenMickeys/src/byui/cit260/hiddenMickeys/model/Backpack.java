@@ -34,6 +34,17 @@ public class Backpack implements Serializable{
         //give the users $50 to start with
         this.moneyBalance = 50;
         this.time = 600;
+        //put in some temp values for testing
+        this.mickeysCollected = new Mickey[3];
+        Mickey mickey1 = new Mickey();
+        Mickey mickey2 = new Mickey();
+        Mickey mickey3 = new Mickey();
+        mickey1.setLocationNum(8);
+        mickey2.setLocationNum(35);
+        mickey3.setLocationNum(21);
+        this.mickeysCollected[0]=mickey1;
+        this.mickeysCollected[1]=mickey2;
+        this.mickeysCollected[2]=mickey3;
     }
 
     

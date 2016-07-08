@@ -27,6 +27,7 @@ public GameMenuView(){
             +"\nT - View Time spent/Time remaining"
             +"\nL - View Energy Level"
             +"\nR - Rest for 15 minutes"
+            +"\nV - View Report of Locations Visited"
             +"\nH - Help"
             +"\nQ - Quit"
             +"\n---------------------------------------------------"
@@ -58,6 +59,9 @@ public GameMenuView(){
             case "R": //rest for 15 minutes (charges energy level +20)
                 this.restAndRecharge();
                 this.quitTheOption();
+                break;
+            case "V":
+                this.locationVisitedReport();
                 break;
             case "H": //save current game
                 this.showHelpMenu();
@@ -236,6 +240,11 @@ public GameMenuView(){
         }
 
 
+    }
+
+    private void locationVisitedReport() {
+         LocationVisitedReportView reportMenu = new LocationVisitedReportView();
+        reportMenu.display();
     }
 
     

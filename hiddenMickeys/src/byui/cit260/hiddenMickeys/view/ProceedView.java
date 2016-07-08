@@ -45,9 +45,7 @@ public class ProceedView extends View {
                break;
        }
        return !returnToMenu;
-   } {
-    
-}
+   } 
 
     private void movePlayer() {
         Game game = HiddenMickeys.getCurrentGame(); // retreive the game

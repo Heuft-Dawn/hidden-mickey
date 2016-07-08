@@ -17,6 +17,8 @@ import hiddenmickeys.HiddenMickeys;
  *
  * @author Hannah Mars
  */
+
+
 public class BackpackControl {
     public double calcNewBalance(double price)
         throws BackpackControlException {
@@ -35,6 +37,14 @@ public class BackpackControl {
         // retrieve the Mickeys collected
         int countMickeys = game.getBackpack().getMickeysCollected().length;
         return countMickeys;
+    }
+     
+     private static void assignMickeys(Mickey[] mickeys){
+    Game game = HiddenMickeys.getCurrentGame();
+    Backpack myBackpack = game.getBackpack();
+    Mickey[] myMickeys = myBackpack.getMickeysCollected();
+    myBackpack.setMickeysCollected(null);
+    myBackpack.setMickeysCollected(mickeys);
     }
     
      public String[] getMickeysCollectedList() {
