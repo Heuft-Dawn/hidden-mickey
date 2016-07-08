@@ -56,13 +56,15 @@ public class ExploreFoodLocationView extends View {
                         this.buyFood(choiceNum-1);
                         break;
                     default:
-                        System.out.println("\nYou must enter a valid option.");
+                        ErrorView.display(this.getClass().getName(),
+                                "\nYou must enter a valid option.");
                         returnToMenu = true;
                         break;
                         
                 }
             } catch (NumberFormatException nf) {
-                System.out.println("\nYou must enter a valid number or Q");
+                ErrorView.display(this.getClass().getName(),
+                        "\nYou must enter a valid number or Q");
                 //prompt the user to try again
                 return false;
             }
@@ -87,17 +89,16 @@ public class ExploreFoodLocationView extends View {
     }
 
     private void getFoodDescription() {
-       System.out.println("This kiosk sells popcorn in souvenir containers."
+       this.console.println("This kiosk sells popcorn in souvenir containers."
                 +"\nYou purchased a Star Wars souvenir container and ate"
                 + "\nseveral handfuls of popcorn.  It was delicious.");
     }
 
     private void updateEnergy() {
-       System.out.println("\n***updateEnergy()function called***");
+       this.console.println("\n***updateEnergy()function called***");
     }
 
     private void buyFood(int arrayPosition) {
-        //System.out.println("\n***buyFood()function called***");
         Game game = HiddenMickeys.getCurrentGame();
         int locationNum = game.getCurrentLocationNo();
         
@@ -113,7 +114,7 @@ public class ExploreFoodLocationView extends View {
         try {
         bc.updateMoney(price);  
         } catch (Throwable backpackc) {
-            System.out.println(backpackc.getMessage());
+            this.console.println(backpackc.getMessage());
         }
         //use decimal format object to format money
         DecimalFormat df = new DecimalFormat("###,###,###.00");
@@ -123,7 +124,7 @@ public class ExploreFoodLocationView extends View {
         
         //get the item name from the position in the array
         String item = myLocation.getScene().getItemName()[arrayPosition];
-        System.out.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");     
+        this.console.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");     
         //update the location as visited
         myLocation.setVisited(true);
         

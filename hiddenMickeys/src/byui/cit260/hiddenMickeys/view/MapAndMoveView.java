@@ -39,13 +39,15 @@ public class MapAndMoveView extends View{
                 try {
                 number = Integer.parseInt(choice);
                 } catch (NumberFormatException nf) {
-                System.out.println("\n***You must enter a valid number or option.");
+                ErrorView.display(this.getClass().getName(),
+                        "\n***You must enter a valid number or option.");
                 }
                 if (number < 36 && number > 0) {
                 this.goToLocation(number);
                 break;
                 } else {
-                    System.out.println("Number entered is not a valid location.");  
+                    ErrorView.display(this.getClass().getName(),
+                            "Number entered is not a valid location.");  
                     returnToMenu = true;
                 }
         }
@@ -84,11 +86,11 @@ public class MapAndMoveView extends View{
         }); 
          
         //display the results
-          System.out.println("Ride Wait Times");
-          System.out.println("-----------------------");
+          this.console.println("Ride Wait Times");
+          this.console.println("-----------------------");
           for (int s=0;s<tmpLocations.length;s++){
             if(tmpLocations[s][0]> 0){  
-            System.out.println("Location #" + Integer.toString(tmpLocations[s][0]) + ": " + Integer.toString(tmpLocations[s][1]) + " min");
+            this.console.println("Location #" + Integer.toString(tmpLocations[s][0]) + ": " + Integer.toString(tmpLocations[s][1]) + " min");
             }
           }
           
@@ -117,10 +119,10 @@ public class MapAndMoveView extends View{
         MapControl mpcontrol = new MapControl();//create map control object
         try{
         int moveTime = mpcontrol.calcMoveTime(curRow, curCol, newRow, newCol);
-         System.out.println("\nIt will take " + Integer.toString(moveTime) + " minutes to "
+         this.console.println("\nIt will take " + Integer.toString(moveTime) + " minutes to "
          + "get to " + locationName);
         } catch (MapControlException me) {
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
        //load proceed view
        ProceedView proceed = new ProceedView(number);

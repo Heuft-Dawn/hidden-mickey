@@ -34,7 +34,7 @@ public class MickeyLocationEndView extends View{
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         boolean returnToMenu = false;
-        //System.out.println("The choice you entered is " + choice);
+    
         switch (choice) {
             case "S": //Search for Mickey
                 
@@ -43,7 +43,8 @@ public class MickeyLocationEndView extends View{
             case "Q": //go back to menu
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(),
+                        "\n***Invalid selection. Try again.");
                 returnToMenu = true;
                 break;
                         }

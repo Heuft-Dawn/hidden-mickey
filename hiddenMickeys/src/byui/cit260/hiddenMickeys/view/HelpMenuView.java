@@ -57,7 +57,8 @@ public HelpMenuView() {//Constructor Function
             case "Q": //exit this portion
                 break;
             default:
-                System.out.println("\n***Invalid selection. Try again.");
+                ErrorView.display(this.getClass().getName(),
+                        "\n***Invalid selection. Try again.");
                 break;
         }
         return false;
@@ -65,7 +66,7 @@ public HelpMenuView() {//Constructor Function
 
     private void displayGameGoal() {
     
-        System.out.println("\n"
+        this.console.println("\n"
             +"\n   The objective of the game is to find 10 Hidden Mickeys.  You must do this before "
             +"\nyou run out of time and energy."
             +"\n"
@@ -95,7 +96,7 @@ public HelpMenuView() {//Constructor Function
 
     private void displayHowMove() {
     String quit; //Variable used to return to the help menu
-       System.out.println("\n"
+       this.console.println("\n"
         +"\n   To move to a new location in the game, enter an 'M' from the Game Menu. A map will"
         +"\nthen be displayed.  Enter the location number of the location that you wish to move to"
         +"\nand the program will tell you how much time it will take to move to that location.  If"
@@ -107,7 +108,7 @@ public HelpMenuView() {//Constructor Function
 
     private void displayHowCheckEnergy() {
     String quit; //Variable used to return to the help menu
-        System.out.println("\n"
+        this.console.println("\n"
         +"\nTo check energy levels, enter an 'L' from the Game Menu screen."
         +"\n"
         + "\n  Your current energy level will be displayed."
@@ -117,7 +118,7 @@ public HelpMenuView() {//Constructor Function
 
     private void displayHowCheckTime() {
     String quit; //Variable used to return to the help menu
-        System.out.println("\n"
+        this.console.println("\n"
         +"\nTo check time remaining and time spent, enter a 'T' from the Game Menu screen.  "
         +"\n"
         +"\nYour Total Time Spent and Total Time Remaining will be displayed."
@@ -127,7 +128,7 @@ public HelpMenuView() {//Constructor Function
 
     private void displayHowRechargeEnergy() {
     String quit; //Variable used to return to the help menu
-        System.out.println("\n"
+        this.console.println("\n"
         +"\nEnergy may be recharged any of the following 3 ways:"
         +"\n"
         +"\n1)- View your Backpack by entering a 'B' from the Game Menu.  If you have an emergency"
@@ -143,7 +144,7 @@ public HelpMenuView() {//Constructor Function
 
     private void displayHowSearch() {
     String quit; //Variable used to return to the help menu
-        System.out.println("\n"
+        this.console.println("\n"
         +"\n   When exploring rides or store locations, you will be given the option to 'Search  "
         +"\nfor Mickey Head.'  If you choose to search, you will enter guesses that are words"
         +"\nand objects contained withinthe ride description where you believe a Mickey Head  " 
