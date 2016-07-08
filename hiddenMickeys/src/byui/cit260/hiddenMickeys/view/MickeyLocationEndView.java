@@ -6,8 +6,10 @@
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Mickey;
 import byui.cit260.hiddenMickeys.model.Scene;
 import hiddenmickeys.HiddenMickeys;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -36,8 +38,7 @@ public class MickeyLocationEndView extends View{
         boolean returnToMenu = false;
     
         switch (choice) {
-            case "S": //Search for Mickey
-                
+            case "S": //Search for Mickey                
                 this.displayMickeySearch();
                 break;
             case "Q": //go back to menu
@@ -56,8 +57,16 @@ public class MickeyLocationEndView extends View{
 
     private void displayMickeySearch() {
         
+        Game game = HiddenMickeys.getCurrentGame();
+        Mickey mickey1 = new Mickey();
+        mickey1.setLocationNum(game.getCurrentLocationNo());
+        ArrayList<Mickey> mickeysCollected = game.getBackpack().getMickeysCollected();
+        mickeysCollected.add(mickey1);
+        game.getBackpack().setMickeysCollected(mickeysCollected);
         
         MickeySearchMenuView  mickeySearchMenu = new MickeySearchMenuView(this.myScene);
         mickeySearchMenu.display();
+        
+       
     }
 }

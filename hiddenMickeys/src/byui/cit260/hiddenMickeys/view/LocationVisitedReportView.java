@@ -11,6 +11,7 @@ import byui.cit260.hiddenMickeys.model.Mickey;
 import hiddenmickeys.HiddenMickeys;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  *
@@ -60,7 +61,7 @@ public class LocationVisitedReportView extends View {
             //pull the data
             Game game = HiddenMickeys.getCurrentGame();
             Location[][] locations = game.getMap().getLocations();
-            Mickey[] mickeys = game.getBackpack().getMickeysCollected();
+            ArrayList<Mickey> mickeys = game.getBackpack().getMickeysCollected();
             //initialize needed variables 
             boolean mickeyFound;
             String mickeyFoundDisplay;
@@ -114,7 +115,7 @@ public class LocationVisitedReportView extends View {
         //get the data
             Game game = HiddenMickeys.getCurrentGame();
             Location[][] locations = game.getMap().getLocations();
-            Mickey[] mickeys = game.getBackpack().getMickeysCollected();
+            ArrayList<Mickey> mickeys = game.getBackpack().getMickeysCollected();
         //initialize needed variables
             boolean mickeyFound;
             String mickeyFoundDisplay;

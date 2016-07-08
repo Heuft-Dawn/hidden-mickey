@@ -12,6 +12,7 @@ import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
 import byui.cit260.hiddenMickeys.model.Mickey;
 import hiddenmickeys.HiddenMickeys;
+import java.util.ArrayList;
 
 /**
  *
@@ -31,26 +32,12 @@ public class BackpackControl {
         curBalance = curBalance - price;
         return curBalance;	
 
-    }
-     public int getMickeysCollected() {
-        Game game = HiddenMickeys.getCurrentGame(); // retrieve the game
-        // retrieve the Mickeys collected
-        int countMickeys = game.getBackpack().getMickeysCollected().length;
-        return countMickeys;
-    }
-     
-     private static void assignMickeys(Mickey[] mickeys){
-    Game game = HiddenMickeys.getCurrentGame();
-    Backpack myBackpack = game.getBackpack();
-    Mickey[] myMickeys = myBackpack.getMickeysCollected();
-    myBackpack.setMickeysCollected(null);
-    myBackpack.setMickeysCollected(mickeys);
-    }
+    }     
     
      public String[] getMickeysCollectedList() {
          Game game = HiddenMickeys.getCurrentGame();
-         Mickey[] mickeysCollected = game.getBackpack().getMickeysCollected();
-         String[] tmpArray = new String[mickeysCollected.length];
+         ArrayList<Mickey> mickeysCollected = game.getBackpack().getMickeysCollected();
+         String[] tmpArray = new String[mickeysCollected.size()];
          LocationControl lc = new LocationControl();
          String locationName = new String();
          int i=0;

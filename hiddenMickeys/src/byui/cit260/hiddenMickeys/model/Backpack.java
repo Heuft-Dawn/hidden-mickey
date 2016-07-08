@@ -6,6 +6,7 @@
 package byui.cit260.hiddenMickeys.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -19,7 +20,7 @@ public class Backpack implements Serializable{
     private double moneyBalance;
     private double time;
     private String description;
-    private Mickey[] mickeysCollected;
+    private ArrayList<Mickey> mickeysCollected;
 
     
     
@@ -35,16 +36,10 @@ public class Backpack implements Serializable{
         this.moneyBalance = 50;
         this.time = 600;
         //put in some temp values for testing
-        this.mickeysCollected = new Mickey[3];
-        Mickey mickey1 = new Mickey();
-        Mickey mickey2 = new Mickey();
-        Mickey mickey3 = new Mickey();
-        mickey1.setLocationNum(8);
-        mickey2.setLocationNum(35);
-        mickey3.setLocationNum(21);
-        this.mickeysCollected[0]=mickey1;
-        this.mickeysCollected[1]=mickey2;
-        this.mickeysCollected[2]=mickey3;
+        this.mickeysCollected = new ArrayList<Mickey>();
+        
+        
+        
     }
 
     
@@ -88,13 +83,15 @@ public class Backpack implements Serializable{
         this.description = description;
     }
 
-    public Mickey[] getMickeysCollected() {
+    public ArrayList<Mickey> getMickeysCollected() {
         return mickeysCollected;
     }
 
-    public void setMickeysCollected(Mickey[] mickeysCollected) {
+    public void setMickeysCollected(ArrayList<Mickey> mickeysCollected) {
         this.mickeysCollected = mickeysCollected;
     }
+
+   
 
     @Override
     public int hashCode() {
