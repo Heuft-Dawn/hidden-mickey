@@ -79,6 +79,7 @@ public class HiddenMickeys {
          } catch (IOException ex) {
              System.out.println("Error closing files");
              return;
+                     
          }
         
      }

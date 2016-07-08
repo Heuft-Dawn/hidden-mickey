@@ -34,7 +34,7 @@ public abstract class View implements ViewInterface {
         boolean done = false; //set flag to not done
         
         do { //prompt for and get selected menu option
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             String value = this.getInput();
             if (value.toUpperCase().equals("Q"))  //user wants to quit
               return; //exit the game
@@ -58,13 +58,13 @@ public abstract class View implements ViewInterface {
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
+                this.console.println("\nInvalid value: value cannot be blank");
                 continue;
             }
             break; //end the loop
         }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            this.console.println("Error reading input: " + e.getMessage());
         }
         return value; //return the value entered
     }
@@ -72,7 +72,7 @@ public abstract class View implements ViewInterface {
     @Override
     public void quitTheOption() {
          
-          System.out.println("Enter Q to Return");
+          this.console.println("Enter Q to Return");
           
                String option = this.getInput();
           

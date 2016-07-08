@@ -50,7 +50,7 @@ public class MickeySearchMenuView extends View {
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        //System.out.println("The choice you entered is " + choice);
+        
         if (choice.equals("V")) {
                 //show the description for the ride
                 this.showRideDescription();
@@ -67,13 +67,13 @@ public class MickeySearchMenuView extends View {
     
     
     private void searchDescription(String choice) {
-        System.out.println("\n***searchDescription()function called on " + choice + "***");
-        System.out.println("\nSorry, no Mickey found there.");
+        this.console.println("\n***searchDescription()function called on " + choice + "***");
+        this.console.println("\nSorry, no Mickey found there.");
     }
 
    
    private void showRideDescription() {
-        System.out.println("Here is the description of the ride...");
+        this.console.println("Here is the description of the ride...");
     }
      
     

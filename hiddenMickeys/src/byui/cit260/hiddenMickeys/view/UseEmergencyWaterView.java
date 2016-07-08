@@ -22,7 +22,7 @@ public class UseEmergencyWaterView extends View {
        switch(choice){
            case "Y":
                this.updateBackpackWater();
-               System.out.println("\n Whew, you are feeling refreshed after drinking your emergency water.. \nYour energy has increased.\n");
+               this.console.println("\n Whew, you are feeling refreshed after drinking your emergency water.. \nYour energy has increased.\n");
                this.quitTheOption();
                break;
            case "N":
@@ -30,12 +30,12 @@ public class UseEmergencyWaterView extends View {
            case "Q":
                break;
            default:
-               System.out.println("\nInvalid choice try again");
+               this.console.println("\nInvalid choice try again");
                break;
        }
        return true;
    }
 
-    public static void updateBackpackWater() {
-        System.out.println("TODO: UpdateBackpackWater"); }
+    public void updateBackpackWater() {
+        this.console.println("TODO: UpdateBackpackWater"); }
 }

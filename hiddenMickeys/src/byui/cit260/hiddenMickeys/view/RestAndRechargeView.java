@@ -21,7 +21,7 @@ public class RestAndRechargeView extends View {
        boolean returnToMenu = false;
        switch(choice){
            case "Y":
-               System.out.println("\n Whew!  You feel much better after resting! \n Your energy has increased 20%. \n");
+               this.console.println("\n Whew!  You feel much better after resting! \n Your energy has increased 20%. \n");
                this.quitTheOption();
                break;
            case "N":
@@ -29,7 +29,7 @@ public class RestAndRechargeView extends View {
            case "Q":
                break;
            default:
-               System.out.println("/nInvalid choice try again");
+               this.console.println("/nInvalid choice try again");
                returnToMenu = true;
                break;
        }
