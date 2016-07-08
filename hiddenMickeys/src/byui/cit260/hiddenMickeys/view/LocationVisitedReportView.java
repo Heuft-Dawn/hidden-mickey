@@ -38,7 +38,7 @@ public class LocationVisitedReportView extends View {
            case "Q":
                break;
            default:
-               System.out.println("/nInvalid choice try again");
+               ErrorView.display(this.getClass().getName(),"/nInvalid choice try again");
                returnToMenu = true;
                break;
        }
@@ -66,30 +66,27 @@ public class LocationVisitedReportView extends View {
             String mickeyFoundDisplay;
             int curLocationNum;
             
-            //loop through all the locations
-            for (int row = 0; row < locations.length; row++){
-                for( int column = 0; column < locations[row].length; column++){ 
-                    curLocationNum = locations[row][column].getLocationNo();
+          //loop through all the locations
+          for (Location[] location : locations) {
+                for (Location location1 : location) {
+                    curLocationNum = location1.getLocationNo();
                     //this.console.println(Integer.toString(curLocationNum));
                     mickeyFound = false;
                     mickeyFoundDisplay = "N";
                     //if the location has been visited, search the Mickeys collected to check for a match
-                    if(locations[row][column].isVisited()){
-                                           
-                           for (Mickey mickey: mickeys){
-                           //this.console.println(Integer.toString(mickey.getLocationNum()));
-                           //if there is a matching mickey location, set mickeyfound to true
-                           if (mickey.getLocationNum() == curLocationNum){
-                               mickeyFound=true;
+                    if (location1.isVisited()) {
+                        for (Mickey mickey: mickeys){
+                            //this.console.println(Integer.toString(mickey.getLocationNum()));
+                            //if there is a matching mickey location, set mickeyfound to true
+                            if (mickey.getLocationNum() == curLocationNum){
+                                mickeyFound=true;
                             }
-                           }
-                    if(mickeyFound){mickeyFoundDisplay = "Y";}       
-                    //display the location in the report with the correct Mickey status
-                    out.printf("%n%-5s%-35s%-15s",Integer.toString(curLocationNum),locations[row][column].getScene().getName(), mickeyFoundDisplay);
-                    
+                        } if(mickeyFound){mickeyFoundDisplay = "Y";}
+                        //display the location in the report with the correct Mickey status
+                        out.printf("%n%-5s%-35s%-15s", Integer.toString(curLocationNum), location1.getScene().getName(), mickeyFoundDisplay);
                     }
-                 }
-            }
+                }
+          }
             out.println("\n\n ");
             //close the file
             try{
@@ -97,12 +94,12 @@ public class LocationVisitedReportView extends View {
                  out.close();
                          
             } catch(Exception e) {
-             System.out.println("Error closing file");
+             ErrorView.display(this.getClass().getName(),"Error closing file");
              return;
              }
             this.console.println("\n\nThe Report has been saved.");
         }catch (IOException ex) {
-            this.console.println("I/0 Error: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),"I/0 Error: " + ex.getMessage());
         }
          
         
@@ -123,29 +120,27 @@ public class LocationVisitedReportView extends View {
             String mickeyFoundDisplay;
             int curLocationNum;
         //loop through the locations to find visited ones
-            for (int row = 0; row < locations.length; row++){
-                for( int column = 0; column < locations[row].length; column++){ 
-                    curLocationNum = locations[row][column].getLocationNo();
+        for (Location[] location : locations) {
+                for (Location location1 : location) {
+                    curLocationNum = location1.getLocationNo();
                     //this.console.println(Integer.toString(curLocationNum));
                     mickeyFound = false;
                     mickeyFoundDisplay = "N";
-                   //if the location has been visited, check to see if a mickey was found there
-                    if(locations[row][column].isVisited()){
-                          //search the mickey array                 
-                           for (Mickey mickey: mickeys){
-                           //this.console.println(Integer.toString(mickey.getLocationNum()));
-                           if (mickey.getLocationNum() == curLocationNum){
-                               mickeyFound=true;
+                    //if the location has been visited, check to see if a mickey was found there
+                    if (location1.isVisited()) {
+                        //search the mickey array
+                        for (Mickey mickey: mickeys){
+                            //this.console.println(Integer.toString(mickey.getLocationNum()));
+                            if (mickey.getLocationNum() == curLocationNum){
+                                mickeyFound=true;
                             }
-                           }
-                    //set the mickeyFoundDisplay value for the report       
-                    if(mickeyFound){mickeyFoundDisplay = "Y";}       
-                    //print the visited location on the report
-                    this.console.printf("%n%-5s%-35s%-15s",Integer.toString(curLocationNum),locations[row][column].getScene().getName(), mickeyFoundDisplay);
-                    
+                        }   //set the mickeyFoundDisplay value for the report
+                        if(mickeyFound){mickeyFoundDisplay = "Y";}
+                        //print the visited location on the report
+                        this.console.printf("%n%-5s%-35s%-15s", Integer.toString(curLocationNum), location1.getScene().getName(), mickeyFoundDisplay);
                     }
-                 }
-            }
+                }
+        }
             this.console.println("\n\n ");
       
     }
