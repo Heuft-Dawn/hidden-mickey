@@ -58,7 +58,7 @@ public class HiddenMickeys {
         
      } catch (Throwable e) {
          
-         System.out.println("Exception: " + e.toString() +
+         ErrorView.display("HiddenMickeys.main","Exception: " + e.toString() +
                             "\nCause: " + e.getCause() +
                             "\nMessage: " + e.getMessage());
          
@@ -77,7 +77,8 @@ public class HiddenMickeys {
                  HiddenMickeys.logFile.close();
              
          } catch (IOException ex) {
-             System.out.println("Error closing files");
+                    
+            ErrorView.display("HiddenMickeys.main","Error closing files");
              return;
                      
          }

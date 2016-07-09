@@ -29,7 +29,7 @@ public class UseEmergencySnackView extends View {
            case "Q":
                break;
            default:
-               this.console.println("/nInvalid choice try again");
+               ErrorView.display(this.getClass().getName(),"/nInvalid choice try again");
                break;
        }
        return true;
