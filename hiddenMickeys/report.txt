@@ -1,0 +1,42 @@
+
+SHOP NAMES AND PRICES REPORT
+
+Loc# Shop Name                          Price      
+-----------------------------------------------------
+1    N/A                                0.00       
+6    N/A                                0.00       
+11   N/A                                0.00       
+16   N/A                                0.00       
+21   N/A                                0.00       
+26   N/A                                0.00       
+31   Big Thunder Ranch Food             15.00      
+2    N/A                                0.00       
+7    Hungry Bear Restaurant             10.00      
+12   N/A                                0.00       
+17   N/A                                0.00       
+22   Village Haus Restaurant            10.00      
+27   N/A                                0.00       
+32   N/A                                0.00       
+3    Pieces of Eight                    3.50       
+8    N/A                                0.00       
+13   N/A                                0.00       
+18   Emporium Souvenirs                 5.00       
+23   N/A                                0.00       
+28   N/A                                0.00       
+33   N/A                                0.00       
+4    N/A                                0.00       
+9    N/A                                0.00       
+14   N/A                                0.00       
+19   Carnation Cafe                     5.00       
+24   N/A                                0.00       
+29   N/A                                0.00       
+34   N/A                                0.00       
+5    Mickey Beignet Shop                5.00       
+10   N/A                                0.00       
+15   Dole Whip                          5.00       
+20   Main Street Magic Shop             15.00      
+25   N/A                                0.00       
+30   Pizza Port                         10.00      
+35   N/A                                0.00       
+
+ 

@@ -1,0 +1,17 @@
+
+SHOP NAMES AND PRICES REPORT
+
+Loc# Shop Name                          Price      
+-----------------------------------------------------
+31   Big Thunder Ranch Food             15.00      
+7    Hungry Bear Restaurant             10.00      
+22   Village Haus Restaurant            10.00      
+3    Pieces of Eight                    3.50       
+18   Emporium Souvenirs                 5.00       
+19   Carnation Cafe                     5.00       
+5    Mickey Beignet Shop                5.00       
+15   Dole Whip                          5.00       
+20   Main Street Magic Shop             15.00      
+30   Pizza Port                         10.00      
+
+ 
