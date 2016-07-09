@@ -40,7 +40,7 @@ public class ProceedView extends View {
            case "Q":
                break;
            default:
-               this.console.println("/nInvalid choice try again");
+               ErrorView.display(this.getClass().getName(),"/nInvalid choice try again");
                returnToMenu = true;
                break;
        }
