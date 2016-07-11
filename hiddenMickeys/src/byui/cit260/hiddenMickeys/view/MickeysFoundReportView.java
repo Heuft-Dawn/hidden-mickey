@@ -82,9 +82,11 @@ public class MickeysFoundReportView extends View {
                             if (mickey.getLocationNum() == curLocationNum){
                                 mickeyFound=true;
                             }
-                        } if(mickeyFound=true);
+                        } 
+                        if(mickeyFound=true){
                         //display the location in the report with the correct Mickey status
                         out.printf("%n%-5s%-35s", Integer.toString(curLocationNum), location1.getScene().getName());
+                        }
                     }
                 }
           }
@@ -144,11 +146,12 @@ public class MickeysFoundReportView extends View {
                                 mickeyFound=true;
                             }
                         }   
-                        if(mickeyFound = true)
+                        if(mickeyFound = true){
                         //print the visited location on the report
                         this.console.printf("%n%-5s%-35s", Integer.toString(curLocationNum), location1.getScene().getName());
                     }
                 }
+             }         
         }
             this.console.println("\n\n ");
       

@@ -73,29 +73,13 @@ public class ExploreFoodLocationView extends View {
         return !returnToMenu;
         }
 
-       
-            
-
-    private void exploreFood() {
-        //this will display a description for the user - telling them 
-        //about the food location and what is available
-        this.getFoodDescription();
-        //This calls a menu that gives the player a chance to search for Mickeys or exit.
-                
-        MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(this.myScene);
-        locationEndMenu.display();
-                
- 
-    }
-
-    private void getFoodDescription() {
-       this.console.println("This kiosk sells popcorn in souvenir containers."
-                +"\nYou purchased a Star Wars souvenir container and ate"
-                + "\nseveral handfuls of popcorn.  It was delicious.");
-    }
-
+   
     private void updateEnergy() {
-       this.console.println("\n***updateEnergy()function called***");
+       Game game = HiddenMickeys.getCurrentGame();
+       int curEnergy = game.getEnergyLevel();
+       curEnergy = curEnergy + 10;
+       game.setEnergyLevel(curEnergy);
+           
     }
 
     private void buyFood(int arrayPosition) {
@@ -124,9 +108,12 @@ public class ExploreFoodLocationView extends View {
         
         //get the item name from the position in the array
         String item = myLocation.getScene().getItemName()[arrayPosition];
-        this.console.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining.");     
-        //update the location as visited
+        this.console.println("\nYou bought "+ item + " for $"+  df.format(price) + ", and have $" + df.format(remaining) + " remaining."
+                + "\nEnergy level has increased by 10%");     
+        //update the location as visited and 
+        this.updateEnergy();
         myLocation.setVisited(true);
+        this.displayCurrentTimeAndEnergy();
         
     }
 } 

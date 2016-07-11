@@ -7,8 +7,11 @@
 package byui.cit260.hiddenMickeys.view;
 import byui.cit260.hiddenMickeys.control.BackpackControl;
 import byui.cit260.hiddenMickeys.exceptions.BackpackControlException;
+import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
+import byui.cit260.hiddenMickeys.model.Mickey;
 import hiddenmickeys.HiddenMickeys;
+import java.util.ArrayList;
   
 /**
  *
@@ -98,7 +101,12 @@ public class BackpackView extends View{
     }
 
     private void displayMickeys() {
-         MickeysFoundReportView reportMenu = new MickeysFoundReportView();
+        Game game = HiddenMickeys.getCurrentGame();
+        Backpack backpack = game.getBackpack();
+        ArrayList<Mickey> mickeys =  backpack.getMickeysCollected();
+        int numMickeys = mickeys.size();
+        //this.console.println("# of Mickeys Found: " + Integer.toString(numMickeys));
+        MickeysFoundReportView reportMenu = new MickeysFoundReportView();
         reportMenu.display();
     }
     

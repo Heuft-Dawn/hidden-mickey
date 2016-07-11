@@ -75,7 +75,7 @@ public class ExploreRideLocationView extends View {
         int locationNum = game.getCurrentLocationNo();
         //LocationControl lc = new LocationControl();
         Location mylocation = LocationControl.getLocationByNumber(locationNum);
-        GameControl gc = new GameControl();
+        //GameControl gc = new GameControl();
         //print a description of the ride
         String description = mylocation.getScene().getDescription();
         this.console.println(description);
@@ -84,8 +84,8 @@ public class ExploreRideLocationView extends View {
             int fastPassTime = this.fastPassTime;
             int energyLevel;
             int timeRemaining;
-            energyLevel = gc.updateEnergyLevels(fastPassTime);
-            timeRemaining = gc.updateTimeRemaining(fastPassTime);
+            energyLevel = GameControl.updateEnergyLevels(fastPassTime);
+            timeRemaining = GameControl.updateTimeRemaining(fastPassTime);
             this.displayCurrentTimeAndEnergy();
             mylocation.setVisited(true);
             numFastPasses--;
@@ -111,7 +111,7 @@ public class ExploreRideLocationView extends View {
         int locationNum = game.getCurrentLocationNo();
         //LocationControl lc = new LocationControl();
         Location mylocation = LocationControl.getLocationByNumber(locationNum);
-        GameControl gc = new GameControl();
+        //GameControl gc = new GameControl();
         //print a description of the ride
         String description = mylocation.getScene().getDescription();
         this.console.println(description);
@@ -119,8 +119,8 @@ public class ExploreRideLocationView extends View {
             int waitTime = mylocation.getScene().getWaitTime();
             int energyLevel;
             int timeRemaining;
-            energyLevel = gc.updateEnergyLevels(waitTime);
-            timeRemaining = gc.updateTimeRemaining(waitTime);
+            energyLevel = GameControl.updateEnergyLevels(waitTime);
+            timeRemaining = GameControl.updateTimeRemaining(waitTime);
             this.displayCurrentTimeAndEnergy();
             mylocation.setVisited(true);
             //Go to the end of ride menu that allows Mickey Searching

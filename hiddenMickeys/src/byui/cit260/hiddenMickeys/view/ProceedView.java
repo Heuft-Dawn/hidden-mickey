@@ -5,13 +5,14 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.GameControl;
 import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.control.MapControl;
+import byui.cit260.hiddenMickeys.exceptions.GameControlException;
 import byui.cit260.hiddenMickeys.exceptions.LocationControlException;
 import byui.cit260.hiddenMickeys.exceptions.MapControlException;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
-import byui.cit260.hiddenMickeys.model.Map;
 import hiddenmickeys.HiddenMickeys;
 
 /**
@@ -69,7 +70,10 @@ public class ProceedView extends View {
         game.setCurrentRow(newRow);
         game.setCurrentColumn(newColumn);
         game.setCurrentLocationNo(this.locationNum);
-        this.console.println("Player will now move to " + Integer.toString(this.locationNum) + ".");
+        String strLocationName = LocationControl.lookupLocationName(this.locationNum);
+        this.console.println("\n---------------------------------------------------"
+                + ("\nYou are now at " + strLocationName + ".").toUpperCase() +
+                "\n---------------------------------------------------");
         
         //update time left in game
         MapControl mc = new MapControl();
@@ -78,14 +82,19 @@ public class ProceedView extends View {
         moveTime = mc.calcMoveTime(curRow, curColumn, newRow, newColumn);
         int curTimeRemain = game.getTimeRemaining();
         game.setTimeRemaining(curTimeRemain - moveTime);
-        curTimeRemain = game.getTimeRemaining();
-        this.console.println ("You have " + Integer.toString(curTimeRemain) + " minutes left before your time expires.");
-         } catch (MapControlException me) {
-            this.console.println(me.getMessage());
+        try {
+            GameControl.updateEnergyLevels(moveTime);
+            } catch (GameControlException ge){
+                ErrorView.display(this.getClass().getName(), ge.getMessage());
+            }
+        this.displayCurrentTimeAndEnergy();
+        // explore the location based on the location type 
+        this.exploreLocationType();
+        } catch (MapControlException me) {
+                ErrorView.display(this.getClass().getName(), me.getMessage());
          }
-       // explore the location based on the location type 
-       this.exploreLocationType();
-    
+       
+  
     }
     
     

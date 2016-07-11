@@ -54,9 +54,9 @@ public class ExploreRestView extends View {
         game.setTimeRemaining(curTime - 20);
         //increase energy by 15
         int curEnergy = game.getEnergyLevel();
-        game.setEnergyLevel(curEnergy + 15);
+        game.setEnergyLevel(curEnergy + 10);
         //Notify user of new values
-        this.console.println("\nAfter resting for 20 minutes, your energy has increased by 15.");
+        this.console.println("\nAfter resting for 20 minutes, your energy has increased by 10%.");
         this.displayCurrentTimeAndEnergy();
         //quit the option? or ??go to Mickey search view??
         this.quitTheOption();

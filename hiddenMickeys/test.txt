@@ -1,0 +1,12 @@
+
+Mickeys Found Report
+
+Loc# Location Name                      
+--------------------------------        
+1    Pirates of the Caribbean           
+6    Park Bench                         
+16   Main Gate                          
+2    Fast Pass Machine                  
+3    Pieces of Eight                    
+
+ 

@@ -119,11 +119,11 @@ public class GameControl {
         
     }
     
-    public int updateEnergyLevels(int minutes)
+    public static int updateEnergyLevels(int minutes)
             throws GameControlException {
         Game game = HiddenMickeys.getCurrentGame();
         int curEnergyLevel = game.getEnergyLevel();
-        int energyDecrease = this.calcEnergyUsed(minutes);
+        int energyDecrease = calcEnergyUsed(minutes);
         if (energyDecrease>curEnergyLevel){
             throw new GameControlException("Sorry - You are out of Energy."); //null or zero location number
         }else{
@@ -133,7 +133,7 @@ public class GameControl {
             return game.getEnergyLevel();
 }
     
-     public int calcEnergyUsed (int timeUsed) 
+     public static int calcEnergyUsed (int timeUsed) 
             throws GameControlException {
       if(timeUsed<1){
            throw new GameControlException("Cannot calculate energy used on time less than 1"); 
@@ -145,7 +145,7 @@ public class GameControl {
       }
       }
     
-    public  int updateTimeRemaining(int minutes)
+    public static int updateTimeRemaining(int minutes)
             throws GameControlException {
         Game game = HiddenMickeys.getCurrentGame();
         int curTime = game.getTimeRemaining();
