@@ -6,7 +6,9 @@
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.GameControl;
+import byui.cit260.hiddenMickeys.model.Game;
 import hiddenmickeys.HiddenMickeys;
+import static hiddenmickeys.HiddenMickeys.getCurrentGame;
 import java.util.Scanner;
 
 /**
@@ -115,8 +117,15 @@ public MainMenuView() {
     }
 
     private void viewGameMenu() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        try{
+            Game game= getCurrentGame();
+            int gameCheck = game.getTimeRemaining();
+            if(gameCheck>0){
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.display();}
+        }catch (Exception e){
+            ErrorView.display(this.getClass().getName(), "You have not begun a game yet.\nStart a New Game");
+        }
     }
 
    
