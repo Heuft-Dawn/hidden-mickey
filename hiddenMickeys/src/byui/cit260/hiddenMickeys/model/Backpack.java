@@ -14,11 +14,11 @@ import java.util.Objects;
  */
 public class Backpack implements Serializable{
     //class instance variables
-    private boolean emergencyWaterUsed;
-    private boolean emergencySnackUsed;
+    public boolean emergencyWaterUsed;
+    public boolean emergencySnackUsed;
     private int numberFastPasses;
     private double moneyBalance;
-    private double time;
+    //private double time;
     private String description;
     private ArrayList<Mickey> mickeysCollected;
 
@@ -34,7 +34,7 @@ public class Backpack implements Serializable{
         this.numberFastPasses = 0;
         //give the users $50 to start with
         this.moneyBalance = 50;
-        this.time = 600;
+        //this.time = 600;
         //put in some temp values for testing
         this.mickeysCollected = new ArrayList<Mickey>();
         

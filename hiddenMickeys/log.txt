@@ -1,4 +1,0 @@
-byui.cit260.hiddenMickeys.view.ExploreRideLocationView - 
-Invalid value: value cannot be blank
-byui.cit260.hiddenMickeys.view.ExploreRideLocationView - 
-Invalid value: value cannot be blank

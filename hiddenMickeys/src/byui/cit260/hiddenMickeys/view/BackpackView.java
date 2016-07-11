@@ -91,13 +91,29 @@ public class BackpackView extends View{
     }
   
     private void useEmergencyWater() {
-        this.console.println("\n Whew, you are feeling refreshed after drinking"
-                + " your emergency water.");
+        try{
+            BackpackControl backpack = new BackpackControl();
+            Backpack emergencyWater = new Backpack();
+            int newEnergy = (int) backpack.updateEnergy();
+            this.console.println("\n Whew, you are feeling refreshed after drinking"
+                + " your emergency water. Your current energy balance is " + Integer.toString(newEnergy) + "%.");
+            emergencyWater.emergencyWaterUsed = true;
+        }catch (BackpackControlException be) {
+            ErrorView.display(this.getClass().getName(),be.getMessage());
+        }
     }
 
     private void useEmergencySnack() {
-        this.console.println("\nYummy, You have eaten your emergency snack and "
-                + "it was delicious.");
+        try{
+            BackpackControl bc = new BackpackControl();
+            Backpack emergencySnack = new Backpack();
+            int newEnergy = (int) bc.updateSnackEnergy();
+            this.console.println("\nYummy, you have eaten your emergency snack and "
+                + "it was delicious. Your current energy balance is " + Integer.toString(newEnergy) + "%.");
+            emergencySnack.emergencySnackUsed = true;
+        }catch (BackpackControlException be) {
+            ErrorView.display(this.getClass().getName(),be.getMessage());
+    }
     }
 
     private void displayMickeys() {

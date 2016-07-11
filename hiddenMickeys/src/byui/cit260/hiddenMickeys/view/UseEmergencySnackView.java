@@ -12,7 +12,7 @@ package byui.cit260.hiddenMickeys.view;
 public class UseEmergencySnackView extends View {
     
     public UseEmergencySnackView(){
-        super("Eating your emergency snack will replenish your energy by 40%.  \n Continue? (Y/N)\n");
+        super("Eating your emergency snack will replenish your energy by 10%.  \n Continue? (Y/N)\n");
     }
     
     @Override
