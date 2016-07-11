@@ -24,6 +24,7 @@ public MainMenuView() {
         +"\nN - Start new game                                 "
         +"\nG - Get and start saved game"
         +"\nH - Get help on how to play the game"
+        +"\nR - Return to current game"    
         +"\nS - Save Game"
         +"\nQ - Quit"
         +"\n---------------------------------------------------"
@@ -47,6 +48,9 @@ public MainMenuView() {
                 break;   
             case "H": //display help menu
                 this.showHelpMenu();
+                break;
+            case "R": //return to current game
+                this.viewGameMenu();
                 break;
             case "S": //save current game
                 this.saveGame();
@@ -108,6 +112,11 @@ public MainMenuView() {
       } catch (Exception ex) {
           ErrorView.display("MainMenuView", ex.getMessage());
       }
+    }
+
+    private void viewGameMenu() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
    

@@ -55,7 +55,7 @@ public class MickeysFoundReportView extends View {
             //Write the report header
             out.println("\nMickeys Found Report");
             out.printf("%n%-5s%-35s","Loc#","Location Name");
-            out.printf("%n%-5s%-35s","-----","-----------------------------------");
+            out.printf("%n%-5s%-35s","-----","---------------------------");
             
             //pull the data
             Game game = HiddenMickeys.getCurrentGame();
@@ -110,6 +110,15 @@ public class MickeysFoundReportView extends View {
     private void viewReport() {
         //report header
             this.console.println("\nMICKEYS FOUND REPORT");
+                   this.console.println("         .-\"\"\"-.\n" +
+"        /       \\\n" +
+"        \\       /\n" +
+" .-\"\"\"-.-`.-.-.<  _\n" +
+"/      _,-\\ ()()_/:)\n" +
+"\\     / ,  `     `|\n" +
+" '-..-| \\-.,___,  /\n" +
+"       \\ `-.__/  /\n" +
+"        `-.__.-'`");
             this.console.printf("%n%-5s%-35s","Loc#","Location Name");
             this.console.println("\n-------------------------------------------------------------");
         //get the data

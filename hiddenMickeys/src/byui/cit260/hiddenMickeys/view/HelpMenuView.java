@@ -20,10 +20,9 @@ public HelpMenuView() {//Constructor Function
         +"\n---------------------------------------------------"
         +"\nG - What is the goal/objective of the game?"
         +"\nM - How to move"
-        +"\nE - How to check energy levels"
-        +"\nT - How to check time remaining"
+        +"\nT - How to check time remaining and energy levels"
         +"\nR - How to re-charge energy"
-        +"\nS - How to search for Mickey Heads"
+        +"\nS - How to search for Hidden Mickeys"
         +"\nQ - Return to previous screen"
         +"\n---------------------------------------------------"
         + "\n \n"
@@ -42,16 +41,13 @@ public HelpMenuView() {//Constructor Function
             case "M": //how to move
                 this.displayHowMove();
                 break;   
-            case "E": //check energy level
-                this.displayHowCheckEnergy();
-                break;
             case "T": //check time remaining
                 this.displayHowCheckTime();
                 break;
             case "R": //recharge energy
                 this.displayHowRechargeEnergy();
                 break;
-            case "S": //search for Mickey Heads
+            case "S": //search for Hidden Mickeys
                 this.displayHowSearch();
                 break;
             case "Q": //exit this portion
@@ -70,9 +66,9 @@ public HelpMenuView() {//Constructor Function
             +"\n   The objective of the game is to find 10 Hidden Mickeys.  You must do this before "
             +"\nyou run out of time and energy."
             +"\n"
-            +"\n  Mickey Heads are located within rides and shopping locations.  While exploring "
-            +"\nthese locations, you will be given opportunities to search for the Mickey Heads. "
-            +"\nThere will be 1 or 0 Mickey heads at each location. Once you have found 10, the game"
+            +"\n  Hidden Mickeys are located within rides and shopping locations.  While exploring "
+            +"\nthese locations, you will be given opportunities to search for the Hidden Mickeys. "
+            +"\nThere will be 1 or 0 Hidden Mickeys at each location. Once you have found 10, the game"
             +"\nends."
             +"\n"
             +"\n   You begin the game with 600 minutes and 100% energy.  The game ends when the   "
@@ -106,22 +102,12 @@ public HelpMenuView() {//Constructor Function
         this.quitTheOption();
     }
 
-    private void displayHowCheckEnergy() {
-    String quit; //Variable used to return to the help menu
-        this.console.println("\n"
-        +"\nTo check energy levels, enter an 'L' from the Game Menu screen."
-        +"\n"
-        + "\n  Your current energy level will be displayed."
-        +"\n");
-         this.quitTheOption();
-    }
-
     private void displayHowCheckTime() {
     String quit; //Variable used to return to the help menu
         this.console.println("\n"
-        +"\nTo check time remaining and time spent, enter a 'T' from the Game Menu screen.  "
+        +"\nTo check time remaining and energy levels, enter a 'T' from the Game Menu screen.  "
         +"\n"
-        +"\nYour Total Time Spent and Total Time Remaining will be displayed."
+        +"\nYour Total time remaining and current energy levels will be displayed."
         +"\n");
         this.quitTheOption();
     }
@@ -136,8 +122,8 @@ public HelpMenuView() {//Constructor Function
         +"\n	"
         +"\n2)- Move to a snack location and purchase a snack.  A snack will recharge energy."
         +"\n    "
-        +"\n3)- Enter an 'R' from the Game Menu and take the option to rest for 15 minutes. This " 
-        +"\nwill recharge your energy by 20."
+        +"\n3)- Select one of the 'Rest Locations' from the map.  Once you arrive you will"
+                + "\nbe given the choice of whether to rest or not."
 	+"\n    ");
         this.quitTheOption();
     }
@@ -146,15 +132,9 @@ public HelpMenuView() {//Constructor Function
     String quit; //Variable used to return to the help menu
         this.console.println("\n"
         +"\n   When exploring rides or store locations, you will be given the option to 'Search  "
-        +"\nfor Mickey Head.'  If you choose to search, you will enter guesses that are words"
-        +"\nand objects contained withinthe ride description where you believe a Mickey Head  " 
-        +"\ncould be."
-	+"\n    "
-        +"\n   Mickey Heads will be hidden on objects that are mentioned in the description"
-        +"\n	"
-        +"\n   A helpful strategy would be to find nouns within the description and use those"
-        +"\nas guesses."
-	+"\n    ");
+        +"\nfor Hidden Mickey.'  If you choose to search, and a Hidden Mickey exists at that, "
+                + "\nlocation, you will see a description of where the Hidden Mickey is located "
+        +"\nand your Hidden Mickey count will be increased.  " );
         this.quitTheOption();
     }
 
