@@ -40,6 +40,7 @@ public class HiddenMickeys {
     public static void main(String[] args) {
        
      try {
+         
         //open character stream files for end user input and output
         HiddenMickeys.inFile = 
                 new BufferedReader(new InputStreamReader(System.in));
@@ -57,7 +58,7 @@ public class HiddenMickeys {
         
      } catch (Throwable e) {
          
-         System.out.println("Exception: " + e.toString() +
+         ErrorView.display("HiddenMickeys.main","Exception: " + e.toString() +
                             "\nCause: " + e.getCause() +
                             "\nMessage: " + e.getMessage());
          
@@ -76,7 +77,8 @@ public class HiddenMickeys {
                  HiddenMickeys.logFile.close();
              
          } catch (IOException ex) {
-             System.out.println("Error closing files");
+                    
+            ErrorView.display("HiddenMickeys.main","Error closing files");
              return;
                      
          }

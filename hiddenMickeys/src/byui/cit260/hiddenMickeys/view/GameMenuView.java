@@ -25,6 +25,9 @@ public GameMenuView(){
             +"\nB-  View backpack"
             +"\nT - View Time spent/Time remaining"
             +"\nL - View Energy Level"
+            +"\nR - Rest for 15 minutes"
+            +"\nV - View Report of Locations Visited"
+            +"\nS - View Report of Shops and Resteraunts and their prices"
             +"\nH - Help"
             +"\nQ - Quit"
             +"\n---------------------------------------------------"
@@ -56,6 +59,12 @@ public GameMenuView(){
             case "R": //rest for 15 minutes (charges energy level +20)
                 this.restAndRecharge();
                 this.quitTheOption();
+                break;
+            case "V":
+                this.locationVisitedReport();
+                break;
+            case "S":
+                this.shopReport();
                 break;
             case "H": //save current game
                 this.showHelpMenu();
@@ -234,6 +243,16 @@ public GameMenuView(){
         }
 
 
+    }
+
+    private void locationVisitedReport() {
+         LocationVisitedReportView reportMenu = new LocationVisitedReportView();
+        reportMenu.display();
+    }
+
+    private void shopReport() {
+        ShopNamesAndPricesView shopReport = new ShopNamesAndPricesView();
+        shopReport.display();
     }
 
     

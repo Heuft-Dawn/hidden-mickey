@@ -58,13 +58,13 @@ public abstract class View implements ViewInterface {
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
-                this.console.println("\nInvalid value: value cannot be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value cannot be blank");
                 continue;
             }
             break; //end the loop
         }
         } catch (Exception e) {
-            this.console.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
         return value; //return the value entered
     }

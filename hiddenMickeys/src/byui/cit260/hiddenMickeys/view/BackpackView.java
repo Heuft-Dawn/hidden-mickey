@@ -99,6 +99,8 @@ public class BackpackView extends View{
     private void displayMickeys() {
         
         this.console.println("\nNot supported yet."); 
+         MickeysFoundReportView reportMenu = new MickeysFoundReportView();
+        reportMenu.display();
     }
     
 }
