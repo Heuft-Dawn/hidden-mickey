@@ -24,7 +24,7 @@ public class MickeyLocationEndView extends View{
         super("------------------------------"
             +"\nRide Exit Menu"
             +"\n------------------------------"
-            +"\nS - Search for Mickey Head"
+            +"\nS - Search for Hidden Mickey"
             +"\nQ - Exit Ride/ Stop Exploring"
             +"\n------------------------------"
             +"\n \n"

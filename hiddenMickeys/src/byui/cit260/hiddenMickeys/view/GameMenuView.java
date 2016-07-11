@@ -6,6 +6,7 @@
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.MapControl;
+import byui.cit260.hiddenMickeys.control.GameControl;
 import byui.cit260.hiddenMickeys.control.BackpackControl;
 import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.exceptions.MapControlException;
@@ -22,11 +23,8 @@ public GameMenuView(){
             +"\n|  Game Menu                                      |"
             +"\n---------------------------------------------------"
             +"\nM - View Map or Move  (to move to new location)"
-            +"\nE - Explore/enter the current location"
             +"\nB-  View backpack"
-            +"\nT - View Time spent/Time remaining"
-            +"\nL - View Energy Level"
-            +"\nR - Rest for 15 minutes"
+            +"\nT - View Time remaining and Energy Level"
             +"\nV - View Report of Locations Visited"
             +"\nS - View Report of Shops and Resteraunts and their prices"
             +"\nH - Help"
@@ -43,22 +41,11 @@ public GameMenuView(){
             case "M": //view map or move
                 this.mapAndMove();
                 break;
-            case "E": //explore/enter current location
-                this.exploreLocation();
-                break;   
             case "B": //view Backpack
                 this.viewBackpack();
                 break;
             case "T": //view time spent/remaining
                 this.viewTime();
-                this.quitTheOption();
-                break;
-            case "L": //view energy level
-                this.energyLevel();
-                this.quitTheOption();
-                break;
-            case "R": //rest for 15 minutes (charges energy level +20)
-                this.restAndRecharge();
                 this.quitTheOption();
                 break;
             case "V":
@@ -123,7 +110,7 @@ public GameMenuView(){
            }
 
     private void viewTime() {
-        this.console.println("\n***viewTime()function called***");
+        this.displayCurrentTimeAndEnergy();
     }
 
     private void energyLevel() {

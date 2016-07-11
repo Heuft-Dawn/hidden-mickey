@@ -297,7 +297,24 @@ public class MapControl {
 
             Scene winnie_pooh = new Scene();
             winnie_pooh.setName("Winnie the Pooh");
-            winnie_pooh.setDescription("\nClimb aboard the beehive and travel through a hundred acre wood"
+            winnie_pooh.setDescription("      ____________________     _    _\n" +
+"     /                    \\   (_`,_' )\n" +
+"    /                      \\   )    `\\\n" +
+"   /                        \\ /    ', |\n" +
+"  /                          \\|       `,\n" +
+" /                            \\\\,_  `-/\n" +
+"/______________________________,&&&&&V\n" +
+"|                             ,&&&&&&&&:\n" +
+"|  |   |                  \\  ,&&&&&&&&&&;\n" +
+"|  |___| |   | |   | |  /| \\/|  |&&&&&&&|\n" +
+"|  |   | |   | |  /| | / |  ||  |       :\\\n" +
+"|  |   | |   | | / | |/  |  ||  |       ; \\\n" +
+"|  |   |  \\_/| |/  | |   |  |'--'   `, /`-'\n" +
+"|______________________________/`.    \\\n" +
+" \\                            /   /\\  _\\\n" +
+"  \\                          /\\   \\ \\/  \\" +
+"\n   \\________________________/  \\__'  \\__/"
+                    + "\n\nClimb aboard the beehive and travel through a hundred acre wood"
                     + "\nwith Winnie the Pooh and friends.");
             winnie_pooh.setLocationType("R");
             winnie_pooh.setMapSymbol(">");
@@ -368,7 +385,32 @@ public class MapControl {
 
             Scene peter_pan = new Scene();
             peter_pan.setName("Peter Pan's Flight");
-            peter_pan.setDescription("\nJoin Peter Pan as you fly over the rooftops of London.  Check out"
+            peter_pan.setDescription("                    __\n" +
+"                    \",'.\n" +
+"                      \",\\\n" +
+"                      / Y\n" +
+"     ,             _,'--.\\\n" +
+"     \\_-(         ;--(/\\ )\n" +
+"       \\'.         )6,6 /)\n" +
+"        \\ \\_       \\ _, |_\n" +
+"         ', '--/'---'- /_/'-._\n" +
+"           '-'-L._  -|/      /-._     /\n" +
+"                  |      |-~'--._'-._/(,\n" +
+"                 ,_/>   /         ''--~\n" +
+"                 /\\<_ _/\n" +
+"                // \"-'-'\\\n" +
+"               ,~-.   ._ )\n" +
+"               /   \\_/  '\\\n" +
+"              /   /   \\   |\n" +
+"             /  /`    _\\  |\n" +
+"            ( ,/  _.-' __.'\n" +
+"           / /  [((---'\n" +
+"          / /   ) )\n" +
+"         / /    \\/\n" +
+"        K=/\n" +
+"snd    / _>\n" +
+"      )_/\n"
+                    + "\n\nJoin Peter Pan as you fly over the rooftops of London.  Check out"
                     + " \nSt. Paul's Cathedral, Big Ben and the River Thames as you head toward the second"
                     + " \nstar to the right and straight on til morning into Neverland where you'll see the Lost Boys,"
                     + " \nSkull Rock and even Captain Hook himself.");
@@ -393,7 +435,26 @@ public class MapControl {
 
             Scene space_mountain = new Scene();
             space_mountain.setName("Space Mountain");
-            space_mountain.setDescription("\nOh no, it's dogfight between Rebel X-wing starfighters and"
+            space_mountain.setDescription("           __\n" +
+".-.__      \\ .-.  ___  __\n" +
+"|_|  '--.-.-(   \\/\\;;\\_\\.-._______.-.\n" +
+"(-)___     \\ \\ .-\\ \\;;\\(   \\       \\ \\\n" +
+" Y    '---._\\_((Q)) \\;;\\\\ .-\\     __(_)\n" +
+" I           __'-' / .--.((Q))---'    \\,\n" +
+" I     ___.-:    \\|  |   \\'-'_          \\\n" +
+" A  .-'      \\ .-.\\   \\   \\ \\ '--.__     '\\\n" +
+" |  |____.----((Q))\\   \\__|--\\_      \\     '\n" +
+"    ( )        '-'  \\_  :  \\-' '--.___\\\n" +
+"     Y                \\  \\  \\       \\(_)\n" +
+"     I                 \\  \\  \\         \\,\n" +
+"     I                  \\  \\  \\          \\\n" +
+"     A                   \\  \\  \\          '\\\n" +
+"     |              snd   \\  \\__|           '\n" +
+"                           \\_:.  \\\n" +
+"                             \\ \\  \\\n" +
+"                              \\ \\  \\\n" +
+"                               \\_\\_|\n" +
+                    "\nOh no, it's dogfight between Rebel X-wing starfighters and"
                     + "\nImperial TIE fighters.  Steer clear of the trap that awaits you and attempt to"
                     + "\ncomplete your mission.  Twist and turn on the rollercoaster to avoid getting hit.");
             space_mountain.setLocationType("R");
@@ -406,7 +467,17 @@ public class MapControl {
                         
             Scene starTours = new Scene();	
             starTours.setName("Star Tours");
-            starTours.setDescription("\nClimb aboard the Starspeeder 1000 and enjoy an intergalactic adventure."
+            starTours.setDescription("                    .==.\n" +
+"                   ()''()-.\n" +
+"        .---.       ;--; /\n" +
+"      .'_:___\". _..'.  __'.\n" +
+"      |__ --==|'-''' \\'...;\n" +
+"      [  ]  :[|       |---\\\n" +
+"      |__| I=[|     .'    '.\n" +
+"      / / ____|     :       '._\n" +
+"     |-/.____.'      | :       :\n" +
+"snd /___\\ /___\\      '-'._----'\n" 
+                    + "\n\nClimb aboard the Starspeeder 1000 and enjoy an intergalactic adventure."
                     + "\nBeware of mishaps.  Hopefully your droid, C-3PO can help you avoid being intercepted"
                     + "\nby Imperial forces!");
             starTours.setLocationType("R");
@@ -419,7 +490,38 @@ public class MapControl {
             
             Scene astroBlasters = new Scene();
             astroBlasters.setName("Buzz Lightyear Astro Blasters");
-            astroBlasters.setDescription("\nTo Infinity and Beyond!  Grab your guns and compete with your neighbor to"
+            astroBlasters.setDescription("            _._                           _._\n" +
+"           ||||                           ||||\n" +
+"           ||||_           ___           _||||\n" +
+"           |  ||        .-'___`-.        ||  |\n" +
+"           \\   /      .' .'_ _'. '.      \\   /\n" +
+"           /~~|       | (| b d |) |       |~~\\\n" +
+"          /'  |       |  |  '  |  |       |  `\\\n" +
+",        /__.-:      ,|  | `-' |  |,      :-.__\\       ,\n" +
+"|'-------(    \\-''\"\"/.|  /\\___/\\  |.\\\"\"''-/    )------'|\n" +
+"|         \\_.-'\\   /   '-._____.-'   \\   /'-._/        |\n" +
+"|.---------\\   /'._| _    .---. ===  |_.'\\   /--------.|\n" +
+"'           \\ /  | |\\_\\ _ \\=v=/  _   | |  \\ /          '\n" +
+"             `.  | | \\_\\_\\ ~~~  (_)  | |  .'\n" +
+"               `'\"'|`'--.__.^.__.--'`|'\"'`\n" +
+"                   \\                 /\n" +
+"                    `,..---'\"'---..,'\n" +
+"                      :--..___..--:    TO INFINITY...\n" +
+"                       \\         /  \n" +
+"                       |`.     .'|       AND BEYOND!\n" +
+"                       |  :___:  |\n" +
+"                       |   | |   |\n" +
+"                       |   | |   |\n" +
+"                       |.-.| |.-.|\n" +
+"                       |`-'| |`-'|\n" +
+"                       |   | |   |\n" +
+"                      /    | |    \\\n" +
+"                     |_____| |_____|\n" +
+"                     ':---:-'-:---:'\n" +
+"                     /    |   |    \\\n" +
+"                jgs /.---.|   |.---.\\\n" +
+"                    `.____;   :____.'\n"
+                    + "\n\nGrab your guns and compete with your neighbor to"
                     + "\nsee who can fire lasers to stop the Zung and score more points.");
             astroBlasters.setLocationType("R");
             astroBlasters.setMapSymbol(">");
