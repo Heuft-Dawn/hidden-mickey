@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
 import hiddenmickeys.HiddenMickeys;
 import java.io.BufferedReader;
@@ -85,5 +86,31 @@ public abstract class View implements ViewInterface {
         Game game = HiddenMickeys.getCurrentGame();
           this.console.println("\nCurrent Time Remaining: " + Integer.toString(game.getTimeRemaining()) 
                   + "  Current Energy: " + Integer.toString(game.getEnergyLevel()) + "%");
+    }
+    
+    @Override
+    public void displayFastPassInfo(){
+        Game game = HiddenMickeys.getCurrentGame();
+        Backpack backpack = game.getBackpack();
+        int numFastPasses = backpack.getNumberFastPasses();
+        int curFastPassReturnTime = game.getFastPassReturnTime();
+        int curTimeRemaining = game.getTimeRemaining();
+        int timeToNextPass = 999;
+        String displayText = new String();
+        
+        if(curTimeRemaining<= curFastPassReturnTime){
+            timeToNextPass = 0; 
+            displayText =  "You may collect another pass.";
+            
+        }else{
+            timeToNextPass = curTimeRemaining -curFastPassReturnTime;
+            displayText = "There are " + Integer.toString(timeToNextPass) + 
+                    " minutes remaining until you may collect another.";
+        }
+        this.console.println("\n---------------------------------------------------------"+
+                "\nYou have " + Integer.toString(numFastPasses) + " Fast Passes."
+                +"\n" + displayText 
+                + "\n---------------------------------------------------------");
+                
     }
 }

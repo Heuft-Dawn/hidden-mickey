@@ -24,7 +24,7 @@ public class Scene implements Serializable{
     private int waitTime;
     private String[] itemName;
     private double itemPrice;
-    private int fastPassReturnTime;
+    
 
     //class instance variables
     private String name;
@@ -108,15 +108,6 @@ public class Scene implements Serializable{
 
     public void setItemPrice(double itemPrice) {
         this.itemPrice = itemPrice;
-    }
-    
-    
-    public int getFastPassReturnTime() {
-        return fastPassReturnTime;
-    }
-
-    public void setFastPassReturnTime(int fastPassReturnTime) {
-        this.fastPassReturnTime = fastPassReturnTime;
     }
     
     public Scene() {

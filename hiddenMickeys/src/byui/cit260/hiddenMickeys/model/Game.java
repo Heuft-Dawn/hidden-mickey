@@ -18,6 +18,8 @@ public class Game implements Serializable{
     private int energyLevel;
     private int timeExpired;
     private int timeRemaining;
+    private int fastPassReturnTime;
+    private int fastPassReturnInterval;
     private int mickeysCollected;
     private Character character;
     private Backpack backpack;
@@ -80,6 +82,22 @@ public class Game implements Serializable{
 
     public void setTimeRemaining(int timeRemaining) {
         this.timeRemaining = timeRemaining;
+    }
+
+    public int getFastPassReturnTime() {
+        return fastPassReturnTime;
+    }
+
+    public void setFastPassReturnTime(int fastPassReturnTime) {
+        this.fastPassReturnTime = fastPassReturnTime;
+    }
+
+    public int getFastPassReturnInterval() {
+        return fastPassReturnInterval;
+    }
+
+    public void setFastPassReturnInterval(int fastPassReturnInterval) {
+        this.fastPassReturnInterval = fastPassReturnInterval;
     }
 
     public int getMickeysCollected() {

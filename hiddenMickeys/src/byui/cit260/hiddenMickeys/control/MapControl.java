@@ -68,7 +68,6 @@ public class MapControl {
             fast_pass.setMapSymbol("*");
             fast_pass.setLocationType("P");
             fast_pass.setMickeyPresent(false);
-            fast_pass.setFastPassReturnTime(600);
             scenes[SceneType.fast_pass.ordinal()] = fast_pass;
 
             Scene pieces_eight = new Scene();

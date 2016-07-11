@@ -8,6 +8,7 @@ package byui.cit260.hiddenMickeys.view;
 import byui.cit260.hiddenMickeys.control.GameControl;
 import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.exceptions.GameControlException;
+import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import hiddenmickeys.HiddenMickeys;
@@ -42,8 +43,7 @@ public class ExploreRideLocationView extends View {
         boolean returnToMenu = false;
         switch (choice) {
             case "P": //Use FastPass
-                this.useFastPass();
-                
+                returnToMenu = this.useFastPass();
                 break;
             case "Y": //Continue and explore
                 this.exploreRide();
@@ -62,11 +62,16 @@ public class ExploreRideLocationView extends View {
 
   
 
-    private void useFastPass() {
+    private boolean useFastPass() {
+       
+       Game game = HiddenMickeys.getCurrentGame();
+       Backpack backpack = game.getBackpack();
+       int numFastPasses = backpack.getNumberFastPasses();
+       if(numFastPasses > 0){
        
         try{
             //loading current game, location and get location number
-        Game game = HiddenMickeys.getCurrentGame();
+        
         int locationNum = game.getCurrentLocationNo();
         //LocationControl lc = new LocationControl();
         Location mylocation = LocationControl.getLocationByNumber(locationNum);
@@ -83,13 +88,20 @@ public class ExploreRideLocationView extends View {
             timeRemaining = gc.updateTimeRemaining(fastPassTime);
             this.displayCurrentTimeAndEnergy();
             mylocation.setVisited(true);
+            numFastPasses--;
+            backpack.setNumberFastPasses(numFastPasses);
             //Go to the end of ride menu that allows Mickey Searching
             MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
             locationEndMenu.display();
         }catch (GameControlException ge) {
             this.console.println(ge.getMessage());
         }
-        
+        return false;
+       } else {
+           ErrorView.display(this.getClass().getName(),"You do not have any Fast Passes");
+           return true;
+       }
+           
     }
 
     private void exploreRide() {

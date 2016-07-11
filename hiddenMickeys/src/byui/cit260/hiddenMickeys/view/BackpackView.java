@@ -7,6 +7,8 @@
 package byui.cit260.hiddenMickeys.view;
 import byui.cit260.hiddenMickeys.control.BackpackControl;
 import byui.cit260.hiddenMickeys.exceptions.BackpackControlException;
+import byui.cit260.hiddenMickeys.model.Game;
+import hiddenmickeys.HiddenMickeys;
   
 /**
  *
@@ -70,8 +72,7 @@ public class BackpackView extends View{
     }
    
     private void viewFastPass() {
-        ErrorView.display(this.getClass().getName(),
-                "\n***viewFastPasses()function called***");
+        this.displayFastPassInfo();
     }
 
     

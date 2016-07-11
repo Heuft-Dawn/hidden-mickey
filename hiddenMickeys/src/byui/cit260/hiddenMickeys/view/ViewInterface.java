@@ -20,5 +20,7 @@ public interface ViewInterface {
     public void quitTheOption();
     
     public void displayCurrentTimeAndEnergy();
+    
+    public void displayFastPassInfo();
 
 }
