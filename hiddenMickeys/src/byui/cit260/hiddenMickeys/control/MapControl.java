@@ -58,7 +58,7 @@ public class MapControl {
                     + "\ntheir victory");
             piratesCaribbean.setLocationType("R");
             piratesCaribbean.setMapSymbol(">");
-            piratesCaribbean.setMickeyPresent(true);
+            piratesCaribbean.setMickeyPresent(false);
             piratesCaribbean.setMickeyLocation("lily pads");
             piratesCaribbean.setWaitTime(45);
             scenes[SceneType.pirates_caribbean.ordinal()] = piratesCaribbean;
