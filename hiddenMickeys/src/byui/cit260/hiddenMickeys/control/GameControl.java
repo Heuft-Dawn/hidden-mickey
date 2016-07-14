@@ -44,12 +44,13 @@ public class GameControl {
         game.setCurrentRow(1);
         game.setCurrentColumn(4);
         game.setCurrentLocationNo(16);
-        game.setTimeRemaining(600);
+        game.setTimeRemaining(50);
         //initializes to the beginning time remaining (user can immedicately get a fast pass)
         game.setFastPassReturnTime(600);
         //set this interval for optimal
         game.setFastPassReturnInterval(90);
         game.setEnergyLevel(100);
+        game.setGameOver(false);
         
                 
         //Create Character and save in game

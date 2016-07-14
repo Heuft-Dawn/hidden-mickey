@@ -36,13 +36,16 @@ public GameMenuView(){
     @Override
      public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-       
+        Game game = HiddenMickeys.getCurrentGame();
+        
         switch (choice) {
             case "M": //view map or move
                 this.mapAndMove();
+                if(game.isGameOver()) return true;
                 break;
             case "B": //view Backpack
                 this.viewBackpack();
+                if(game.isGameOver()) return true;
                 break;
             case "T": //view time spent/remaining
                 this.viewTime();

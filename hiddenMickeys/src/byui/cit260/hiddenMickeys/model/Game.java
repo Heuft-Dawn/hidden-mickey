@@ -27,6 +27,7 @@ public class Game implements Serializable{
     private Backpack backpack;
     private Player player;
     private Map map;
+    private boolean gameOver;
 
    
    
@@ -72,7 +73,7 @@ public class Game implements Serializable{
         }else if(energyLevel <=0) {
             ErrorView.display(this.getClass().getName(),"You have run out of energy!  \nGAME OVER");
             Game game = HiddenMickeys.getCurrentGame();
-            game = null; 
+            game.setGameOver(true); 
         }else{
         this.energyLevel = energyLevel;}
     }
@@ -93,7 +94,7 @@ public class Game implements Serializable{
         if(timeRemaining <=0) {
             ErrorView.display(this.getClass().getName(),"You have run out of time!  \nGAME OVER");
             Game game = HiddenMickeys.getCurrentGame();
-            game = null; 
+            game.setGameOver(true);
         }else{
         this.timeRemaining = timeRemaining;}
     }
@@ -152,6 +153,14 @@ public class Game implements Serializable{
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
     }
 
     @Override

@@ -86,13 +86,14 @@ public class ExploreRideLocationView extends View {
             int timeRemaining;
             energyLevel = GameControl.updateEnergyLevels(fastPassTime);
             timeRemaining = GameControl.updateTimeRemaining(fastPassTime);
+            if(!game.isGameOver()){
             this.displayCurrentTimeAndEnergy();
             mylocation.setVisited(true);
             numFastPasses--;
             backpack.setNumberFastPasses(numFastPasses);
             //Go to the end of ride menu that allows Mickey Searching
             MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
-            locationEndMenu.display();
+            locationEndMenu.display();}
         }catch (GameControlException ge) {
             this.console.println(ge.getMessage());
         }
@@ -121,11 +122,12 @@ public class ExploreRideLocationView extends View {
             int timeRemaining;
             energyLevel = GameControl.updateEnergyLevels(waitTime);
             timeRemaining = GameControl.updateTimeRemaining(waitTime);
+            if(!game.isGameOver()){
             this.displayCurrentTimeAndEnergy();
             mylocation.setVisited(true);
             //Go to the end of ride menu that allows Mickey Searching
             MickeyLocationEndView  locationEndMenu = new MickeyLocationEndView(mylocation.getScene());
-            locationEndMenu.display();
+            locationEndMenu.display();}
         }catch (GameControlException ge) {
             ErrorView.display(this.getClass().getName(),ge.getMessage());
         }

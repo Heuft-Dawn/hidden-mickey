@@ -24,8 +24,8 @@ public class ExploreRestView extends View {
         choice = choice.toUpperCase();
         switch (choice) {
             case "Y": 
-                    this.rest();
-                break;
+                    return this.rest();
+                
             case "N": 
                     LocationControl.markCurrentLocationVisited();
                 break;
@@ -40,7 +40,7 @@ public class ExploreRestView extends View {
         return true;
 }
 
-    private void rest() {
+    private boolean rest() {
         Game game = HiddenMickeys.getCurrentGame();
         int locationNum = game.getCurrentLocationNo();
         Location myLocation = LocationControl.getLocationByNumber(locationNum);
@@ -52,6 +52,7 @@ public class ExploreRestView extends View {
         //charge 20 min to the time
         int curTime = game.getTimeRemaining();
         game.setTimeRemaining(curTime - 20);
+        if(game.isGameOver()) return true;
         //increase energy by 15
         int curEnergy = game.getEnergyLevel();
         game.setEnergyLevel(curEnergy + 10);
@@ -61,7 +62,7 @@ public class ExploreRestView extends View {
         //quit the option? or ??go to Mickey search view??
         this.quitTheOption();
         
-        
+        return true;
     }
     
     }

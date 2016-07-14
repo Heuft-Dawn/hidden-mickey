@@ -20,6 +20,7 @@ public abstract class View implements ViewInterface {
     
     protected String displayMessage;
     
+    
     protected final BufferedReader keyboard = HiddenMickeys.getInFile();
     protected final PrintWriter console = HiddenMickeys.getOutFile();
     
@@ -41,8 +42,10 @@ public abstract class View implements ViewInterface {
               return; //exit the game
         
         //this will do the requested action and display the next view
-        done = this.doAction(value);
-            
+        
+         done = this.doAction(value);
+         
+         
         } while(!done);
     }
  

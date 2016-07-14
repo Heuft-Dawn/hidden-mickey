@@ -35,7 +35,7 @@ public class ProceedView extends View {
        switch(choice){
            case "Y":
                this.movePlayer();
-               break;
+               
            case "N":
                break;   
            case "Q":
@@ -87,13 +87,14 @@ public class ProceedView extends View {
             } catch (GameControlException ge){
                 ErrorView.display(this.getClass().getName(), ge.getMessage());
             }
+        if(!game.isGameOver()) {
         this.displayCurrentTimeAndEnergy();
         // explore the location based on the location type 
-        this.exploreLocationType();
+        this.exploreLocationType();}
         } catch (MapControlException me) {
                 ErrorView.display(this.getClass().getName(), me.getMessage());
          }
-       
+      
   
     }
     
