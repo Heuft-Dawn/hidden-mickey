@@ -5,6 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Mickey;
@@ -67,29 +68,18 @@ public class MickeysFoundReportView extends View {
             String mickeyFoundDisplay;
             int curLocationNum;
             
-          //loop through all the locations
-          for (Location[] location : locations) {
-                for (Location location1 : location) {
-                    curLocationNum = location1.getLocationNo();
-                    
-                    //this.console.println(Integer.toString(curLocationNum));
-                    mickeyFound = false;
-                    //if the location has been visited, search the Mickeys collected to check for a match
-                    if (location1.isVisited()) {
-                        for (Mickey mickey: mickeys){
+          //loop through all the mickeys
+           for (Mickey mickey: mickeys){
                            
-                            //if there is a matching mickey location, set mickeyfound to true
-                            if (mickey.getLocationNum() == curLocationNum){
-                                mickeyFound=true;
-                            }
-                        } 
-                        if(mickeyFound=true){
+                        //if there is a matching mickey location, set mickeyfound to true
+                        String locationName = LocationControl.lookupLocationName(mickey.getLocationNum());
+                               
                         //display the location in the report with the correct Mickey status
-                        out.printf("%n%-5s%-35s", Integer.toString(curLocationNum), location1.getScene().getName());
+                        out.printf("%n%-5s%-35s", Integer.toString(mickey.getLocationNum()), locationName);
                         }
-                    }
-                }
-          }
+                    
+                
+          
             out.println("\n\n ");
             //close the file
             try{
@@ -132,27 +122,15 @@ public class MickeysFoundReportView extends View {
             String mickeyFoundDisplay;
             int curLocationNum;
         //loop through the locations to find visited ones
-        for (Location[] location : locations) {
-                for (Location location1 : location) {
-                    curLocationNum = location1.getLocationNo();
-                    //this.console.println(Integer.toString(curLocationNum));
-                    mickeyFound = false;
-                    //if the location has been visited, check to see if a mickey was found there
-                    if (location1.isVisited()) {
-                        //search the mickey array
-                        for (Mickey mickey: mickeys){
-                            //this.console.println(Integer.toString(mickey.getLocationNum()));
-                            if (mickey.getLocationNum() == curLocationNum){
-                                mickeyFound=true;
-                            }
-                        }   
-                        if(mickeyFound = true){
-                        //print the visited location on the report
-                        this.console.printf("%n%-5s%-35s", Integer.toString(curLocationNum), location1.getScene().getName());
-                    }
-                }
-             }         
-        }
+         for (Mickey mickey: mickeys){
+                           
+                            //if there is a matching mickey location, set mickeyfound to true
+                           String locationName = LocationControl.lookupLocationName(mickey.getLocationNum());
+                               
+                        //display the location in the report with the correct Mickey status
+                        this.console.printf("%n%-5s%-35s", Integer.toString(mickey.getLocationNum()), locationName);
+                        }
+                    
             this.console.println("\n\n ");
       
     }

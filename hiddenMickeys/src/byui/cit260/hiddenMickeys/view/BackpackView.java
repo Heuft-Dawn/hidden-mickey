@@ -84,7 +84,7 @@ public class BackpackView extends View{
         try{
         BackpackControl backpack = new BackpackControl();
         double newBalance = backpack.calcNewBalance(0);
-        this.console.println("Your current balance is $" + Double.toString(newBalance));
+        this.console.println("Your current balance is $" + Double.toString(newBalance) + "0");
         }catch (BackpackControlException be) {
             ErrorView.display(this.getClass().getName(),be.getMessage());
         }
@@ -93,11 +93,14 @@ public class BackpackView extends View{
     private void useEmergencyWater() {
         try{
             BackpackControl backpack = new BackpackControl();
-            Backpack emergencyWater = new Backpack();
-            int newEnergy = (int) backpack.updateEnergy();
+            Game game = HiddenMickeys.getCurrentGame();
+            Backpack emergencyWater = game.getBackpack();
+            int newEnergy = backpack.updateEnergy();
             this.console.println("\n Whew, you are feeling refreshed after drinking"
-                + " your emergency water. Your current energy balance is " + Integer.toString(newEnergy) + "%.");
-            emergencyWater.emergencyWaterUsed = true;
+                + " your emergency water. Your current energy balance is " + Integer.toString(newEnergy) + "%."
+                    + "\nReminder - Your energy balance cannot exceed 100%.");
+            emergencyWater.setEmergencyWaterUsed(true);
+            
         }catch (BackpackControlException be) {
             ErrorView.display(this.getClass().getName(),be.getMessage());
         }
@@ -106,11 +109,14 @@ public class BackpackView extends View{
     private void useEmergencySnack() {
         try{
             BackpackControl bc = new BackpackControl();
-            Backpack emergencySnack = new Backpack();
-            int newEnergy = (int) bc.updateSnackEnergy();
+            Game game = HiddenMickeys.getCurrentGame();
+            Backpack emergencySnack = game.getBackpack();
+            int newEnergy = bc.updateSnackEnergy();
             this.console.println("\nYummy, you have eaten your emergency snack and "
-                + "it was delicious. Your current energy balance is " + Integer.toString(newEnergy) + "%.");
-            emergencySnack.emergencySnackUsed = true;
+                + "it was delicious. Your current energy balance is " + Integer.toString(newEnergy) + "%."
+                    + "\nReminder - Your energy balance cannot exceed 100%.");
+            emergencySnack.setEmergencySnackUsed(true); 
+        
         }catch (BackpackControlException be) {
             ErrorView.display(this.getClass().getName(),be.getMessage());
     }

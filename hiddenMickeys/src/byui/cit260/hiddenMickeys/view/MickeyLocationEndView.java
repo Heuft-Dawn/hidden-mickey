@@ -68,7 +68,7 @@ public class MickeyLocationEndView extends View{
         //pass the array back to the game
         game.getBackpack().setMickeysCollected(mickeysCollected);
         //go to the Mickey search menu
-        MickeySearchMenuView  mickeySearchMenu = new MickeySearchMenuView(this.myScene);
+        MickeySearchMenuView  mickeySearchMenu = new MickeySearchMenuView(this.myScene, mickeysCollected);
         mickeySearchMenu.display();
         
        

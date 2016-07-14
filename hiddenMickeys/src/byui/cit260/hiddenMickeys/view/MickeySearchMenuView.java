@@ -5,7 +5,9 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
+import byui.cit260.hiddenMickeys.model.Mickey;
 import byui.cit260.hiddenMickeys.model.Scene;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -17,7 +19,7 @@ public class MickeySearchMenuView extends View {
     private Scene myScene;
  
        
-    public MickeySearchMenuView(Scene myScene){//constructor Function
+    public MickeySearchMenuView(Scene myScene, ArrayList<Mickey> mickeys){//constructor Function
     super("       .:::::::::.                    .:::::::::."
             +"\n     :::::::::::::::                :::::::::::::::"
             +"\n    :::::::::::::::::              :::::::::::::::::"
@@ -39,7 +41,7 @@ public class MickeySearchMenuView extends View {
             +"\n"
             +"\n " + myScene.getMickeySearchDescription() 
             +"\n "
-            +"\n Congratulations, you found a Mickey!  Current Mickey Count = INSERT COUNT HERE"
+            +"\n Congratulations, you found a Mickey!  Current Mickey Count = " + Integer.toString(mickeys.size()) 
             +"\n\n Press Q to Return to Game Menu"
             
             

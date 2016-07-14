@@ -14,8 +14,8 @@ import java.util.Objects;
  */
 public class Backpack implements Serializable{
     //class instance variables
-    public boolean emergencyWaterUsed;
-    public boolean emergencySnackUsed;
+    private boolean emergencyWaterUsed;
+    private boolean emergencySnackUsed;
     private int numberFastPasses;
     private double moneyBalance;
     //private double time;
@@ -33,7 +33,7 @@ public class Backpack implements Serializable{
         //set number of Fast Passes to 0
         this.numberFastPasses = 0;
         //give the users $50 to start with
-        this.moneyBalance = 50;
+        this.moneyBalance = 100;
         //this.time = 600;
         //put in some temp values for testing
         this.mickeysCollected = new ArrayList<Mickey>();

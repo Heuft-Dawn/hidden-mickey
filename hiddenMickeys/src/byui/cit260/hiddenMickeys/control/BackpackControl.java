@@ -56,33 +56,33 @@ public class BackpackControl {
          return tmpArray;
          }
 
-    public double updateEnergy()
+    public int updateEnergy()
         throws BackpackControlException {
         Game game = HiddenMickeys.getCurrentGame(); // retreive the game
-        Game energy = new Game();
         Backpack backpack = game.getBackpack();
-        Backpack emergencyWater = new Backpack();
         int curEnergy = game.getEnergyLevel();//energy.getEnergyLevel();
-        if (emergencyWater.emergencyWaterUsed == true) {
-            throw new BackpackControlException("You have already used your emergncy water. "
-                    + "Find a food or rest location to recharge your energy if need be.");
+        if (backpack.isEmergencyWaterUsed()) {
+            throw new BackpackControlException("You have already used your emergency water. "
+                    + "\nFind a food or rest location to recharge \nyour energy if need be.");
         }
         curEnergy = curEnergy + 10;
+        game.setEnergyLevel(curEnergy);
+        curEnergy = game.getEnergyLevel();
         return curEnergy;
     }
     
-    public double updateSnackEnergy()
+    public int updateSnackEnergy()
         throws BackpackControlException {
         Game game = HiddenMickeys.getCurrentGame(); // retreive the game
-        Game energy = new Game();
         Backpack backpack = game.getBackpack();
-        Backpack emergencySnack = new Backpack();
         int curEnergy = game.getEnergyLevel();//energy.getEnergyLevel();
-        if (emergencySnack.emergencySnackUsed == true) {
-            throw new BackpackControlException("You have already used your emergncy snack. "
-                    + "Find a food or rest location to recharge your energy if need be.");
+        if (backpack.isEmergencySnackUsed()) {
+            throw new BackpackControlException("You have already used your emergency snack. "
+                    + "\nFind a food or rest location to recharge \nyour energy if need be.");
         }
         curEnergy = curEnergy + 10;
+        game.setEnergyLevel(curEnergy);
+        curEnergy = game.getEnergyLevel();
         return curEnergy;
     }
          

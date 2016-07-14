@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.hiddenMickeys.model;
+import byui.cit260.hiddenMickeys.view.ErrorView;
+import hiddenmickeys.HiddenMickeys;
 import java.io.Serializable;
 /**
  *
@@ -65,7 +67,14 @@ public class Game implements Serializable{
     }
 
     public void setEnergyLevel(int energyLevel) {
-        this.energyLevel = energyLevel;
+        if( energyLevel > 100) {
+            this.energyLevel = 100;
+        }else if(energyLevel <=0) {
+            ErrorView.display(this.getClass().getName(),"You have run out of energy!  \nGAME OVER");
+            Game game = HiddenMickeys.getCurrentGame();
+            game = null; 
+        }else{
+        this.energyLevel = energyLevel;}
     }
 
     public int getTimeExpired() {
@@ -81,7 +90,12 @@ public class Game implements Serializable{
     }
 
     public void setTimeRemaining(int timeRemaining) {
-        this.timeRemaining = timeRemaining;
+        if(timeRemaining <=0) {
+            ErrorView.display(this.getClass().getName(),"You have run out of time!  \nGAME OVER");
+            Game game = HiddenMickeys.getCurrentGame();
+            game = null; 
+        }else{
+        this.timeRemaining = timeRemaining;}
     }
 
     public int getFastPassReturnTime() {
