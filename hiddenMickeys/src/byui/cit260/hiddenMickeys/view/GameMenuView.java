@@ -6,8 +6,6 @@
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.MapControl;
-import byui.cit260.hiddenMickeys.control.GameControl;
-import byui.cit260.hiddenMickeys.control.BackpackControl;
 import byui.cit260.hiddenMickeys.control.LocationControl;
 import byui.cit260.hiddenMickeys.exceptions.MapControlException;
 import byui.cit260.hiddenMickeys.model.*;
@@ -114,15 +112,6 @@ public GameMenuView(){
 
     private void viewTime() {
         this.displayCurrentTimeAndEnergy();
-    }
-
-    private void energyLevel() {
-        this.console.println("\n***energyLevel()function called***");
-    }
-
-    private void restAndRecharge() {
-        RestAndRechargeView restMenu = new RestAndRechargeView();
-        restMenu.display();
     }
 
     private void showHelpMenu() {

@@ -44,7 +44,7 @@ public class GameControl {
         game.setCurrentRow(1);
         game.setCurrentColumn(4);
         game.setCurrentLocationNo(16);
-        game.setTimeRemaining(50);
+        game.setTimeRemaining(600);
         //initializes to the beginning time remaining (user can immedicately get a fast pass)
         game.setFastPassReturnTime(600);
         //set this interval for optimal

@@ -5,7 +5,6 @@
  */
 package byui.cit260.hiddenMickeys.view;
 
-import java.util.Scanner;
 
 /**
  *

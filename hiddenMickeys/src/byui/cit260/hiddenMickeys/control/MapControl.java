@@ -6,13 +6,10 @@
 package byui.cit260.hiddenMickeys.control;
 
 import byui.cit260.hiddenMickeys.exceptions.MapControlException;
-import byui.cit260.hiddenMickeys.model.Game;
-import byui.cit260.hiddenMickeys.model.Land;
 import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
 import byui.cit260.hiddenMickeys.model.Scene;
 import byui.cit260.hiddenMickeys.model.SceneType;
-import hiddenmickeys.HiddenMickeys;
 
 
 public class MapControl {
