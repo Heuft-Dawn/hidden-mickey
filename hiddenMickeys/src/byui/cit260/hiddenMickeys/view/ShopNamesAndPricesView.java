@@ -7,17 +7,9 @@ package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
-import byui.cit260.hiddenMickeys.model.Mickey;
-import byui.cit260.hiddenMickeys.model.Shop;
 import hiddenmickeys.HiddenMickeys;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.console;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Hannah Mars

@@ -24,7 +24,7 @@ public GameMenuView(){
             +"\nB-  View backpack"
             +"\nT - View Time remaining and Energy Level"
             +"\nV - View Report of Locations Visited"
-            +"\nS - View Report of Shops and Resteraunts and their prices"
+            +"\nS - View Report of Shops and Restaurants and their prices"
             +"\nH - Help"
             +"\nQ - Quit"
             +"\n---------------------------------------------------"

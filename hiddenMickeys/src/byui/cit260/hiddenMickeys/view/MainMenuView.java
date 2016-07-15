@@ -9,7 +9,6 @@ import byui.cit260.hiddenMickeys.control.GameControl;
 import byui.cit260.hiddenMickeys.model.Game;
 import hiddenmickeys.HiddenMickeys;
 import static hiddenmickeys.HiddenMickeys.getCurrentGame;
-import java.util.Scanner;
 
 /**
  *

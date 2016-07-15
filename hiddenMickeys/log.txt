@@ -1,0 +1,12 @@
+byui.cit260.hiddenMickeys.view.GameMenuView - 
+***Invalid selection. Try again.
+byui.cit260.hiddenMickeys.view.GameMenuView - 
+Invalid value: value cannot be blank
+byui.cit260.hiddenMickeys.view.ExploreRideLocationView - You do not have any Fast Passes
+byui.cit260.hiddenMickeys.view.MapAndMoveView - 
+Invalid value: value cannot be blank
+byui.cit260.hiddenMickeys.view.ExploreRideLocationView - You do not have any Fast Passes
+byui.cit260.hiddenMickeys.view.GameMenuView - 
+***Invalid selection. Try again.
+byui.cit260.hiddenMickeys.view.GameMenuView - 
+***Invalid selection. Try again.
