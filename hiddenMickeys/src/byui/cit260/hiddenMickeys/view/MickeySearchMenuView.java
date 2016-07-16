@@ -39,7 +39,7 @@ public class MickeySearchMenuView extends View {
             +"\n                      ?$g      g$F"
             +"\n                         \'#**#\'"
             +"\n"
-            +"\n " + myScene.getMickeySearchDescription() 
+            +"\n " + myScene.getMickeyLocation()
             +"\n "
             +"\n Congratulations, you found a Mickey!  Current Mickey Count = " + Integer.toString(mickeys.size()) 
             +"\n\n Press Q to Return to Game Menu"
