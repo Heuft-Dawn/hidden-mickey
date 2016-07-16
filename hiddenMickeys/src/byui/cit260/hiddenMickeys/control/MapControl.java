@@ -56,7 +56,9 @@ public class MapControl {
             piratesCaribbean.setLocationType("R");
             piratesCaribbean.setMapSymbol(">");
             piratesCaribbean.setMickeyPresent(false);
-            piratesCaribbean.setMickeyLocation("lily pads");
+            piratesCaribbean.setMickeyLocation("It started out as a nice leisurely ride"
+                    + "\nthrough the bayou.  As you floated down you noticed that some"
+                    + "\nof those Lily Pads were in a familiar pattern...");
             piratesCaribbean.setWaitTime(45);
             scenes[SceneType.pirates_caribbean.ordinal()] = piratesCaribbean;
             
@@ -97,8 +99,9 @@ public class MapControl {
             itemsEmporium [2] = "Keychain Set";
             emporium.setItemName(itemsEmporium);
             emporium.setItemPrice(5);
-            emporium.setMickeyPresent(false);
-            emporium.setMickeyLocation("");
+            emporium.setMickeyPresent(true);
+            emporium.setMickeyLocation("Wow! That is a hard one to find, but you spotted it."
+                    + "Just behind the register in the painted mural you spied the Hidden Mickey.");
             scenes[SceneType.emporium.ordinal()] = emporium;
 
 
@@ -114,8 +117,9 @@ public class MapControl {
             itemsMagic [2] = "Magic Wand";
             magic_shop.setItemName(itemsMagic);
             magic_shop.setItemPrice(15);
-            magic_shop.setMickeyPresent(false);
-            magic_shop.setMickeyLocation("Look up on the wall...");
+            magic_shop.setMickeyPresent(true);
+            magic_shop.setMickeyLocation("There it is, right inside the vlevety display case."
+                    + "Good Job!");
             scenes[SceneType.magic_shop.ordinal()] = magic_shop;
 
 
@@ -287,7 +291,9 @@ public class MapControl {
             haunted_mansion.setLocationType("R");
             haunted_mansion.setMapSymbol(">");
             haunted_mansion.setMickeyPresent(true);
-            haunted_mansion.setMickeyLocation("place setting");
+            haunted_mansion.setMickeyLocation("As you watched the ghosts dance around the ballroom, "
+                    + "\nsomething caught your eye.  There it was, a Hidden Mickey, in one of the"
+                    + "\nplace settings on the table.");
             haunted_mansion.setWaitTime(60);
             scenes[SceneType.haunted_mansion.ordinal()] = haunted_mansion;
 
@@ -316,7 +322,8 @@ public class MapControl {
             winnie_pooh.setLocationType("R");
             winnie_pooh.setMapSymbol(">");
             winnie_pooh.setMickeyPresent(true);
-            winnie_pooh.setMickeyLocation("place setting");
+            winnie_pooh.setMickeyLocation("As you were entering the building you glanced to the "
+                    + "\right and saw the Hidden Mickey etched into the wood.");
             winnie_pooh.setWaitTime(5);
             scenes[SceneType.winnie_pooh.ordinal()] = winnie_pooh;
 
@@ -328,7 +335,9 @@ public class MapControl {
             indiana_jones.setLocationType("R");
             indiana_jones.setMapSymbol(">");
             indiana_jones.setMickeyPresent(true);
-            indiana_jones.setMickeyLocation("place setting");
+            indiana_jones.setMickeyLocation("As you passed the office area in the queue, you caught"
+                    + "\na brief glance of the magnifying glass on the table.  Sure enough it was"
+                    + "\nright over a Hidden Mickey.");
             indiana_jones.setWaitTime(90);
             scenes[SceneType.indiana_jones.ordinal()] = indiana_jones;
 
@@ -338,7 +347,7 @@ public class MapControl {
                     + "\nAvoid the hippos and cannibals and you might make it out alive...");
             jungle_cruise.setLocationType("R");
             jungle_cruise.setMapSymbol(">");
-            jungle_cruise.setMickeyPresent(true);
+            jungle_cruise.setMickeyPresent(false);
             jungle_cruise.setMickeyLocation("");
             jungle_cruise.setWaitTime(30);
             scenes[SceneType.jungle_cruise.ordinal()] = jungle_cruise;
@@ -351,7 +360,7 @@ public class MapControl {
                     + "\nhear a tribute to the original Swiss Family Robinson Treehouse.");
             tarzan_treehouse.setLocationType("R");
             tarzan_treehouse.setMapSymbol(">");
-            tarzan_treehouse.setMickeyPresent(true);
+            tarzan_treehouse.setMickeyPresent(false);
             tarzan_treehouse.setMickeyLocation("");
             tarzan_treehouse.setWaitTime(5);
             scenes[SceneType.tarzan_treehouse.ordinal()] = tarzan_treehouse;
@@ -364,7 +373,7 @@ public class MapControl {
                     + " \nget stuck in your head.  It's a Small World after all... It's a Small World after all...");
             small_world.setLocationType("R");
             small_world.setMapSymbol(">");
-            small_world.setMickeyPresent(true);
+            small_world.setMickeyPresent(false);
             small_world.setMickeyLocation("");
             small_world.setWaitTime(45);
             scenes[SceneType.small_world.ordinal()] = small_world;
@@ -376,7 +385,9 @@ public class MapControl {
             matterhorn.setLocationType("R");
             matterhorn.setMapSymbol(">");
             matterhorn.setMickeyPresent(true);
-            matterhorn.setMickeyLocation("");
+            matterhorn.setMickeyLocation("Great job!  While you were standing in line, you looked around"
+                    + "\nand spotted a really difficult to find Hidden Mickey.  You must have really been"
+                    + "\nlooking closely at those coat of arms.");
             matterhorn.setWaitTime(45);
             scenes[SceneType.matterhorn.ordinal()] = matterhorn;
 
@@ -414,7 +425,9 @@ public class MapControl {
             peter_pan.setLocationType("R");
             peter_pan.setMapSymbol(">");
             peter_pan.setMickeyPresent(true);
-            peter_pan.setMickeyLocation("");
+            peter_pan.setMickeyLocation("I can't believe you found that one!  You must have"
+                    + "\nbeen looking up when you were standing in line.  Most people just"
+                    + "\nnotice the Teddy Bear.");
             peter_pan.setWaitTime(30);
             scenes[SceneType.peter_pan.ordinal()] = peter_pan;
 
@@ -426,7 +439,9 @@ public class MapControl {
             alice_wonderland.setLocationType("R");
             alice_wonderland.setMapSymbol(">");
             alice_wonderland.setMickeyPresent(true);
-            alice_wonderland.setMickeyLocation("");
+            alice_wonderland.setMickeyLocation("There it is, in the room where the cards are"
+                    + "\npainting the roses red...I think a little splatter of red paint"
+                    + "\ncaught your attention.");
             alice_wonderland.setWaitTime(10);
             scenes[SceneType.alice_wonderland.ordinal()] = alice_wonderland;
 
@@ -457,7 +472,8 @@ public class MapControl {
             space_mountain.setLocationType("R");
             space_mountain.setMapSymbol(">");
             space_mountain.setMickeyPresent(true);
-            space_mountain.setMickeyLocation("");
+            space_mountain.setMickeyLocation("While you were winding your way around the queue you"
+                    + "\nlooked down and spotted the Hidden Mickey right there on the ride vehicle");
             space_mountain.setWaitTime(120);
             scenes[SceneType.space_mountain.ordinal()] = space_mountain;
             
@@ -480,7 +496,8 @@ public class MapControl {
             starTours.setLocationType("R");
             starTours.setMapSymbol(">");
             starTours.setMickeyPresent(true);
-            starTours.setMickeyLocation("dawn");
+            starTours.setMickeyLocation("Great Job!  Instead of just seeing C-3PO's"
+                    + "\nmonitor, you noticed a Hidden Mickey too!");
             starTours.setWaitTime(50);
             scenes[SceneType.star_tours.ordinal()] = starTours;
 
@@ -523,7 +540,8 @@ public class MapControl {
             astroBlasters.setLocationType("R");
             astroBlasters.setMapSymbol(">");
             astroBlasters.setMickeyPresent(true);
-            astroBlasters.setMickeyLocation("dawn");
+            astroBlasters.setMickeyLocation("Hmm, that galaxy looks a bit different that the ones you've seen"
+                    + "\nbefore and wait a minute, is that Mickey Shaped continent on that globe??  Yep!");
             astroBlasters.setWaitTime(40);
             scenes[SceneType.astro_blasters.ordinal()] = astroBlasters;
 
@@ -535,7 +553,8 @@ public class MapControl {
             thunderMountain.setLocationType("R");
             thunderMountain.setMapSymbol(">");
             thunderMountain.setMickeyPresent(true);
-            thunderMountain.setMickeyLocation("dawn");
+            thunderMountain.setMickeyLocation("As you were riding along, you happened to notice the gears"
+                    + "\non your left and sure enough, they were shaped like Mickey!");
             thunderMountain.setWaitTime(30);
             scenes[SceneType.thunder_mountain.ordinal()] = thunderMountain;
             
@@ -547,7 +566,9 @@ public class MapControl {
             splashMountain.setLocationType("R");
             splashMountain.setMapSymbol(">");
             splashMountain.setMickeyPresent(true);
-            splashMountain.setMickeyLocation("dawn");
+            splashMountain.setMickeyLocation("Just as you were nearing the top of the last big climb...."
+                    + "\npreparing for that big drop...you spotted it at the roof of the tunnel and "
+                    + "\nthen you suddenly came barreling down, splashing water everywhere.");
             splashMountain.setWaitTime(40);
             scenes[SceneType.splash_mountain.ordinal()] = splashMountain;
 
@@ -560,7 +581,9 @@ public class MapControl {
             sawyerIsland.setLocationType("R");
             sawyerIsland.setMapSymbol(">");
             sawyerIsland.setMickeyPresent(true);
-            sawyerIsland.setMickeyLocation("dawn");
+            sawyerIsland.setMickeyLocation("You decided to climb the tree house and check out the view."
+                    + "\nGood thing you did.  As you looked out toward the Old Saw Mill you saw Mickey"
+                    + "\nlooking back at you.");
             sawyerIsland.setWaitTime(5);
             scenes[SceneType.sawyer_island.ordinal()] = sawyerIsland;
             
