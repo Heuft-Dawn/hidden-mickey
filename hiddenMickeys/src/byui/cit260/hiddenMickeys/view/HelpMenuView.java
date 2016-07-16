@@ -69,7 +69,7 @@ public HelpMenuView() {//Constructor Function
             +"\nthese locations, you will be given opportunities to search for the Hidden Mickeys. "
             +"\nThere will be 1 or 0 Hidden Mickeys at each location."
             +"\n"
-            +"\n   You begin the game with 600 minutes and 100% energy.  The game ends when the   "
+            +"\n   You begin the game with 480 minutes and 100% energy.  The game ends when the   "
             +"\nminutes remaining is 0, or the energy percent reaches 0%.  "
             +"\n"                
             +"\n   When you move to a new location in the game, the time it will to move will be given"

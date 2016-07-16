@@ -43,7 +43,7 @@ public class StartProgramView extends View {
         +"\n* You may also collect snacks or meals along the way to charge your energy levels. Your   *"
         +"\n* energy decreases by 1% for every 5 minutes you are in the park.                         *"
         +"\n* You will begin the game with a bag packed with the following:                           *"
-        +"\n* 1 emergency snack, 1 bottle of water, and $100 for food and souvenirs.                  *"
+        +"\n* 1 emergency snack, 1 bottle of water, and $50 for food and souvenirs.                  *"
         +"\n*                                                                                         *"        
         +"\n* From there, you will explore the park and decide where to look for the hidden Mickeys.  *"
         +"\n* Good Luck and Happy Searching!                                                          *" 
