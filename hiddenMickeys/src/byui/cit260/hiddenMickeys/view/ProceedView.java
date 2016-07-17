@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.GameControl;
@@ -15,10 +11,7 @@ import byui.cit260.hiddenMickeys.model.Game;
 import byui.cit260.hiddenMickeys.model.Location;
 import hiddenmickeys.HiddenMickeys;
 
-/**
- *
- * @author Dawn
- */
+
 public class ProceedView extends View {
     private int locationNum;
     
@@ -149,11 +142,18 @@ public class ProceedView extends View {
     }
 
     private boolean checkFastPassAvailability() {
-        this.console.println("Code the check to see if fast passes are available.  Default right now is true.");
-        return true;
+        Game game = HiddenMickeys.getCurrentGame();
+        int timeRemaining = game.getTimeRemaining();
+        int returnTime = game.getFastPassReturnTime();
+        if(timeRemaining<=returnTime){
+           return true;}
+        else{
+            return false;
+        }
+               
     }
 
-    private void notifyNextFastPassTime() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  private void notifyNextFastPassTime() {
+       this.displayFastPassInfo();
     }
    }

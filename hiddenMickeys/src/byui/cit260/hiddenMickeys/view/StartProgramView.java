@@ -1,18 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.GameControl;
 import byui.cit260.hiddenMickeys.model.Player;
 import java.util.Scanner;
 
-/**
- *
- * @author Hannah Mars
- */
+
 public class StartProgramView extends View {
     private String promptMessage;    
     public StartProgramView() {
@@ -24,31 +17,35 @@ public class StartProgramView extends View {
 
     private void displayBanner() {
         this.console.println(
-        "\n*******************************************************************************************"
-        +"\n*                                                                                         *"
-        +"\n*    | | | |(_)  __| |  __| |  ___  _ __   |  \\/  |(_)  ___ | | __ ___  _   _  ___        *"
-        +"\n*    | |_| || | / _` | / _` | / _ \\| '_ \\  | |\\/| || | / __|| |/ // _ \\| | | |/ __|       *"
-        +"\n*    |  _  || || (_| || (_| ||  __/| | | | | |  | || || (__ |   <|  __/| |_| |\\__ \\       *"
-        +"\n*    |_| |_||_| \\__,_| \\__,_| \\___||_| |_| |_|  |_||_| \\___||_|\\_\\\\___| \\__, ||___/       *"
-        +"\n*                                                                       |___/             *"
-        +"\n* In this game, you are a Disneyland Guest with a one day, one park ticket. Your          *"
-        +"\n* challenge is to find 10 or more hidden Mickeys by the time the park closes.  There are  *"
-        +"\n* hidden Mickeys in rides and souvenir shops.                                             *"
-        +"\n*                                                                                         *"        
-        +"\n* You must pay attention to the time and your energy levels to ensure that you don't run  *"
-        +"\n* out of either before you find the 10 Mickeys. Before moving to locations in the  park,  *"
-        +"\n* you will be shown an estimated time that your move will take. You have the opportunity  *"
-        +"\n* to collect Fast Passes. Fast passes will cut the wait time for a ride by half.          *"
-        +"\n*                                                                                         *"        
-        +"\n* You may also collect snacks or meals along the way to charge your energy levels. Your   *"
-        +"\n* energy decreases by 1% for every 5 minutes you are in the park.                         *"
-        +"\n* You will begin the game with a bag packed with the following:                           *"
-        +"\n* 1 emergency snack, 1 bottle of water, and $50 for food and souvenirs.                  *"
-        +"\n*                                                                                         *"        
-        +"\n* From there, you will explore the park and decide where to look for the hidden Mickeys.  *"
-        +"\n* Good Luck and Happy Searching!                                                          *" 
-        +"\n*                                                                                         *"
-        +"\n*******************************************************************************************");
+                "\n******************************************************************************************"
+                +"\n*                                                                                        *"
+                +"\n*    | | | |(_)  __| |  __| |  ___  _ __   |  \\/  |(_)  ___ | | __ ___  _   _  ___       *"
+                +"\n*    | |_| || | / _` | / _` | / _ \\| '_ \\  | |\\/| || | / __|| |/ // _ \\| | | |/ __|      *"
+                +"\n*    |  _  || || (_| || (_| ||  __/| | | | | |  | || || (__ |   <|  __/| |_| |\\__ \\      *"
+                +"\n*    |_| |_||_| \\__,_| \\__,_| \\___||_| |_| |_|  |_||_| \\___||_|\\_\\\\___| \\__, ||___/      *"
+                +"\n*                                                                       |___/            *" +
+                "\n* In this game, you are a Disneyland Guest with a one-day ticket. Your challenge is to   *" +
+                "\n* find 12 Hidden Mickeys by the time the park closes.                                    *" +
+                "\n*                                                                                        *" +
+                "\n* What are Hidden Mickeys? They’re hidden Mickey Mouse heads that Disney designers have   *" +
+                "\n* built into the park itself. They might be trimmed into bushes, or pieced together with *" +
+                "\n* paving stones, or tucked into the back corner of some dark ride. In this game, you’ll   *" +
+                "\n* find them only on rides or in souvenir shops.                                          *" +
+                "\n*                                                                                        *" +
+                "\n* As you explore the park, your energy level will fall. If it reaches 0, you lose. Your  *" +
+                "\n* energy decreases by 2% for every 5 minutes you are in the park, but you can            * " +
+                "\n* recharge it by resting, eating, or drinking. Use the emergency water and snack in your *" +
+                "\n* backpack or buy refreshments from restaurants in the park. But spend your money        *" +
+                "\n* carefully. You have just $50 for food and souvenirs.                                   *" +
+                "\n*                                                                                        *" +
+                "\n* You will have a limited amount of time in the park—just 480 minutes (8 hours). Some    *" +
+                "\n* rides have longer wait times than others, and moving from place to place will take     *" +
+                "\n* time. Budget your time wisely, and collect fast passes to cut your wait times for      *" +
+                "\n* rides in half. If time runs out before you’ve collected 12 Hidden Mickeys, you lose.    *" +
+                "\n*                                                                                        *" +
+                "\n* So manage your time, your energy, and your money well.  Good luck and happy searching! *" +
+                "\n*                                                                                        *" +
+                "\n******************************************************************************************");
     }
 
     //display the start program view

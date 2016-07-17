@@ -1,22 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.model.Mickey;
 import byui.cit260.hiddenMickeys.model.Scene;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-/**
- *
- * @author Administrator
- */
 public class MickeySearchMenuView extends View {
     private String promptMessage; 
     private Scene myScene;
+    private ArrayList<Mickey> mickeys;
  
        
     public MickeySearchMenuView(Scene myScene, ArrayList<Mickey> mickeys){//constructor Function
@@ -42,11 +34,12 @@ public class MickeySearchMenuView extends View {
             +"\n " + myScene.getMickeyLocation()
             +"\n "
             +"\n Congratulations, you found a Mickey!  Current Mickey Count = " + Integer.toString(mickeys.size()) 
-            +"\n\n Press Q to Return to Game Menu"
+            +"\n\n Press Q - Return to Game Menu or M - Return to Map"
             
             
             );    
             this.myScene = myScene;
+            this.mickeys = mickeys;
 }
 
     @Override
@@ -59,7 +52,23 @@ public class MickeySearchMenuView extends View {
                 //have the user enter q to continue with the search menu
                 this.quitTheOption();
         }else if (choice.equals("Q")) {
-                return false;
+                if(mickeys.size()== 12){
+                    this.console.println("------------------------------------------------------------"
+                            + "\nCONGRATULATIONS!  YOU HAVE FOUND 12 MICKEYS.  You may continue"
+                            + "\nto search for more Mickeys, or quit the game."
+                            + "\n------------------------------------------------------------");
+                } 
+                return true;
+        }else if (choice.equals("M")) {
+                if(mickeys.size()== 12){
+                    this.console.println("------------------------------------------------------------"
+                            + "\nCONGRATULATIONS!  YOU HAVE FOUND 12 MICKEYS.  You may continue"
+                            + "\nto search for more Mickeys, or quit the game."
+                            + "\n------------------------------------------------------------");
+                } 
+                GameMenuView gmv = new GameMenuView();
+                gmv.mapAndMove();
+                return true;
         }else {
                 this.searchDescription(choice);
                 
@@ -67,6 +76,21 @@ public class MickeySearchMenuView extends View {
         return false;
     }
     
+   @Override
+    public void display(){
+        boolean done = false; //set flag to not done
+        
+        do { //prompt for and get selected menu option
+            this.console.println("\n" + this.displayMessage);
+            String value = this.getInput();
+                    
+        //this will do the requested action and display the next view
+        
+         done = this.doAction(value);
+         
+         
+        } while(!done);
+    }
     
     private void searchDescription(String choice) {
         this.console.println("\n***searchDescription()function called on " + choice + "***");

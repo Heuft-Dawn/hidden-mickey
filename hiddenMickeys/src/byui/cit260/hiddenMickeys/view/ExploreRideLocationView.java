@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.GameControl;
@@ -14,10 +10,6 @@ import byui.cit260.hiddenMickeys.model.Location;
 import hiddenmickeys.HiddenMickeys;
 
 
-/**
- *
- * @author Administrator
- */
 public class ExploreRideLocationView extends View {
     private int waitTime;
     private int fastPassTime;
@@ -28,7 +20,7 @@ public class ExploreRideLocationView extends View {
             +"\nRide Menu"
             +"\n------------------------------"
             +"\nP - Use Fast Pass"
-            +"\nY - Continue "
+            +"\nY - Continue Without Fast Pass "
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"
             +"\n\n\nThe current Ride wait time is " + Integer.toString(waitTime) + ".  "

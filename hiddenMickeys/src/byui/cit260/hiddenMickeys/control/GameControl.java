@@ -140,7 +140,7 @@ public class GameControl {
            throw new GameControlException("Cannot calculate energy used on time less than 1"); 
       }else{
          
-      int energyUsed = timeUsed/5;
+      int energyUsed = (timeUsed/5)*2;
       
       return energyUsed;
       }

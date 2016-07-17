@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.model;
 import byui.cit260.hiddenMickeys.view.ErrorView;
 import hiddenmickeys.HiddenMickeys;
 import java.io.Serializable;
-/**
- *
- * @author Administrator
- */
+
 public class Game implements Serializable{
    
     private int currentRow;
@@ -71,7 +64,8 @@ public class Game implements Serializable{
         if( energyLevel > 100) {
             this.energyLevel = 100;
         }else if(energyLevel <=0) {
-            ErrorView.display(this.getClass().getName(),"You have run out of energy!  \nGAME OVER");
+            ErrorView.display(this.getClass().getName(),"You have run out of energy!  "
+                   + "\nNumber of Mickeys: " + Integer.toString(this.mickeysCollected) + "\nGAME OVER");
             Game game = HiddenMickeys.getCurrentGame();
             game.setGameOver(true); 
         }else{
@@ -92,7 +86,8 @@ public class Game implements Serializable{
 
     public void setTimeRemaining(int timeRemaining) {
         if(timeRemaining <=0) {
-            ErrorView.display(this.getClass().getName(),"You have run out of time!  \nGAME OVER");
+            ErrorView.display(this.getClass().getName(),"You have run out of time!  "
+                    + "\nNumber of Mickeys: " + Integer.toString(this.mickeysCollected) + "\nGAME OVER");
             Game game = HiddenMickeys.getCurrentGame();
             game.setGameOver(true);
         }else{

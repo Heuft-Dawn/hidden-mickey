@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.model;
 
+import hiddenmickeys.HiddenMickeys;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
-/**
- *
- * @author Hannah Mars
- */
+
 public class Backpack implements Serializable{
     //class instance variables
     private boolean emergencyWaterUsed;
@@ -88,6 +81,9 @@ public class Backpack implements Serializable{
 
     public void setMickeysCollected(ArrayList<Mickey> mickeysCollected) {
         this.mickeysCollected = mickeysCollected;
+        int numMickeys = mickeysCollected.size();
+        Game game = HiddenMickeys.getCurrentGame();
+        game.setMickeysCollected(numMickeys);
     }
 
    

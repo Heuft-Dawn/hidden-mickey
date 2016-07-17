@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.LocationControl;
@@ -13,15 +9,13 @@ import byui.cit260.hiddenMickeys.model.Location;
 import byui.cit260.hiddenMickeys.model.Map;
 import hiddenmickeys.HiddenMickeys;
 
-/**
- *
- * @author Hannah Mars
- */
+
 public class MapAndMoveView extends View{
     
     public MapAndMoveView() {
-        super("Using the map above, enter the location # to move to or"
-              +"\nQ = exit map, W= view ride wait times.");
+        super("Using the map above\nEnter the location # to move to or"
+              +"\nQ = Exit map\nW= view ride wait times.\n"
+             );
     }
     
     @Override
@@ -31,6 +25,7 @@ public class MapAndMoveView extends View{
         switch (choice) {
             case "W"://show wait times on rides
                 this.displaySortedWaitTimes();
+                this.quitTheOption();
                 break;
             case "Q":
                 break;
@@ -86,11 +81,14 @@ public class MapAndMoveView extends View{
         }); 
          
         //display the results
+        String locationName;
           this.console.println("Ride Wait Times");
           this.console.println("-----------------------");
           for (int s=0;s<tmpLocations.length;s++){
-            if(tmpLocations[s][0]> 0){  
-            this.console.println("Location #" + Integer.toString(tmpLocations[s][0]) + ": " + Integer.toString(tmpLocations[s][1]) + " min");
+            if(tmpLocations[s][0]> 0){
+            locationName = LocationControl.lookupLocationName(tmpLocations[s][0]);
+            this.console.println("Location #" + Integer.toString(tmpLocations[s][0]) + "(" + 
+                    locationName + "): " + Integer.toString(tmpLocations[s][1]) + " min");
             }
           }
           

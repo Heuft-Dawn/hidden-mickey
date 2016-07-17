@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.GameControl;
@@ -10,10 +6,6 @@ import byui.cit260.hiddenMickeys.model.Game;
 import hiddenmickeys.HiddenMickeys;
 import static hiddenmickeys.HiddenMickeys.getCurrentGame;
 
-/**
- *
- * @author Hannah Mars
- */
 public class MainMenuView extends View {
 
     

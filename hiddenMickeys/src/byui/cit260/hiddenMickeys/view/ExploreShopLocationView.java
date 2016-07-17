@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.BackpackControl;
@@ -14,16 +10,13 @@ import byui.cit260.hiddenMickeys.model.Scene;
 import hiddenmickeys.HiddenMickeys;
 import java.text.DecimalFormat;
 
-/**
- *
- * @author Hannah Mars
- */
+
 public class ExploreShopLocationView extends View {
     
     public ExploreShopLocationView(Scene scene){
     
     super("------------------------------"
-            +"\n" + scene.getName() +" Food Menu"
+            +"\n" + scene.getName() +" Menu"
             +"\n" + scene.getDescription()
             +"\n------------------------------"
             +"\n1 - Purchase " + scene.getItemName()[0]
@@ -33,8 +26,9 @@ public class ExploreShopLocationView extends View {
             +"\n    All items are $" + Double.toString(scene.getItemPrice()) + "0"
             +"\n------------------------------"
             +"\nQ - Return to Game Menu"
+            + "\nM - Return to Map"
             +"\n------------------------------"
-            +"\n\n\nPlease enter your choice.");
+            +"\n\nYou must purchase souvenir in order to search for a Mickey\n\nPlease enter your choice.");
     }
 
      @Override
@@ -43,6 +37,10 @@ public class ExploreShopLocationView extends View {
      boolean returnToMenu = false;
         switch (choice) {
             case "Q": //go back to menu
+                break;
+            case "M":
+                GameMenuView gmv = new GameMenuView();
+                gmv.mapAndMove();
                 break;
             default:
             int choiceNum = 0;    

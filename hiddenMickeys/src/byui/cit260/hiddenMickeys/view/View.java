@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
 import hiddenmickeys.HiddenMickeys;
+import static hiddenmickeys.HiddenMickeys.getCurrentGame;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
-/**
- *
- * @author Administrator
- */
+
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
@@ -40,6 +33,8 @@ public abstract class View implements ViewInterface {
             String value = this.getInput();
             if (value.toUpperCase().equals("Q"))  //user wants to quit
               return; //exit the game
+            
+           
         
         //this will do the requested action and display the next view
         
@@ -76,12 +71,26 @@ public abstract class View implements ViewInterface {
     @Override
     public void quitTheOption() {
          
-          this.console.println("Enter Q to Return");
+          this.console.println("Enter Q - Return to Menu or M - Map");
           
                String option = this.getInput();
-          
+                if (option.toUpperCase().equals("M")) {
+                    try{
+                         Game game= getCurrentGame();
+                        int gameCheck = game.getTimeRemaining();
+                        if(gameCheck>0){
+                        GameMenuView gameMenu = new GameMenuView();
+                        gameMenu.mapAndMove();}
+                        }catch (Exception e){
+                            ErrorView.display(this.getClass().getName(), "You have not begun a game yet.\nStart a New Game then go to the map");
+                        }
+                    
+                   
+                    
+                }
+                else {   
                 this.doAction(option);
-            
+                }
     }
     
     @Override

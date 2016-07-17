@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package byui.cit260.hiddenMickeys.view;
 import byui.cit260.hiddenMickeys.control.BackpackControl;
@@ -13,23 +8,20 @@ import byui.cit260.hiddenMickeys.model.Mickey;
 import hiddenmickeys.HiddenMickeys;
 import java.util.ArrayList;
   
-/**
- *
- * @author Dawn
- */
+
 public class BackpackView extends View{
    
    public BackpackView() {
-       super("----------------------------------------------"
+       super("--------------------------------------------------"
             +"\nView Backpack Menu"
-            +"\n----------------------------------------------"
-            +"\n1 - Check number of fast passes"
+            +"\n--------------------------------------------------"
+            +"\n1 - Check # Fast passes and minutes until next pass"
             +"\n2 - Check Money Balance"
             +"\n3 - Use Emergency Water"
             +"\n4 - Use Emergency Snack"
             +"\n5 - Display List of Mickeys Found" 
             +"\nQ - Return to menu"   
-            +"\n----------------------------------------------"
+            +"\n--------------------------------------------------"
             +"\n\n\nYou have several items in your backpack,"
             + " which one would you like to check?");
     }

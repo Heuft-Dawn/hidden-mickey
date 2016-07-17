@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.LocationControl;
@@ -13,12 +8,7 @@ import byui.cit260.hiddenMickeys.model.Mickey;
 import byui.cit260.hiddenMickeys.model.Scene;
 import hiddenmickeys.HiddenMickeys;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-/**
- *
- * @author Administrator
- */
 public class MickeyLocationEndView extends View{
    private String promptMessage; 
    private Scene myScene;

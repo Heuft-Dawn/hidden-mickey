@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
 import byui.cit260.hiddenMickeys.control.BackpackControl;
@@ -14,10 +10,6 @@ import hiddenmickeys.HiddenMickeys;
 import java.text.DecimalFormat;
 
 
-/**
- *
- * @author Dawn
- */
 public class ExploreFoodLocationView extends View {    
     private Scene myScene;
     public ExploreFoodLocationView(Scene scene){
@@ -29,7 +21,7 @@ public class ExploreFoodLocationView extends View {
             +"\n2 - Purchase Item 2 " + scene.getItemName()[1] 
             +"\n3 - Purchase Item 3 " + scene.getItemName()[2]
             +"\n------------------------------"
-            +"\n    All items are $" + Double.toString(scene.getItemPrice()) + "0"
+            +"\n    All items are $" + Double.toString(scene.getItemPrice()) + "0, and will boost energy by 10%"
             +"\n------------------------------"
             +"\nQ - Return to Game Menu"
             +"\n------------------------------"

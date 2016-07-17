@@ -5,11 +5,7 @@
  */
 package byui.cit260.hiddenMickeys.exceptions;
 
-/**
- *
- * @author Hannah Mars
- */
-    
+
 public class BackpackControlException extends Exception {
 
     public BackpackControlException() {

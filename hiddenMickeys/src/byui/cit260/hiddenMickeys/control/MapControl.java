@@ -71,7 +71,7 @@ public class MapControl {
 
             Scene pieces_eight = new Scene();
             String[] itemsPirate = {"", "", ""};
-            pieces_eight.setName("Pieces of Eight");
+            pieces_eight.setName("Pieces of Eight Souvenirs");
             pieces_eight.setDescription("Want to connect with your inner Pirate?  This is"
                     + "\nthe place to buy your Pirate Gear.");
             pieces_eight.setMapSymbol("$");

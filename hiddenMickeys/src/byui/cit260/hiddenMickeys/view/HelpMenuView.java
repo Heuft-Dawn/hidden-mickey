@@ -1,15 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.hiddenMickeys.view;
 
-
-/**
- *
- * @author Hannah Mars
- */
 public class HelpMenuView extends View{
 private String promptMessage;
     
@@ -56,7 +47,7 @@ public HelpMenuView() {//Constructor Function
                         "\n***Invalid selection. Try again.");
                 break;
         }
-        return false;
+        return true;
     }
 
     private void displayGameGoal() {
