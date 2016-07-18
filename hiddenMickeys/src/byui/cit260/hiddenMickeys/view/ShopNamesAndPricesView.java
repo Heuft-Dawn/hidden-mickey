@@ -50,9 +50,8 @@ public class ShopNamesAndPricesView extends View{
             //pull the data
             Game game = HiddenMickeys.getCurrentGame();
             Location[][] locations = game.getMap().getLocations();
-            //ArrayList<Mickey> mickeys = game.getBackpack().getMickeysCollected();
-            //initialize needed variables 
-            //boolean isShop;
+            
+            //initialize needed variables
             int curLocationNum;
             String shopName;
             double shopPrice;
@@ -62,12 +61,9 @@ public class ShopNamesAndPricesView extends View{
           for (Location[] location : locations) {
                 for (Location location1 : location) {
                     curLocationNum = location1.getLocationNo();
-                   // isShop = false;
-                   // shopName = "N/A";
-                   // shopPrice = 0;
+                   
                     //if the location is a shop, search for the item price
                     if (location1.getScene().getLocationType().equals("S") || location1.getScene().getLocationType().equals("F")) {
-                       // isShop = true;
                         shopName = location1.getScene().getName();
                         shopPrice = location1.getScene().getItemPrice();
                     
@@ -106,20 +102,17 @@ public class ShopNamesAndPricesView extends View{
             Location[][] locations = game.getMap().getLocations();
             
         //initialize needed variables
-            //boolean isShop;
             int curLocationNum;
             String shopName;
             double shopPrice;
-        //loop through the locations to find visited ones
+            
+        //loop through the locations to find shop and restaurant locations
         for (Location[] location : locations) {
                 for (Location location1 : location) {
                     curLocationNum = location1.getLocationNo();
-                   // isShop = false;
-                   // shopName = "N/A";
-                    //shopPrice = 0;
+                   
                     //if the location is a shop, search for the item price
                     if (location1.getScene().getLocationType().equals("S") || location1.getScene().getLocationType().equals("F")) {
-                      //  isShop = true;
                         shopName = location1.getScene().getName();
                         shopPrice = location1.getScene().getItemPrice();
                     

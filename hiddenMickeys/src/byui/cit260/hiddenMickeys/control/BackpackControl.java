@@ -8,8 +8,6 @@ package byui.cit260.hiddenMickeys.control;
 import byui.cit260.hiddenMickeys.exceptions.BackpackControlException;
 import byui.cit260.hiddenMickeys.model.Backpack;
 import byui.cit260.hiddenMickeys.model.Game;
-import byui.cit260.hiddenMickeys.model.Location;
-import byui.cit260.hiddenMickeys.model.Map;
 import byui.cit260.hiddenMickeys.model.Mickey;
 import hiddenmickeys.HiddenMickeys;
 import java.util.ArrayList;
